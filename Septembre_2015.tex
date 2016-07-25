@@ -3,9 +3,11 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tcolorbox}
 \usepackage{tikz}
-\usetikzlibrary{intersections}
+\usetikzlibrary{intersections,calc}
 \usepackage{amsmath}
-
+\usepackage{graphicx}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {$\mathcal{C}$}
 
 \tcbset{%
 	basic/.style={colframe=black,
@@ -64,27 +66,29 @@
 			\underline{Dessin}\\
 			
 				  \begin{figure}[h]
-				  \begin{tikzpicture}[scale=0.8]
-					%\draw[help lines] (-3,-3) grid (3,3); 
-					
+				  \begin{tikzpicture}[scale=0.65]
+					%\draw[help lines] (-3,-3) grid (3,3); 					
 					%CERCLE C
 					\coordinate (O) at (0,0);
-					\draw (O) circle (0.025);
+					\fill (O) circle (0.025);
 					\draw[name path=cercle] (O) circle (1.5cm);
-					\coordinate[label=below left:$\mathcal{C}$] () at (-150:1.5);
+					\coordinate[label=above left:$\mathcal{C}$] () at (100:1.5);
 					%CERCLE C'
 					\coordinate (O') at (-45:2.5);
-					\draw (O') circle (0.025);
+					\fill (O') circle (0.025);
 					\draw[name path=cercle'] (O') circle (2cm);
-					\path (O') -- +(-130:2) coordinate[label=below left:$\mathcal{C'}$] ();
+					\path (O') -- +(45:2) coordinate[label=above right:$\mathcal{C'}$] ();
 
-%TODO trouver 2 intersection des 2 cercles					
+					
 					%A et B
-					\path [name intersections={of=cercle and cercle',by=A}];
-					\path [name intersections={of=cercle' and cercle,by=B}];
-					\draw (A) circle (0.025);
-					\draw (B) circle (0.025);
-%TODO point P et P'					
+					\path [name intersections={of=cercle and cercle',by=intersection}];
+					\coordinate[label=above right:$A$] (A) at (intersection-1);
+					\coordinate[label=below left:$B$] (B) at (intersection-2);
+					\draw (A) -- (O) -- +($(O)-(A)$) coordinate[label=left:$P$](P);
+					\draw (A) -- (O') -- +($(O')-(A)$) coordinate[label=below right:$P'$](P');
+					\draw (P) -- (P');
+					\draw (A) -- (B);
+					
 				  \end{tikzpicture}
 				  \end{figure}
 			
@@ -106,11 +110,10 @@
 		
 		\column{.5\textwidth}\flushleft
 		
-		\underline{Résolution}\\
+		\underline{Résolution}\\ \bigskip
 		
-		\begin{itemize} 
-		\item[$\heartsuit$]Un triangle inscrit dans un demi-cercle est rectangle.
-		\end{itemize}
+		\heart Un triangle inscrit dans un demi-cercle est rectangle.
+		
 		
 		\begin{enumerate}
 		 \item $\Delta APB$ rectangle en $B$ \\
