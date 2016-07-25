@@ -71,7 +71,7 @@
 					
 					%CERCLE
 					\coordinate[label=below left:$O$] (O) at (0,0);
-					\draw (O) circle (0.025);
+					\fill (O) circle (0.025);
 					\draw[name path=cercle] (O) circle (2cm);
 					\node[below left] (C) at (-110:2) {$\mathcal{C}$};
 					
@@ -90,7 +90,7 @@
 					\path [name intersections={of=d_2 and cercle,by=A_2}];
 					\node [above left] at (A_2) {$A_2$}; 
 					\draw (A_1) -- (A_2) coordinate[pos=0.5,label=right:$M$](M);
-					\draw (M) circle (0.025);
+					
 					
 					%segments [PM],[OM],[OA_1]
 					\draw (P) -- (M);
