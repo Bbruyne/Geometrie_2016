@@ -1,0 +1,127 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\usepackage{amsmath}
+
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    
+    \frame{
+	  
+	  \frametitle{Q1 Juillet 2012.}
+	  On considère un tétraèdre $ABCD$ et un plan parallèle à sa base $ABC$,
+	  qui coupe les arêtes $[AD]$, $[BD]$ et $[CD]$ en des points notés respectivement $A'$ , $B'$ et $C'$.
+	  Dans le triangle $ABC$, les milieux des côtés $[BC]$,
+	  $[AC]$ et $[AB]$ sont respectivement notés $P$, $Q$ et $R$. \\
+	  Démontrer que les droites $A'P$, $B'Q$ et $C'R$ sont concourantes.
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.5\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{itemize}
+%TODO symbole parallèle
+		      \item $ABC//A'B'C'$,
+		      \item $|BP|=|PC|$ \\
+			    $|AQ|=|QC|$ \\
+			    $|AR|=|RB|$.
+		      \end{itemize}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse} \\		
+		      \smallskip
+		      $A'P$, $B'Q$ et $C'R$ sont concourantes.
+		
+	      \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.8]
+%TODO dessin 3D					
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+%TODO symbole parallèle
+				    \item $ABC // A'B'C'$,
+				    \item $|BP|=|PC|$ \\
+					  $|AQ|=|QC|$ \\
+					  $|AR|=|RB|$. 
+				    \end{enumerate}
+							      
+				    \underline{Thèse} \\
+				    \smallskip
+				    $A'P$, $B'Q$ et $C'R$ sont concourantes.
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\underline{Résolution}\\
+%TODO coeur en bleu		
+		\textit{Cas particulier (1): $ABC$ = $A'B'C'$} \\ \medskip		
+		$\heartsuit$ Les médianes d'un triangle sont concourantes.
+		\bigskip
+		
+		\textit{Cas particulier (2): $ABC$ contient $D$} \\ \medskip
+		Les droites sont concourantes en D.
+		\bigskip
+		
+		\textit{Cas général :} \\ medskip
+		\begin{enumerate}
+		 \item $AB//A'B'$,
+		 \item $AB//PQ$ par Thalès.
+		\end{enumerate}	
+		\centering $A'B'// PQ$
+		
+		\begin{itemize} 
+		\item[$\heartsuit$]
+		\end{itemize}
+		
+		
+		\medskip 
+	        \flushright $\qed$
+
+   
+	   \end{columns}
+    
+    
+    
+    }
+	  
+  
+\end{document}

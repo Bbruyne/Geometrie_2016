@@ -1,0 +1,228 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\usepackage{amsmath}
+
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    
+    \frame{%enoncé ex1
+	  
+	  \frametitle{Q1 Septembre 2015.}
+	  On considère deux cercles $\mathcal{C}$ et $\mathcal{C'}$ se coupant en deux points distincts
+	  $A$ et $B$. On note $P$ le point diamétralement opposé à $A$ sur $\mathcal{C}$, et $P'$ le
+	  point diamétralement opposé à $A$ sur $\mathcal{C'}$ . \\
+	  Démontrer que les points $P$ , $B$ et $P'$ sont alignés.
+	  
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.5\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{itemize}
+		      \item $[AP]$ diamètre de $\mathcal{C}$ \\
+			    $[AP']$ diamètre de  $\mathcal{C'}$,
+		      \item $[AB]$ corde de $\mathcal{C}$ et $\mathcal{C'}$.			    
+		      \end{itemize}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse} \\
+		      \smallskip
+		      $P,B$ et $P'$ alignés.
+		
+	      \end{columns}
+	  \end{tcolorbox}
+    
+    }
+    \frame{% résolution ex1
+
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.8]
+					%\draw[help lines] (-3,-3) grid (3,3); 
+					
+					%CERCLE C
+					\coordinate (O) at (0,0);
+					\draw (O) circle (0.025);
+					\draw[name path=cercle] (O) circle (1.5cm);
+					\coordinate[label=below left:$\mathcal{C}$] () at (-150:1.5);
+					%CERCLE C'
+					\coordinate (O') at (-45:2.5);
+					\draw (O') circle (0.025);
+					\draw[name path=cercle'] (O') circle (2cm);
+					\path (O') -- +(-130:2) coordinate[label=below left:$\mathcal{C'}$] ();
+
+%TODO trouver 2 intersection des 2 cercles					
+					%A et B
+					\path [name intersections={of=cercle and cercle',by=A}];
+					\path [name intersections={of=cercle' and cercle,by=B}];
+					\draw (A) circle (0.025);
+					\draw (B) circle (0.025);
+%TODO point P et P'					
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+				    \item $[AP]$ diamètre de $\mathcal{C}$ \\
+					  $[AP']$ diamètre de  $\mathcal{C'}$,
+				    \item $[AB]$ corde de $\mathcal{C}$ et $\mathcal{C'}$.
+				    \end{enumerate}
+							      
+				    \underline{Thèse} \\
+				    \smallskip
+				    $P,B$ et $P'$ alignés. 
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\underline{Résolution}\\
+		
+		\begin{itemize} 
+		\item[$\heartsuit$]Un triangle inscrit dans un demi-cercle est rectangle.
+		\end{itemize}
+		
+		\begin{enumerate}
+		 \item $\Delta APB$ rectangle en $B$ \\
+		       $\Delta AP'B$ rectangle en $B$,
+		 \item $P$ et $P'$ sont sur une droite $\bot$ à AB passant par $B$.
+		\end{enumerate}
+		\bigskip		
+		$P,B$ et $P'$ alignés.  \hfill $\qed$
+
+   
+	   \end{columns}
+        }
+
+  \frame{%énoncé ex2
+	\frametitle{Q2 Septembre 2015.}
+	 Dans un repère orthonormé $(O,X,Y)$, on considère une parabole $\mathcal{P}_1$
+	 d’axe $Y$ dont le sommet est l’origine $O$ et dont tous les points ont
+	 une ordonnée positive ou nulle. On considère aussi la parabole $\mathcal{P}_2$,
+	 translatée de $\mathcal{P}_1$ , de sommet au point de coordonnées $(4, 0)$. Les
+	 paraboles $\mathcal{P}_1$ et $\mathcal{P}_2$ sont telles que leurs tangentes respectives à leur
+	 point d’intersection sont orthogonales. On demande de déterminer les
+	 équations cartésiennes de $P_1$ et $P_2$.
+  
+	 \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.5\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{itemize}
+%TODO aligner les :		      
+		      \item $\mathcal{P}_1$ : concavité positive et sommet en $(0,0)$,
+		      \item $\mathcal{P}_2$ : $\mathcal{P}_1$ translatée et sommet en $(4,0)$,
+		      \item tangentes $\bot$ en$\mathcal{P}_1..\mathcal{P}_2$.
+		      \end{itemize}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Inconnues} \\
+		      \smallskip
+		      Equations de $\mathcal{P}_1$ et $\mathcal{P}_2$.
+		
+	      \end{columns}
+	  \end{tcolorbox}
+	}  
+	
+  \frame{ %résolution ex2
+	\begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.60]
+					%\draw[help lines] (-3,-3) grid (3,3); 
+%TODO plot fonctions					
+					%AXES
+					\draw[->] (0,-3) -- (0,3) coordinate[label=below right:$y$]();
+					\draw[->] (-3,0) -- (3,0) coordinate[label=above left:$x$]();
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+%TODO aligner les :		      
+				    \item $\mathcal{P}_1$ : concavité positive et sommet en $(0,0)$,
+				    \item $\mathcal{P}_2$ : $\mathcal{P}_1$ translatée et sommet en $(4,0)$,
+%TODO symbol inter
+				    \item tangentes $\bot$ en$\mathcal{P}_1..\mathcal{P}_2$.
+				    \end{enumerate}
+							      
+				    \underline{Inconnues} \\
+				    \smallskip
+				    Equations de $\mathcal{P}_1$ et $\mathcal{P}_2$.
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\underline{Résolution}\\
+		
+		\begin{enumerate}
+%TODO symbol def et inter
+		\item $\mathcal{P}_1..y=px^2$ $(p>0)$,
+		\item $\mathcal{P}_2..y=p(x-4)^2$,
+		\item $\mathcal{P}_1..\mathcal{P}_2 = (2,4p)$.
+		\end{enumerate}
+		\begin{itemize} 
+		\item[$\heartsuit$]Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$.
+		\end{itemize}  \bigskip
+%TODO aligner		
+		$\mathcal{P}_1'(2).\mathcal{P}_2'(2) = -1$ \\
+		$4p.-4p = -1$ \\
+		$p=\frac{1}{4}$ car $p>0$. \\ \bigskip
+%TODO acolade	
+		$\mathcal{P}_1..y=\frac{x^2}{4}$ \\
+		$\mathcal{P}_1..y=\frac{(x-4)^2}{4}$
+		\flushright $\qed$
+
+   
+	   \end{columns}
+  
+  
+	}
+  
+\end{document}
