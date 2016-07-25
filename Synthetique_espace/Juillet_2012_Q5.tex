@@ -3,12 +3,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tcolorbox}
 \usepackage{tikz}
+\usepackage{tikz-3dplot}
 \usetikzlibrary{intersections,calc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{cases}
+
 \def \heart {\textcolor{blue}{$\heartsuit$} }
 \def \C {$\mathcal{C}$}
-
 
 
 \tcbset{%
@@ -23,6 +25,9 @@
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    
     
     \frame{
 	  
@@ -43,11 +48,13 @@
 		      
 		      \underline{Hypothèses} 
 		      \begin{itemize}
-%TODO symbole parallèle
-		      \item $ABC//A'B'C'$,
-		      \item $|BP|=|PC|$ \\
-			    $|AQ|=|QC|$ \\
-			    $|AR|=|RB|$.
+
+		      \item $ABC\parallel A'B'C'$,
+		      \item \begin{itemize}
+		              \item[$\bullet$] $|AQ|=|QC|$,
+		              \item[$\bullet$] $|AR|=|RB|$,
+		              \item[$\bullet$] $|BP|=|PC|$.
+		            \end{itemize}		            		              
 		      \end{itemize}
 
 		  
@@ -55,7 +62,7 @@
 		      
 		      \underline{Thèse} \\		
 		      \smallskip
-		      $A'P$, $B'Q$ et $C'R$ sont concourantes.
+		      $A'P,B'Q,C'R$ concourantes.
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -70,8 +77,38 @@
 			\underline{Dessin}\\
 			
 				  \begin{figure}[h]
-				  \begin{tikzpicture}[scale=0.8]
-%TODO dessin 3D					
+				  \begin{tikzpicture}[scale=0.85]				  
+				  %\draw[help lines] (-3,-3,-3) grid (3,3,3);
+				  %AXES
+				  %\draw[->] (0,0,-3) -- (0,0,3) coordinate[label=below right:$z$]();
+				  %\draw[->] (0,-3,0) -- (0,3,0) coordinate[label=above left:$y$]();
+				  %\draw[->] (-3,0,0) -- (3,0,0) coordinate[label=above left:$x$]();
+				  %TETRAEDRE et P,Q,R
+				  \coordinate[label=below:$A$] (A) at (0,0,1.5);
+				  \coordinate[label=left:$B$] (B) at (-2,0,0);
+				  \coordinate[label=right:$C$] (C) at (2.5,0,0);
+				  \coordinate[label=above:$D$] (D) at (0,2.5,0);
+				\draw (A) -- (B) coordinate[pos=0.5,label=below left:$R$](R) -- (C) coordinate[pos=0.5,label=below left:$P$](P) -- (A) coordinate[pos=0.5,label=below right:$Q$](Q);
+				  \draw[name path=AD] (A) -- (D);
+				  \draw[name path=BD] (B) -- (D);
+				  \draw[name path=CD] (C) -- (D);
+				  %A',B',C'
+				  \path[name path=x] (0,1.5,0) -- (3,1.5,0);
+				  \path[name path=-x] (0,1.5,0) -- (-3,1.5,0);
+				  \path[name path=z] (0,1.5,0) -- (0,1.5,3);
+				  \path[name intersections={of=x and CD,by=C'}];
+				  \coordinate[label=right:$C'$] () at (C');
+				  \path[name intersections={of=-x and BD,by=B'}];
+				  \coordinate[label=left:$B'$] () at (B');
+				  \path[name intersections={of=z and AD,by=A'}];
+				  \coordinate[label=below left:$A'$] () at (A');
+				  %A'P,B'Q,C'R%
+				  \draw (A') -- (P);
+				  \draw (B') -- (Q);
+				  \draw (C') -- (R);
+				  
+				  \draw (A') -- (B') -- (C') --cycle;
+				  
 				  \end{tikzpicture}
 				  \end{figure}
 			
@@ -80,52 +117,139 @@
 				    \smallskip
 				    \underline{Hypothèses} 
 				    \begin{enumerate}
-%TODO symbole parallèle
-				    \item $ABC // A'B'C'$,
-				    \item $|BP|=|PC|$ \\
-					  $|AQ|=|QC|$ \\
-					  $|AR|=|RB|$. 
+
+				    \item $ABC\parallel A'B'C'$,
+				    \item \begin{itemize}
+					      \item[$\bullet$] $|AQ|=|QC|$,
+					      \item[$\bullet$] $|AR|=|RB|$,
+					      \item[$\bullet$] $|BP|=|PC|$.
+					  \end{itemize} 
 				    \end{enumerate}
 							      
 				    \underline{Thèse} \\
 				    \smallskip
-				    $A'P$, $B'Q$ et $C'R$ sont concourantes.
+				    $A'P,B'Q,C'R$ concourantes.
 				    \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\flushleft
+		\column{.5\textwidth}\centering
 		
-		\underline{Résolution}\\
-%TODO coeur en bleu		
+		\underline{Résolution}\\ \flushleft
+	
 		\textit{Cas particulier (1): $ABC$ = $A'B'C'$} \\ \medskip		
-		$\heartsuit$ Les médianes d'un triangle sont concourantes.
+		\heart Les médianes d'un triangle sont concourantes.
 		\bigskip
 		
 		\textit{Cas particulier (2): $ABC$ contient $D$} \\ \medskip
 		Les droites sont concourantes en D.
 		\bigskip
 		
-		\textit{Cas général :} \\ medskip
+		\textit{Cas général :} \\ \medskip
+		
 		\begin{enumerate}
-		 \item $AB//A'B'$,
-		 \item $AB//PQ$ par Thalès.
-		\end{enumerate}	
-		\centering $A'B'// PQ$
-		
-		\begin{itemize} 
-		\item[$\heartsuit$]
-		\end{itemize}
-		
-		
-		\medskip 
-	        \flushright $\qed$
-
-   
+		 \item $BC\parallel B'C'$,
+		 \item $BC\parallel QR$ par Thalès.
+		\end{enumerate}	\bigskip
+		\centering $B'C'\parallel QR \rightarrow B'Q \nmid C'R$. \\ \medskip
+		De la même façon : \\ \medskip $A'P\nmid C'R\text{ et }A'P\nmid B'Q$.
 	   \end{columns}
-    
-    
-    
-    }
+       }
 	  
+       \frame{ 
+       
+	      \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]				  
+				  %\draw[help lines] (-3,-3,-3) grid (3,3,3);
+				  %AXES
+				  %\draw[->] (0,0,-3) -- (0,0,3) coordinate[label=below right:$z$]();
+				  %\draw[->] (0,-3,0) -- (0,3,0) coordinate[label=above left:$y$]();
+				  %\draw[->] (-3,0,0) -- (3,0,0) coordinate[label=above left:$x$]();
+				  %TETRAEDRE et P,Q,R
+				  \coordinate[label=below:$A$] (A) at (0,0,1.5);
+				  \coordinate[label=left:$B$] (B) at (-2,0,0);
+				  \coordinate[label=right:$C$] (C) at (2.5,0,0);
+				  \coordinate[label=above:$D$] (D) at (0,2.5,0);
+				\draw (A) -- (B) coordinate[pos=0.5,label=below left:$R$](R) -- (C) coordinate[pos=0.5,label=below left:$P$](P) -- (A) coordinate[pos=0.5,label=below right:$Q$](Q);
+				  \draw[name path=AD] (A) -- (D);
+				  \draw[name path=BD] (B) -- (D);
+				  \draw[name path=CD] (C) -- (D);
+				  %A',B',C'
+				  \path[name path=x] (0,1.5,0) -- (3,1.5,0);
+				  \path[name path=-x] (0,1.5,0) -- (-3,1.5,0);
+				  \path[name path=z] (0,1.5,0) -- (0,1.5,3);
+				  \path[name intersections={of=x and CD,by=C'}];
+				  \coordinate[label=right:$C'$] () at (C');
+				  \path[name intersections={of=-x and BD,by=B'}];
+				  \coordinate[label=left:$B'$] () at (B');
+				  \path[name intersections={of=z and AD,by=A'}];
+				  \coordinate[label=below left:$A'$] () at (A');
+				  %A'P,B'Q,C'R%
+				  \draw (A') -- (P);
+				  \draw (B') -- (Q);
+				  \draw (C') -- (R);
+				  
+				  \draw (A') -- (B') -- (C') --cycle;
+				  
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+
+				    \item $ABC\parallel A'B'C'$,
+				    \item \begin{itemize}
+					      \item[$\bullet$] $|AQ|=|QC|$,
+					      \item[$\bullet$] $|AR|=|RB|$,
+					      \item[$\bullet$] $|BP|=|PC|$.
+					  \end{itemize} 
+				    \end{enumerate}
+							      
+				    \underline{Thèse} \\
+				    \smallskip
+				    $A'P,B'Q,C'R$ concourantes.
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\bigskip 
+		
+		\begin{numcases}{}X= B'Q \cap C'R, \label{eq:1}\\
+				  Y= A'P \cap C'R, \label{eq:2}\\
+				  Z= A'P \cap B'Q. \label{eq:3} 
+		\end{numcases} \medskip
+		
+		 
+		\begin{align*}
+		Y \in& C'R \subset B'C'R, \\
+		Z \in& B'Q \subset B'C'R, \\
+		\text{et }&  Y,Z \in A'P, \\[1em]				
+			    Y =& Z  =A'P \cap B'C'R. \\[1.5em]		
+			    Y =& A'P \cap C'R = A'P \cap B'Q, \\
+			      =& B'Q \cap C'R, \\
+			      =& X.\\[0.5em]
+			    X =& Y = Z. 	      
+		\end{align*}
+		\hfill $\qed$
+		
+
+		
+		
+		
+		
+	
+	   \end{columns}
+       
+       
+       }
   
 \end{document}
