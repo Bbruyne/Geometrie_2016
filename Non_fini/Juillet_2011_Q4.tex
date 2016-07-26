@@ -1,0 +1,145 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {$\mathcal{C}$}
+
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    
+    
+    \frame{
+	  
+	  \frametitle{Q4 Juillet 2001.}
+	  Dans un repère orthonormé de l’espace, on considère la droite $d_1$ , pas-
+	  sant par les points $A$ et $B$ respectivement de coordonnées $(1, 2, 3)$ et
+	  $(-1, 0, 2)$ et la droite $d_2$ , passant par les points $C$,$D$ respectivement
+	  de coordonnées $(0, 1, 7)$ et $(2, 0, 5)$.
+	  \renewcommand{\theenumi}{(\alph{enumi})}
+	  \begin{enumerate}
+	   \item Déterminer l’équation cartésienne du plan $\Pi$ parallèle à la droite
+		 $d_1$ et contenant la droite $d_2$.
+	   \item Déterminer la distance entre la droite $d_1$ et le plan $\Pi$.
+	   \item Déterminer des équations paramétriques et des équations carté-
+		 siennes de la droite $d_3$ passant par $C$ et orthogonale à $d_1$ et $d_2$.
+	   \item Déterminer un point $P_1$ de $d_1$ et point $P_2$ de $d_2$ tels que le vecteur
+		 joignant $P_1$ à $P_2$ soit orthogonal à $d_1$ et à $d_2$ .
+	  \end{enumerate}
+
+	  
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	  \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}=\overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.8]
+					
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+				    \item  
+				    \end{enumerate}
+							      
+				    \underline{Thèse} \\
+				    \smallskip
+				    $ $.
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\underline{Résolution}\\
+		
+		\begin{enumerate}
+		 \item 
+		\end{enumerate}	
+		
+		\begin{itemize} 
+		\item[$\heartsuit$]
+		\end{itemize}
+		
+		
+		\medskip 
+	        \flushright $\qed$
+
+   
+	   \end{columns}
+    
+    
+    
+    }
+	  
+  
+\end{document}
