@@ -1,0 +1,177 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\g}[1] {
+  \mathbf{#1}}
+  
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \frametitle{Q3 Septembre 2001. }
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	  On donne quatre points $A,B,C,D$ dans le plan. \\
+	  \begin{enumerate}
+	   \item Montrer que si $M$ est un point du plan, le vecteur \\
+	   $$\g{v}=4\vect{MA}+3\vect{MB}-5\vect{MC}-2\vect{MD}$$ \\
+	   est indépendant du point $M$.
+	   \item Montrer que si le vecteur $\g{v}$ de $a).$ est nul, le nombre \\
+	   $$x=4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$$ \\
+	   est aussi indépendant du point $M$.
+	  \end{enumerate}
+
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.55\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
+					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
+		      \item $\g{v}=\g{0}$, \\ \smallskip
+		      
+			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
+		      \end{enumerate}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse}
+		      \begin{enumerate}
+		       \item $\g{v}$ indépendant de $M$,
+		       \item $x$ indépendant de $M$.
+		      \end{enumerate}
+
+		
+	      \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+		\begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.55\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
+					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
+		      \item $\g{v}=\g{0}$, \\ \smallskip
+		      
+			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
+		      \end{enumerate}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse}
+		      \renewcommand{\theenumi}{\alph{enumi})}
+		      \begin{enumerate}
+		       \item $\g{v}$ indépendant de $M$,
+		       \item $x$ indépendant de $M$.
+		      \end{enumerate}
+
+		
+	      \end{columns}
+	  \end{tcolorbox}
+		
+		\centering\underline{Résolution}\\ \flushleft
+		
+		\begin{enumerate}
+		 \item \begin{align*}
+			\g{v}=&\ 4\vect{MA} + 3\vect{MB} - 5\vect{MC} - 2\vect{MD},\\
+			     =&\ 4\vect{MA} + 3\vect{MA} + 3\vect{AB} -5\vect{MA} - 5\vect{AC} - 2\vect{MA} -2\vect{AD}, \\
+			     =&\ 3\vect{AB}  - 5\vect{AC}  -2\vect{AD}.
+		       \end{align*} \hfill $\qed(a)$
+		\end{enumerate}	
+
+    }
+    
+    \frame{ 
+	  % résolution ex1
+		\begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.55\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
+					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
+		      \item $\g{v}=\g{0}$, \\ \smallskip
+		      
+			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
+		      \end{enumerate}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse}
+		      \renewcommand{\theenumi}{\alph{enumi})}
+		      \begin{enumerate}
+		       \item $\g{v}$ indépendant de $M$,
+		       \item $x$ indépendant de $M$.
+		      \end{enumerate}
+
+		
+	      \end{columns}
+	  \end{tcolorbox}
+		
+		\centering\underline{Résolution}\\ \flushleft
+		
+		\begin{enumerate}
+		 \item[2.] \begin{align*}
+			x=\ &4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2, \\[0.3em]
+			 =\ &4|\vect{MA}|^2 + 3|(\vect{MA} + \vect{AB})|^2 - 5|(\vect{MA} + \vect{AC})|^2 -2|(\vect{MA} + \vect{AD})|^2, \\[0.3em]
+			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + \vect{MA}\cdot(3\vect{AB}  - 5\vect{AC}  -2\vect{AD}), \\[0.3em]
+			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + \vect{MA}\cdot\vect{\g{v}},\\[0.3em]
+			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2. 
+		       \end{align*} \hfill $\qed(b)$
+		\end{enumerate}	
+		
+    }
+	  
+  
+\end{document}
