@@ -1,0 +1,252 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \frametitle{Q5 Juillet 2002.}
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	  On se place dans l’espace muni d’un repère orthonormé $Oxyz$.
+	  \begin{enumerate}
+	   \item Démontrer qu’il existe une droite $d$ passant par l’origine et telle que les plans
+		 d’équation \\ $$\pi \equiv (2r^2 + 6r - 2)x - (r^2 - 1)y - 2rz + r^2 + 1 = 0$$
+		 où $r$ parcourt $\mathbb{R}$, soient tous parallèles à $d$.
+	   \item Déterminer la perpendiculaire commune $d_1$ à $d$ et à la droite $d'$ d’équations 
+		 $$d' : \begin{cases} 
+			x=y \\
+			z=1
+		        \end{cases}$$
+
+	  \end{enumerate}
+
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[T]
+	     \column{.5\textwidth}\centering 
+	     
+	     \begin{enumerate}
+	      \item $d : \begin{cases}
+	                  O(0,0,0), \\
+	                  \vect{d}\in \vect{\pi}.
+	                 \end{cases}$
+
+	     \end{enumerate}
+	     \column{.5\textwidth}\centering 
+	     \begin{enumerate}
+	      \item[b).] $d_1 : \begin{cases} 
+	                         \vect{d_1} = \vect{d} \wedge \vect{d'}, \\
+	                         d_1 \nmid d \text{ et } d_1 \nmid d'.
+	                        \end{cases}$
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+	
+		
+	     \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[T]
+	     \column{.5\textwidth}\centering 
+	     \renewcommand{\theenumi}{\alph{enumi})} 
+	     \begin{enumerate}
+	      \item $d : \begin{cases}
+	                  O(0,0,0), \\
+	                  \vect{d}\in \vect{\pi}.
+	                 \end{cases}$
+
+	     \end{enumerate}
+	     \column{.5\textwidth}\centering 
+	     \begin{enumerate}
+	      \item[b).] $d_1 : \begin{cases} 
+	                         \vect{d_1} = \vect{d} \wedge \vect{d'}, \\
+	                         d_1 \nmid d \text{ et } d_1 \nmid d'.
+	                        \end{cases}$
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox}
+		
+		\underline{Résolution}\\ \flushleft
+		\vspace{-5mm}
+		\begin{align*}
+		                    \pi \equiv &\ (2r^2 + 6r - 2)x - (r^2 - 1)y - 2rz + r^2 + 1 = 0, \\
+		             \vect{\pi} \equiv &\ (2r^2 + 6r - 2)x - (r^2 - 1)y - 2rz = 0, \\
+         \vect{d}=(x_0,y_0,z_0)\in \vect{\pi} : &\ (2r^2 + 6r - 2)x_0 - (r^2 - 1)y_0 - 2rz_0 = 0. \\[0.3em]
+					       &\ \begin{cases}
+					           2r^2x_0 - r^2y_0 &= 0, \\
+					           6rx_0 - 2rz_0 &= 0, \\
+					           -2x_0 + y_0 &= 0.
+					          \end{cases}
+		\end{align*} \\ 
+		
+		\medskip
+		
+		Une solution : $\vect{d} = (1,2,3)$. \\ \medskip
+		$d : \begin{cases}
+	                  O(0,0,0), \\
+	                  \vect{d} = (1,2,3).
+	                 \end{cases}$ $\rightarrow \qquad d \equiv \dfrac{x}{1} =\ \dfrac{y}{2} =\ \dfrac{z}{3}$. \hfill $\qed(a)$
+		
+		%\centering\noindent\rule{2cm}{0.4pt}
+	  
+    }
+    
+     \frame{ 
+		\onslide<+->
+		 \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[T]
+	     \column{.5\textwidth}\centering 
+	     \renewcommand{\theenumi}{\alph{enumi})} 
+	     \begin{enumerate}
+	      \item $d : \begin{cases}
+	                  O(0,0,0), \\
+	                  \vect{d}\in \vect{\pi}.
+	                 \end{cases}$
+
+	     \end{enumerate}
+	     \column{.5\textwidth}\centering 
+	     \begin{enumerate}
+	      \item[b).] $d_1 : \begin{cases} 
+	                         \vect{d_1} = \vect{d} \wedge \vect{d'}, \\
+	                         d_1 \nmid d \text{ et } d_1 \nmid d'.
+	                        \end{cases}$
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox} \medskip
+		$d : \begin{cases} 
+		      2x=y, \\
+		      3x=z.
+		      \end{cases} \hspace{-1.8mm} \rightarrow \begin{cases}
+					       \vect{d} = (1,2,3), \\
+					       D = (1,2,3).
+					       \end{cases}             
+		 d' : \begin{cases} 
+		       x=y, \\
+		       z=1.
+		      \end{cases} \hspace{-1.8mm} \rightarrow \begin{cases}
+						  \vect{d'} = (1,1,0), \\
+						  D' = (0,0,1).
+						  \end{cases}$\\ \medskip
+						
+		\begin{columns}[t]
+		
+		\column{.5\textwidth}\flushleft 
+		\heart La perpendiculaire commune à 2 droites gauches $d,d'$ est l'intersection du plan $\alpha$ contenant $d$ et la direction $d \wedge
+		d'$ avec le plan $\alpha '$ contenant $d'$ et la direction $d \wedge d'$. \\ \medskip 
+		
+		
+		\column{.5\textwidth}\centering 
+		\begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          
+			          %\draw[help lines] (-3,-3) grid (3,3);
+			          \draw (-2,0,0) -- (2,0,0) node[above right] {$d$};
+			          \draw (0,2,-2) -- (0,2,2) node[above] {$d'$};
+			          \draw[visible on =<5>]  (0,0,0)  node[above right] {$d_1$} -- (0,2,0);
+			          
+			          \draw[visible on=<2-4>,->,xshift=5mm] (0,1,0) node[below] {$d \wedge d'$} -- (0,1.5,0); 
+			          
+			          \draw[dotted,visible on=<{3,5}>] (-2,0,0) -- (-2,2,0) (2,0,0) node[above left]{$\alpha$} -- (2,2,0);
+			          \draw[dotted,visible on=<4-5>] (0,2,2)  node[right]{$\alpha '$} -- (0,0,2) (0,2,-2) -- (0,0,-2);
+				  \end{tikzpicture}
+				  \end{figure}
+		\end{columns}
+		\vspace{-8mm}
+		\onslide<+->
+		$\vect{d} \wedge \vect{d'} = (-3,3,-1)$. \\
+		
+		\vspace{-6mm}
+		
+		
+		\begin{columns}[c]
+
+		\column{.333\textwidth}\flushleft 
+		\onslide<+->
+		\begin{align*}
+		\alpha \equiv& \begin{cases}
+		                D, \\
+		                \vect{d}, \\
+		                \vect{d} \wedge \vect{d'}.
+		               \end{cases} \\
+		       \equiv& 11x+8y-9z=0.
+		\end{align*}
+		
+		\column{.333\textwidth}\flushleft 
+		\onslide<+->
+		\begin{align*}
+		\alpha' \equiv& \begin{cases}
+		                D', \\
+		                \vect{d'}, \\
+		                \vect{d} \wedge \vect{d'}.
+		               \end{cases} \\
+		       \equiv& x-y-6z + 6=0.
+		\end{align*}
+		
+		\column{.333\textwidth}\flushleft 
+		\onslide<+->
+		\begin{align*}
+		 d_1      =& \alpha \cap \alpha ', \\
+		     \equiv& \dfrac{x-\frac{6}{19}}{-3} = \dfrac{y-\frac{12}{19}}{3} = \dfrac{z - \frac{18}{19}}{-1}.
+		\end{align*} \\ \bigskip
+		
+		
+		\end{columns}
+
+		\hfill $\qed(b)$
+		
+    }
+	  
+  
+\end{document}
