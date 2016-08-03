@@ -1,0 +1,279 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \frametitle{Q5 Juillet 2001.}
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	  On donne des équations cartésiennes de trois droites $d_1$, $d_2$, $d_3$ de l’espace : \\
+	  $$d_1 \equiv \frac{x-1}{2}=-y=\frac{z+1}{3},\; d_2 \equiv \frac{x}{3}=y+1=\frac{z-2}{5},\; d_3 \equiv \begin{cases}
+	                                                                                                     x=1 \\
+	                                                                                                     y+z=2
+	                                                                                                    \end{cases}$$
+	   \begin{enumerate}
+	    \item Donner une équation du plan $\alpha$ contenant $d_1$ et parallèle à $d_3$.
+	    \item Donner une équation du plan $\beta$ contenant $d_2$ et parallèle à $d_3$
+	    \item Donner les équations de la droite $d$ s’appuyant sur $d_1$ et $d_2$ et parallèle à $d_3$.
+	   \end{enumerate}
+                                                                                                 
+
+	  \vfill
+	  
+	  \pause
+	  
+	   \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[c]
+	     \column{.333\textwidth}\centering 
+	     
+	     \renewcommand{\theenumi}{\alph{enumi})}
+	     \begin{enumerate}
+	      \item $\alpha \equiv \begin{cases}
+				    \supset d_1, \\
+				    \parallel d_3.
+				   \end{cases}$	      
+	     \end{enumerate}
+	     
+	     \column{.333\textwidth}\centering 
+	     
+	     \begin{enumerate}
+	      \item[b).] $\beta \equiv \begin{cases}
+				    \supset d_2, \\
+				    \parallel d_3.
+				   \end{cases}$   
+	     \end{enumerate}
+	     \column{.333\textwidth}\centering 
+	     
+	     \begin{enumerate}
+	      \item[c).]$d  \equiv \begin{cases}
+				    d \nmid d_1, \\
+				    d \nmid d_2, \\
+				    \parallel d_3.
+				   \end{cases}$
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \centering\underline{Traduction}
+				    \begin{columns}[c]
+				      \column{.333\textwidth}\centering 
+				      
+				      \renewcommand{\theenumi}{\alph{enumi})}
+				      \begin{enumerate}
+					\item $\alpha \equiv \begin{cases}
+							      \supset d_1, \\
+							      \parallel d_3.
+							    \end{cases}$	      
+				      \end{enumerate}
+				      
+				      \column{.333\textwidth}\centering 
+				      
+				      \begin{enumerate}
+					\item[b).] $\beta \equiv \begin{cases}
+							      \supset d_2, \\
+							      \parallel d_3.
+							    \end{cases}$   
+				      \end{enumerate}
+				      \column{.333\textwidth}\centering 
+				      
+				      \begin{enumerate}
+					\item[c).]$d  \equiv \begin{cases}
+							      d \nmid d_1, \\
+							      d \nmid d_2, \\
+							      \parallel d_3.
+							    \end{cases}$
+
+				      \end{enumerate}
+
+				    \end{columns}
+				    \end{tcolorbox}
+	
+		\centering\underline{Résolution}\\ \flushleft
+		\medskip
+		\begin{columns}[c]
+	
+		\column{.333\textwidth}\centering
+		\begin{align*}
+	        d_1 &\equiv \begin{cases} 
+		      \frac{x-1}{2} = -y, \\
+		      -y = \frac{z+1}{3}.
+			    \end{cases} \\ 			    
+	        d_1 &\equiv \begin{cases}
+		            \vect{d_1} = (2,-1,3), \\
+		            D_1 = (1,0,-1).
+		            \end{cases}      
+		\end{align*}
+					       
+		\column{.333\textwidth}\centering			       
+		 \begin{align*}
+	        d_2 &\equiv \begin{cases} 
+		      \frac{x}{3}=y+1, \\
+		      y+1=\frac{z-2}{5}.
+			    \end{cases} \\ 			    
+	        d_2 &\equiv \begin{cases}
+		            \vect{d_2} = (3,1,5), \\
+		            D_2 = (0,-1,2).
+		            \end{cases}      
+		\end{align*}
+	
+		\column{.333\textwidth}\centering
+		\begin{align*}
+	        d_3 &\equiv \begin{cases} 
+		      x=1, \\
+		      y+z=2.
+			    \end{cases} \\ 			    
+	        d_3 &\equiv \begin{cases}
+		            \vect{d_3} = (0,1,-1), \\
+		            D_3 = (1,1,1).
+		            \end{cases}      
+		\end{align*}
+		\end{columns}
+		\bigskip
+		\begin{columns}[c]
+
+		\column{.5\textwidth} 	
+		\begin{align*}
+		\alpha \equiv& \begin{cases}
+		                D_1, \\
+		                \vect{d_1}, \\
+		                \vect{d_3}.
+		               \end{cases} \\
+		       \equiv&\ x-y-z-2=0.
+		\end{align*} \hfill $\qed(a)$
+		
+		\column{.5\textwidth}
+		\begin{align*}
+		\beta \equiv& \begin{cases}
+		                D_2, \\
+		                \vect{d_2}, \\
+		                \vect{d_3}.
+		               \end{cases} \\
+		       \equiv&\ 2x-y-z+1=0.
+		\end{align*} \hfill $\qed(b)$
+		
+		\end{columns}	\hfill
+    }
+	\frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \centering\underline{Traduction}
+				    \begin{columns}[c]
+				      \column{.333\textwidth}\centering 
+				      
+				      \renewcommand{\theenumi}{\alph{enumi})}
+				      \begin{enumerate}
+					\item $\alpha \equiv \begin{cases}
+							      \supset d_1, \\
+							      \parallel d_3.
+							    \end{cases}$	      
+				      \end{enumerate}
+				      
+				      \column{.333\textwidth}\centering 
+				      
+				      \begin{enumerate}
+					\item[b).] $\beta \equiv \begin{cases}
+							      \supset d_2, \\
+							      \parallel d_3.
+							    \end{cases}$   
+				      \end{enumerate}
+				      \column{.333\textwidth}\centering 
+				      
+				      \begin{enumerate}
+					\item[c).]$d  \equiv \begin{cases}
+							      d \nmid d_1, \\
+							      d \nmid d_2, \\
+							      \parallel d_3.
+							    \end{cases}$
+
+				      \end{enumerate}
+
+				    \end{columns}
+				    \end{tcolorbox}
+	
+		\centering
+		\medskip
+		\begin{columns}[c]
+		 \column{.5\textwidth}\centering 
+		 $\begin{cases}
+		   d \nmid d_1,\\
+		   d \parallel d_3.
+		  \end{cases} 
+		  \rightarrow 
+		  \begin{cases}
+		   d \nmid \alpha,\\
+		   d \parallel \alpha.
+		  \end{cases}
+		  \rightarrow
+		  d \subset \alpha$.
+
+		 \column{.5\textwidth}\centering 
+		 $\begin{cases}
+		   d \nmid d_2, \\
+		   d \parallel d_3.
+		  \end{cases} 
+		  \rightarrow
+		  \begin{cases}
+		   d \nmid \beta,\\
+		   d \parallel \beta.
+		  \end{cases}
+		  \rightarrow 
+		  d \subset \beta$.	 
+		\end{columns} \bigskip
+		\begin{align*}
+		d=\alpha \cap \beta =& \begin{cases}
+		                        x-y-z-2=0, \\
+		                        2x-y-z+1=0.
+		                       \end{cases} \\
+			            =& \begin{cases}
+		                        x=-3, \\
+		                        y+z=-5.
+		                       \end{cases}
+		\end{align*} \hfill $\qed(c)$
+    }  
+  
+\end{document}
