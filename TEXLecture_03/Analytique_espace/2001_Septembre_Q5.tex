@@ -1,0 +1,211 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \frametitle{Q5 Septembre 2001.}
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	  \begin{enumerate}
+	   \item Quelles sont les coordonnées du pied $Q$ de la perpendiculaire abaissée du point
+		 $P (\alpha, \alpha + 1, \alpha - 1)$ sur le plan $\pi$ d’équation $2x + \alpha y + \alpha z + \alpha^3 + 4 = 0$ ?
+	   \item Montrer que ces pieds, lorsque $\alpha$ parcourt $\mathbb{R}$, sont tous situés sur une même
+		 droite $d$, dont on déterminera des équations.
+	  \end{enumerate}
+
+	  \vfill
+	  
+	  \pause
+	  
+	   \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[c]
+	     \column{.5\textwidth}\centering 
+	     \renewcommand{\theenumi}{\alph{enumi})}
+	     \begin{enumerate}
+	      \item $PQ \equiv \begin{cases}
+	                        \vect{n_\pi}, \\
+	                        \ni P.
+	                       \end{cases}$ \\ \medskip
+	            $\phantom{P}Q = PQ \cap \pi$.
+
+
+	     \end{enumerate}
+	     \column{.5\textwidth}\centering 
+	     \vspace{-7mm}
+	     \begin{enumerate}
+	      \item[b).] Eliminer le paramètre $\alpha$.
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+
+		
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \centering\underline{Traduction}
+				    \begin{columns}[c]
+				    \column{.5\textwidth}\centering 
+				    \renewcommand{\theenumi}{\alph{enumi})}
+				    \begin{enumerate}
+				      \item $PQ \equiv \begin{cases}
+							\vect{n_\pi}, \\
+							\ni P.
+						      \end{cases}$ \\ \medskip
+					    $\phantom{P}Q = PQ \cap \pi$.
+
+
+				    \end{enumerate}
+				    \column{.5\textwidth}\centering 
+				    \vspace{-7mm}
+				    \begin{enumerate}
+				      \item[b).] Eliminer le paramètre $\alpha$.
+
+				    \end{enumerate}
+
+				    \end{columns}
+				    \end{tcolorbox}
+		
+		
+		
+		\centering\underline{Résolution}\\ \medskip
+		
+		$\pi \equiv 2x + \alpha y + \alpha z + \alpha^3 + 4 = 0 \qquad \rightarrow \qquad \vect{n_\pi}=(2,\alpha,\alpha)$. \bigskip\flushleft
+		\begin{columns}
+		
+		\column{.5\textwidth}\centering 
+		\begin{align*}
+		 PQ &\ \equiv \begin{cases}
+		            \vect{n_\pi}, \\
+			    \ni P(\alpha, \alpha + 1, \alpha - 1).
+		           \end{cases} \\
+		    &\ \equiv \frac{\alpha(x-\alpha)}{2}=y-\alpha-1=z-\alpha+1.
+		\end{align*}\bigskip
+		
+		\column{.5\textwidth}\centering
+		\begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          
+			          %\draw[help lines] (-3,-3) grid (3,3);
+			          \draw[dotted] (2,0,0) -- (2,0,2) node[above left]{$\pi$} -- (-2,0,2) -- (-2,0,0);
+			          \coordinate[label=above:$P$](P) at (0,0.8,1);
+			          \fill (P) circle (0.025);
+			          \draw[->] (-1.5,0,1) -- (-1.5,0.5,1) node[left]{$\vect{n_\pi}$};
+			          \draw (P) -- (0,0,1) node[left]{$Q$};
+			          \draw (0,0,1) -- (0,-0.5,1);
+			          \draw (0,0,0.85) -- (0,0,1.15) (-0.08,0,1) -- (0.08,0,1);
+			          
+				  \end{tikzpicture}
+				  \end{figure}
+		\end{columns}
+		
+		$Q =  PQ\ \cap \ \pi = \begin{cases}
+		                     \frac{\alpha(x-\alpha)}{2}=y-\alpha-1, \\
+		                     y-\alpha-1=z-\alpha+1, \\
+		                     2x + \alpha y + \alpha z + \alpha^3 + 4 = 0.
+		                    \end{cases}
+		                    \hspace{-2mm} \rightarrow  Q(-2,\frac{2-\alpha^2}{2},-\frac{2+\alpha^2}{2})$.
+
+		\hfill $\qed(a)$
+		%\centering\noindent\rule{2cm}{0.4pt}
+	
+    }
+	  
+	  
+    \frame{ 
+	  % résolution ex1
+
+		
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \centering\underline{Traduction}
+				    \begin{columns}[c]
+				    \column{.5\textwidth}\centering 
+				    \renewcommand{\theenumi}{\alph{enumi})}
+				    \begin{enumerate}
+				      \item $PQ \equiv \begin{cases}
+							\vect{n_\pi}, \\
+							\ni P.
+						      \end{cases}$ \\ \medskip
+					    $\phantom{P}Q = PQ \cap \pi$.
+
+
+				    \end{enumerate}
+				    \column{.5\textwidth}\centering 
+				    \vspace{-7mm}
+				    \begin{enumerate}
+				      \item[b).] Eliminer le paramètre $\alpha$.
+
+				    \end{enumerate}
+
+				    \end{columns}
+				    \end{tcolorbox}
+		
+		
+		
+		\centering\underline{Résolution}\\ \medskip
+		$Q(-2,\frac{2-\alpha^2}{2},-\frac{2+\alpha^2}{2})\qquad \rightarrow \qquad \begin{cases}
+											    x = -2, \\
+											    y = \frac{2-\alpha^2}{2}, \; \text{ ($\dagger$)}\\
+											    z = -\frac{2+\alpha^2}{2}. 
+											    \end{cases}$ \bigskip
+											    
+		$(\dagger)\quad \alpha^2 = -2y + 2  \qquad \rightarrow \qquad d \equiv      \begin{cases}
+											    x = -2, \\
+											    y = z + 2. 
+											    \end{cases}$  \\ \bigskip
+											    
+		$d$ est une droite car intersection de 2 plans. \\
+											    \hfill $\qed(b)$
+		
+		%\centering\noindent\rule{2cm}{0.4pt}
+	
+    }
+  
+\end{document}
