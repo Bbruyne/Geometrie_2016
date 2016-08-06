@@ -2,11 +2,21 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+  
+\definecolor{links}{HTML}{FF8000}
+\hypersetup{colorlinks,linkcolor=,urlcolor=links}
+
 \def \nom {Benjamin De Bruyne} %nom de l'étudiant-moniteur
 \def \email {benjamin.debruyne@student.ulg.ac.be} %email de l'étudiant-moniteur
 
 \title{Géométrie.}
-    
     \author{\nom}
     \institute
     {
@@ -19,19 +29,34 @@
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     
-    \frame{\titlepage}
+    \frame{\titlepage
+	    \notedir{%
+	      .1 Introduction.
+	      .2 Mot d'accueil.
+	      .2 Se présenter.
+	      .3 Etudiant en ingénieur~civil..
+	      .3 Réussi examen entrée..
+	      .3 Viens pour donner trucs et astuces..
+	      .2 Présenter module Géométrie.
+	      .3 Aujourd'hui.
+	      .4 Questions des examens récents..
+	      .4 Questions sur géométrie synthétique dans l'espace..
+	      .3 Mercredi.
+	      .4 Questions sur géométrie synthétique plane..
+	      .4 Questions sur géométrie vectorielle..
+	      .3 Jeudi.
+	      .4 Questions sur géométrie analytique dans l'espace..
+	      .4 Questions sur géométrie analytique plane..	      
+	    }
+	  }
     
     \frame{
-   
-	   \frametitle{Liens utiles.}
+	   \frametitle{Liens utiles. (Cliquez sur le texte)}
 	   \begin{enumerate}
-	   
-
 	      \item{\href{http://www.facsa.ulg.ac.be/upload/docs/application/pdf/2012-07/geometrie_-_synthese.pdf}{Théorie}},
 	      \item{\href{http://www.montefiore.ulg.ac.be/~boigelot/cours/adm/}{Examens d'anciennes sessions}},
 	      \item{Questions : \href{mailto:\email}{\email}}.
-	   \end{enumerate} 
+	   \end{enumerate} 	   
 	  }
 	  
-  
 \end{document}
