@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -82,6 +90,13 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+    \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse : traduction mathématique..
+	.3 $A',B',C',D'$ pied des hauteurs..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -146,7 +161,7 @@
 		      $EB$ médiane de $BCD$.
 		\end{enumerate}	\medskip
 		\textcolor{blue}{$\heartsuit_1$} Les droites remarquables d'un $\Delta$ équilatéral sont confondues. \\ \medskip
-		$CD\bot EA,CD\bot EB\rightarrow CD\bot ABE$.$\qed$
+		$CD\bot EA,CD\bot EB\rightarrow CD\bot ABE$. \\ \hfill$\qed(a)$ \\
 		\centering\noindent\rule{2cm}{0.4pt}\flushleft 
 		$AA'\bot EB$ car hauteur, \\
 		$AA'\orthog CD$ car $AA'\in ABE$, \\
@@ -154,15 +169,35 @@
 		\begin{enumerate}
 		 \item Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.
 		\end{enumerate}
-		$BB'\bot ACD$. \hfill $\qed$ \\
+		$BB'\bot ACD$. \\ \hfill $\qed(b)$ \\
 		\centering\noindent\rule{2cm}{0.4pt}		   
 	   \end{columns}
+	   \notedir{%
+	   .1 Prouver thèses.
+	   .2 $CD\bot ABE$.
+	   .3 Elément de théorie.
+	   .4 Droite $\bot$ à plan si $\orthog$ 2 droites sécantes du plan..
+	   .3 Résolution..
+	   .4 Droites remarquables d'un $\Delta$ confondues..
+	   .5 Application à $\Delta ACD,\Delta BCD$.
+	   .6 $EA,EB$ médianes $\rightarrow EA,EB$ hauteurs..
+	   .6 $CD\bot EA,EB \rightarrow CD\bot ABE$..
+	   .2 $AA'\bot BCD$ et $BB'\bot ACD$.
+	   .3 Elément de théorie.
+	   .4 Droite $\bot$ à plan si $\orthog$ 2 droites sécantes du plan..
+	   .3 Résolution..
+	   .4 $AA'\bot EB$ car hauteur..
+	   .4 Droite $\bot$ à plan $\rightarrow$ droite $\orthog$ à tt.~droites du plan..
+	   .5 Application à $CD$ et $ABE$ $\rightarrow AA' \orthog CD$..
+	   .4 $\rightarrow AA'\bot EB, AA'\orthog CD \rightarrow AA'\bot BCD$..
+	   .4 Par symétrie tétraèdre régulier, $BB'\bot ACD$..
+	   }
           }  	
           
     \frame{ 
 	  % résolution ex1
 	  \begin{columns}[t]
-		\column{.52\textwidth}\centering 
+		\column{.53\textwidth}\centering 
 			
 			\underline{Dessin}\\
 			\vspace{-2mm}	  
@@ -213,7 +248,7 @@
 				  \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\flushleft
+		\column{.52\textwidth}\flushleft
 		
 		\begin{align*} 
 			  &|AB|= |AC|=|AD|, \\[0.5em]
@@ -223,17 +258,30 @@
 		\vspace{-8mm}
 		
 		\textcolor{blue}{$\heartsuit_2$} Des $\Delta$ sont isométriques s'ils ont un angle de même mesure entre 2 côtés de mêmes longueurs. \\ \medskip
-		$BAA',CAA',DAA'$ isométriques. \\
+		$\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques. \\
 		\begin{align*}
 		A'=& \text{ centre cercle circonscrit,} \\
 		  =& \text{ orthocentre. (\textcolor{blue}{$\heartsuit_1$})} 
 		\end{align*}
 		\begin{enumerate}
-		 \item Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie. \hfill $\qed$
+		 \item Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.\\ \hfill $\qed(c)$
 		\end{enumerate}
 		\centering\noindent\rule{2cm}{0.4pt}	
 			   
 	   \end{columns}
+	   \notedir{%
+	   .1 Prouver thèses.
+	   .2 $A',B',C',D'$ orthocentres.~(commencer par $A'$).
+	   .3 Elément de théorie.
+	   .4 Les droites remarquables d'un $\Delta$ équilatéral sont\\ \hspace{5mm} confondues..
+	   .5 Montrer que $A'$ est centre cercle circonscrit à $\Delta BCD$..
+	   .3 Résolution..
+	   .4 $\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques car.
+	   .5 2 cotés ($AA'$ et arête) et un angle en commun..
+	   .6 $|A'B| = |A'C| = |A'D|\rightarrow A'$ centre cercle..
+	   .7 $A'$ orthocentre..
+	   .4 Par symétrie du tétraèdre régulier, vrai pour $B',C',D'$..
+	   }
           }  
     
    \frame{ 
@@ -323,6 +371,18 @@
 		
 			   
 	   \end{columns}
+	   \notedir{%
+	   .1 Prouver thèses.
+	   .2 $AA',BB',CC', DD'$ concourantes.~(commencer par $AA',BB',CC'$).
+	   .3 Elément de théorie.
+	   .4 3 droites non coplanaires sécantes 2 à 2 sont concourantes (à prouver car non vu)..
+	   .3 Résolution.
+	   .4 Les droites sont sécantes 2 à 2 car hauteurs $\Delta$..
+	   .4 Former un plan avec 2 droites, $AA'$ et $BB'$.
+	   .5 L'intersect\ion de $DD'$ avec $AA'$ et celle avec $BB'$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
+	   .6 Ces deux intersect\ion sont confondues car\\ \hspace{5mm} point de percée de $DD'$ ds.~plan est \\ \hspace{5mm} unique..
+	   .7 Ce point de percée appartient à la fois à $AA',BB',DD' \rightarrow$ droites concourantes..
+	   }
           }
           
        \frame{ 
@@ -387,9 +447,15 @@
 		$AA',BB',DD'$ sont concourantes. \\ \medskip
 		De la même façon : \\ \medskip
 		$AA',BB',CC'$ sont concourantes. \\ \bigskip
-		Ainsi $AA',BB',CC',DD'$ sont concourantes. \hfill $\qed$
+		Ainsi $AA',BB',CC',DD'$ sont concourantes. \hfill $\qed(d)$
 			   
 	   \end{columns}
+	   \notedir{%
+	   .1 Suite de $AA',BB',CC', DD'$ concourantes.
+	   .2 De la même façon, $AA',BB',CC'$ sont concourantes..
+	   .3 L'intersect\ion de $AA',BB'$ appartient à $DD'$ et à $CC'$.
+	   .4 $\rightarrow AA',BB',CC',DD'$ concourantes..
+	   }
           }
   
   

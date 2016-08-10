@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -69,6 +77,14 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+		  .1 Enoncé.
+		  .2 Hypothèses (non visibles sur le dessin)..
+		  .2 Thèse : traduction mathématique..
+		  .3 $B'$ pied de la hauteur issue de $B$..
+		  .3 $B_2$ intersect\ion de la perpendiculaire abaissée et $DD'$..
+		  .2 Grand dessin.. 
+		  }
     }
 
     \frame{ 
@@ -128,16 +144,26 @@
 		
 		\underline{Résolution}\\ \flushleft
 		
-		\heart Une droite est $\bot$ à un plan si elle est ortogonale à 2 droites sécantes de celui-ci.\\ \smallskip
+		\heart Une droite est $\bot$ à un plan si elle est ortogonale à 2 droites sécantes de celui-ci.\\ \bigskip
 		
 		\begin{enumerate}
-		 \item $A'C'\bot D'B', A'C'\bot A'A$ \\
-		       $\rightarrow A'C'\bot XB'B$,\\
-		       $\rightarrow B'B_1 \orthog A'C'$.
+		 \item $A'C'\bot D'B', A'C'\bot A'A$ \\ \medskip
+		       $\rightarrow A'C'\bot XB'B$,\\ \medskip
+		       $\rightarrow B'B_1 \orthog A'C'$. \\ \bigskip
 		 \item $B'B_1\bot XB$.
 		\end{enumerate} \bigskip
 		$B'B_1\bot A'C'B$. \hfill $\qed(a)$
 	   \end{columns}  
+	   \notedir{%
+	   .1 Montrer que $B'B_1$ $\bot$ $A'C'B$.
+	   .2 Elément de théorie.
+	   .3 Droite $\bot$ à plan si $\orthog$ 2 droites sécantes du plan..
+	   .2 Résolution.
+	   .3 $B'B_1\ \orthog\ A'C'$ car. 
+	   .4 $A'C'\ \bot\ DB'B$ car $A'C'\ \bot\ D'B'$ et $\bot\ A'A$.~\\ (Droites $\bot$ plan est $\orthog$ à tt.~droites du plan.).
+	   .3 $B'B_1 \bot XB$ car hauteur..
+	   .3 $\rightarrow B'B_1 \bot A'C'B$..
+	   }
     } 
     \frame{ 
 	  \begin{columns}[t]
@@ -194,9 +220,18 @@
 		$D'B'B_2, BB'X$ isométriques. \\ \bigskip
 		$|DB_2|=|B_2D'|$. \hfill $\qed$
 	   \end{columns}  
-    
-    
-    
-    
+    \notedir{%
+	   .1 Montrer que $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
+	   .2 Elément de théorie.
+	   .3 Triangles isométriques car égalité de longueurs..
+	   .2 Résolution.
+	   .3 $D'B'BD$ carré car les diagonales sont $\bot$..
+	   .3 2 $\Delta$ sont isométriques si 2 angles et 1 côté égaux..
+	   .4 $D'B'B_2, BB'X$ isométriques car.
+	   .5 $|D'B'| = |BB'|$ cotés du carré..
+	   .5 Chacun un angle droit du carré..
+	   .5 $\alpha = \alpha '$ car angles à côtés (carré + thèse a))..
+	   .4 $\rightarrow |D'B_2| = |XB'| = $ moitié d'un côté du carré..
+	   }
     }
 \end{document}

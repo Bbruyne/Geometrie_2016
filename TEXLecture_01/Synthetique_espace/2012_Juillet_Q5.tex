@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -66,6 +74,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+    \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse : traduction mathématique..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -153,6 +167,28 @@
 		\centering $B'C'\parallel QR \rightarrow B'Q \nmid C'R$. \\ \medskip
 		De la même façon : \\ \medskip $A'P\nmid C'R\text{ et }A'P\nmid B'Q$.
 	   \end{columns}
+       \notedir{%
+	   .1 Prouver thèse.
+	   .2 $A'P,B'Q,C'R$ concourantes.
+	   .3 Cas particulier (1) $A'B'C'$ confondu avec $ABC$.
+	   .3 Elément de théorie.
+	   .4 Les médianes d'un $\Delta$ sont concourantes..
+	   .3 Résolution..
+	   .4 $A'P,B'Q,C'R$ médianes de $\Delta ABC$ $\rightarrow$ concourantes..
+	   .3 Cas particulier (2) $A'B'C'$ contient $D$.
+	   .4 $A'=B'=C'=D$ $\rightarrow A'P,B'Q,C'R$ concourantes..
+	   .3 Cas général
+	   .4 Elément de théorie.
+	   .5 3 droites non coplanaires sécantes 2 à 2 sont concourantes (à prouver car non vu)..
+	   .4 Résolution.
+	   .5 $BC$ parallèle à $B'C'$ car plans parallèles..
+	   .5 $BC$ parallèle à $RC$ par Thalès dans $\Delta ABC$..
+	   .5 $\rightarrow$ $B'C'$ parallèle à $RC$ par transitivité..
+	   .6 $B',C',R,Q$ sont coplanaires..
+	   .7 $B'Q$, $C'R$ sécantes car coplanaires et non $\parallel$..
+	   .5 De la même façon, $A'P\nmid C'R$ et $A'P\nmid B'Q$..
+	   .6 Les trois droites sont 2 à 2 sécantes..
+	   }
        }
 	  
        \frame{ 
@@ -240,16 +276,16 @@
 			    X =& Y = Z. 	      
 		\end{align*}
 		\hfill $\qed$
-		
-
-		
-		
-		
-		
-	
 	   \end{columns}
        
-       
+       \notedir{%
+       .1 Prouver thèse.
+       .2 Suite $A'P,B'Q,C'R$ concourantes.
+       .3 Former un plan avec 2 droites, $C'R$ et $B'Q$.
+       .4 L'intersect\ion de $A'P$ avec $C'R$ et celle avec $B'Q$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
+       .5 Ces deux intersect\ion sont confondues car point de \\ \hspace{5mm} percée de $A'P$ ds.~plan est unique..
+       .6 Ce point de percée appartient à la fois à $A'P,B'Q,C'R \rightarrow$ droites concourantes.. 
+       }
        }
   
 \end{document}

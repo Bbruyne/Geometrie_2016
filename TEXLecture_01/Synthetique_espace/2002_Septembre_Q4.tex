@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -75,6 +83,15 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+    \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse : traduction mathématique..
+	.3 Présence d'un "si et seulement si".
+	.4 Montrer l'implication dans les 2 sens..
+	.3 $A',B',C',D'$ pied des hauteurs..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -153,9 +170,30 @@
 
    
 	   \end{columns}
-    
-    
-    
+     \notedir{%
+	   .1 Prouver thèses.
+	   .2 $AA'\nmid BB' \leftrightarrow CD \orthog AB$.
+	   .3 $AA'\nmid BB' \rightarrow CD \orthog AB$.
+	   .4 Elément de théorie.
+	   .5 Droite $\bot$ à plan est $\orthog$ à tt.~droites du plan..
+	   .4 Résolution..
+	   .5 $AA'$ et $BB'$ forment plan car sécantes..
+	   .5 $CD\orthog AA'$ car $AA'$ hauteur du tétraèdre..
+	   .5 $CD\orthog BB'$ car $BB'$ hauteur du tétraèdre.. 
+	   .5 $\rightarrow CD$ perpendiculaire au plan formé par $AA'$, $BB'$..
+	   .5 $AB$ appartenant à ce plan, $CD$ orthogonale à $AB$..
+	   .3 $AA'\nmid BB' \leftarrow CD \orthog AB$.
+	   .4 Elément de théorie.
+	   .5 2 droites coplanaires et non $\parallel$ sont sécantes..
+	   .4 Résolution..
+	   .5 $CD\ \bot$ plan formé par $AA'$ et $AB$ car.
+	   .6 $CD \orthog AB$ (hypo).
+	   .6 $CD \orthog AA'$ car $AA'$ hauteur du tétraèdre..
+	   .5 $CD\ \bot$ plan formé par $BB'$ et $AB$ car.
+	   .6 $CD \orthog AB$ (hypo).
+	   .6 $CD \orthog BB'$ car $BB'$ hauteur du tétraèdre..
+	   .5 $CD\ \bot$ 2 plans incluant même point $\rightarrow$ 2 plans =..
+	   }
     }
     
     \frame{ 
@@ -230,7 +268,19 @@
 
    
 	   \end{columns}
-    
+	   \notedir{%
+	   .1 Prouver thèses.
+	   .2 Suite $AA'\nmid BB' \leftarrow CD \orthog AB$.
+	   .3 $AA'$, $BB'$ dans même plan et non $\parallel \rightarrow$ sont sécantes..
+	   .2 côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
+	   .3 Elément de théorie.
+	   .4 3 droites non coplanaires sécantes 2 à 2 sont concourantes (à prouver car non vu)..
+	   .3 Résolution. 
+	   .4 Les hauteurs sont sécantes 2 à 2 si côtés opposés $\orthog$ par généralisation de thèse a)..
+	   .4 Former un plan avec 2 hauteurs, $AA'$ et $BB'$.
+	   .5 L'intersect\ion de $DD'$ avec $AA'$ et celle avec $BB'$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
+	   .6 Ces deux intersect\ion sont confondues car\\ \hspace{5mm} point de percée de $DD'$ ds.~plan est \\ \hspace{5mm} unique..
+	   }
     
     
   }
@@ -301,9 +351,14 @@
 		$AA',BB',CC'$ sont concourantes. \\ \bigskip
 		Ainsi $AA',BB',CC',DD'$ sont concourantes. \hfill $\qed$   
 	   \end{columns}
-    
-    
-    
+   \notedir{%
+   .1 Prouver thèses.
+   .2 Suite côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
+   .3 Ce point de percée appartient à la fois à $AA',BB',DD' \rightarrow$ droites concourantes..
+   .3 De la même façon : $AA',BB',CC'$ concourantes..
+   .3 L'intersect\ion de $AA',BB'$ appartient à $DD'$ et à $CC'$.
+   .4 $\rightarrow AA',BB',CC',DD'$ concourantes..
+   }
   }
   
 \end{document}
