@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
-
+\usepackage[frenchb]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usetikzlibrary{intersections,calc}
@@ -31,7 +39,7 @@
 	  Par un point $P$ intérieur à un cercle $\mathcal{C}$ de centre $O$ et de rayon $r$, on
 	  mène deux droites perpendiculaires $d_1$ et $d_2$ . On note $A_1$ un des points
 	  d’intersection de $d_1$ avec $\mathcal{C}$, et $A_2$ un des points d’intersection de $d_2$
-	  avec $\mathcal{C}$. Le milieu de la corde $[A_1 A_2 ]$ est noté $M$ . Démontrer l’égalité
+	  avec $\mathcal{C}$. Le milieu de la corde $[A_1 A_2 ]$ est noté $M$. Démontrer l’égalité
 	  $$ |OM|^2 + |PM|^2 = r^2,$$
 	  où $|XY|$ dénote la longueur du segment $[XY]$.
 	  
@@ -59,7 +67,15 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
-	  
+	\notedir{%
+	.1 Enoncé.
+	.2 Choix : Géométrie synthétique.
+	.3 Egalité de longueurs et présence de $\Delta$..
+	.4 Hypothèses (non visibles sur le dessin)..
+	.4 Thèse..
+	.4 Grand dessin.. 
+	}
+    
     }
     
     \frame{ % résolution ex1
@@ -146,6 +162,20 @@
 
    
 	   \end{columns}
+	   \notedir{%
+	   .1 Prouver la thèse.
+	   .2 Elément de théorie.
+	   .3 Pythagore..
+	   .4 Egalité de longueurs..
+	   .4 Somme de carrés..
+	   .2 Résolution.
+	   .3 Si $|PM| = |MA_1|$ et $\Delta OMA_1$ rectangle, thèse vérifiée.
+	   .4 Théorème de la médiane issue de l'angle droit..
+	   .5 Application à $\Delta A_1A_2P \rightarrow |PM| = |MA_1|$..
+	   .4 Théorème de la médiatrice d'une corde..
+	   .5 Application à $OM$ et $A_1A_2$ $\rightarrow \Delta OMA_1$ rectangle..
+	   .3 Thèse vérifiée..
+	   }   
 	   }
 	 
   \frame{ % énoncé ex2
@@ -174,6 +204,13 @@
 		   	 $\mathcal{D}(P,d) = \mathcal{D}(P,\mathcal{C})$.	  
 	  \end{tcolorbox}
 	  	  
+	 \notedir{%
+	.1 Enoncé.
+	.2 Choix : géométrie analytique.
+	.3 Enoncé évoque équations cartésiennes..
+	.4 Procédé : reformuler ce qu'il faut déterminer..
+	.5 Lieu = ensemble de points vérifiant une condition..
+	}  
 	}
 	
   \frame{ %Résolution
@@ -192,7 +229,7 @@
 					\draw[->] (0,-3) -- (0,3) coordinate[label=below right:$y$]();
 					\draw[->] (-3,0) -- (3,0) coordinate[label=above left:$x$]();
 					%CERCLE									
-					\draw (0,0) circle (1.5cm);
+					\draw (0,0) coordinate[label=below left:$O$] circle (1.5cm);
 					\node[below left] (C) at (110:2) {$\mathcal{C}$};
 					\coordinate[label=above:$r$] () at (1.5/2,0);
 					%DROITE D
@@ -223,18 +260,29 @@
 		 \item[$\bullet$] $P (x,y)$,
 		 \item[$\bullet$] $\mathcal{C} \equiv x^2 + y ^2 = r^2$,
 		 \item[$\bullet$] $d \equiv y = -r$.
-		\end{itemize}
+		\end{itemize} \bigskip
 		
 		\begin{enumerate}
-		 \item $\mathcal{D}(P,d) = |y+r|$ \\ Distance entre $P$ et sa projection orthogonale sur $d$. 
-		 \item $\mathcal{D}(P,\mathcal{C}) = |\sqrt{x^2+y^2}-r|$ \\ Distance entre $P$ et sa projection orthogonale sur $\mathcal{C}$.
+		 \item $\mathcal{D}(P,d) = |y+r|$ \\ Distance entre $P$ et sa projection orthogonale sur $d$. \bigskip
+		 \item $\mathcal{D}(P,\mathcal{C}) = |\sqrt{x^2+y^2}-r|$ \\ Différence entre $|OP|$ et $r$.
 		\end{enumerate}
 		
-		\bigskip
+		\bigskip\medskip
 		$|y+r| = |\sqrt{x^2+y^2}-r|$ \\
 		
 	\end{columns}
-  
+	\notedir{%
+	.1 Déterminer le lieu.
+	.2 Représenter les éléments dans repère.
+	.3 $P$: point vérifiant la condition du lieu..
+	.3 $\mathcal{C}$: cercle de rayon r centré sur $O$..
+	.3 $d$: tangente au cercle..	
+	.2 Résolution.
+	.3 Condition: $\mathcal{D}(P,d) = \mathcal{D}(P,\mathcal{C})$.
+	.4 $\mathcal{D}$ point-droite = $\mathcal{D}$ entre point et sa projection.. 
+	.4 $\mathcal{D}$ point-cercle = $\mathcal{D}$ point et centre - rayon..
+	.4 Egaliser les deux distances $\rightarrow$ étude du signe..
+	}
 	}
   
   \frame{%Résolution
@@ -292,7 +340,22 @@
 				  \end{figure}
 
 	
-  
+	\notedir{%
+	.1 Etude du signe.
+	.2 Les membres sont de même signe.
+	.3 Tous les 2 positifs.
+	.4 $P$ au dessus de $d$ et à l'ext.~cercle..
+	.3 Tous les 2 négatifs.
+	.4 $P$ en dessous de $d$ et à l'int.~cercle..
+	.3 On trouve parabole comprise dans les régions ci-dessus..
+	.2 Les membres sont de signes différents.
+	.3 1\ier{} positif et 2\ieme{} négatif.
+	.4 $P$ au dessus de $d$ et à l'int.~cercle..
+	.3 1\ier{} negatif et 2\ieme{} positif.
+	.4 $P$ en dessus de $d$ et à l'ext.~cercle..
+	.3 On trouve $x=0$ à restreindre dans les régions ci-dessus..
+	.2 Dessin du lieu..
+	}
 	}
   
 	  
