@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
-
+\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -70,6 +78,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -128,15 +142,15 @@
 		\begin{align*}
 		\vect{AC}=&\vect{AB} + \vect{BC}, \\[0.5em]
 		\vect{BD}=&\vect{BC} + \vect{CD}, \\[0.5em]
-		\vect{EF}=&\vect{EA} + \vect{AD} + \vect{DF} \\
-				   =&\frac{\vect{CA}}{2} + \vect{AD} + \frac{\vect{DB}}{2} \\
-				   =&\frac{\vect{CB}+\vect{BA}}{2} + \vect{AD} + \frac{\vect{DA}+\vect{AB}}{2} \\
+		\vect{EF}=&\vect{EA} + \vect{AD} + \vect{DF}, \\
+				   =&\frac{\vect{CA}}{2} + \vect{AD} + \frac{\vect{DB}}{2}, \\
+				   =&\frac{\vect{CB}+\vect{BA}}{2} + \vect{AD} + \frac{\vect{DA}+\vect{AB}}{2}, \\
 				   =&\frac{\vect{AD}}{2}-\frac{\vect{BC}}{2}. \\[0.5em]
 	        \end{align*}
 	        
 	        \vspace{-5mm}
 	        
-		\heart Le produit scalaire est commutatif et distributif. \\ \medskip
+		\heart Le produit scalaire est commutatif et distributif. Exemple : \\ \medskip
 		
 		\vspace{-4mm}
 		
@@ -146,15 +160,28 @@
 		\end{align*}
  
 	   \end{columns}
-    
-    
-    
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $|\vect{AB}|^2 + |\vect{BC}|^2 + |\vect{CD}|^2 + |\vect{DA}|^2= |\vect{AC}|^2 + |\vect{BD}|^2 + 4|\vect{EF}|^2$.
+	   .3 Elément de théorie.
+	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre..
+	   .3 Résolution à partir du membre de droite..
+	   .4 Décomposition des vecteurs du membre de droite.
+	   .5 Diagonales décomposée avec les côtés..
+	   .5 $\vect{EF}$ décomposé avec moitiés diagonales et côtés..
+	   .6 Moitiés diagonales décomposées avec côtés..
+	   .4 Produit scalaire distributif et commutatif..
+	   .4 Injecter les décompositions dans le membre de droite..
+	   }
     }
 	  
   
   \frame{
+  \begin{tcolorbox}[basic] \smallskip
   Thèse : $|\vect{AB}|^2 + |\vect{BC}|^2 + |\vect{CD}|^2 + |\vect{DA}|^2
-				    = |\vect{AC}|^2 + |\vect{BD}|^2 + 4|\vect{EF}|^2$. \\ \bigskip
+				    = |\vect{AC}|^2 + |\vect{BD}|^2 + 4|\vect{EF}|^2$. 
+  \end{tcolorbox} \bigskip
+				    
   \begin{align*}
    &|\vect{AC}|^2 + |\vect{BD}|^2 + 4|\vect{EF}|^2, \\[0.5em]
   =&|\vect{AB}|^2+3|\vect{BC}|^2+|\vect{CD}|^2+|\vect{AD}|^2 + 2(\vect{BC}\cdot\vect{CD} -
@@ -164,10 +191,12 @@
   =&|\vect{AB}|^2+|\vect{BC}|^2+|\vect{CD}|^2+|\vect{AD}|^2. \\ 
   \end{align*} \hfill $\qed$
   
-
-
-  
-  
-  
+\notedir{%
+	   .1 Prouver thèse.
+	   .2 Suite $|\vect{AB}|^2 + |\vect{BC}|^2 + |\vect{CD}|^2 + |\vect{DA}|^2= |\vect{AC}|^2 + |\vect{BD}|^2 + 4|\vect{EF}|^2$.
+	   .3 Mise en évidence de $\vect{BC}$..
+	   .3 Application de Chasles..
+	   .3 Thèse démontrée.
+	   }
   }
 \end{document}

@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -71,6 +79,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -187,9 +201,19 @@
 
    
 	   \end{columns}
-    
-    
-    
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $AA',BB',CC'$ concourantes.
+	   .3 Elément de théorie.
+	   .4 Les bissectrices d'un $\Delta$ sont concourantes (Les 3 droites ressemblent à bissectrices)..
+	   .3 Résolution..
+	   .4 $AA'$ bissectrice issue de $A$ car.
+	   .5 $\alpha = \alpha '$ car $\Delta OA_1C, \Delta OA_1B$ isométriques (3 côtés \\ \hspace{5mm} égaux car médiatrices)..
+	   .6 L'angle au centre vaut double de celui inscrit..
+	   .7 $\beta = \beta '$ $\rightarrow$ $AA'$ bissectrice issue de $A$..
+	   .4 De la même façon, $BB',CC'$ sont bissectrices..
+	   .4 Les bissectrices d'un $\Delta$ sont concourantes..
+	   }
     }
 	  
   

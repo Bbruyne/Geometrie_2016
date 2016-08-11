@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -77,6 +85,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -132,8 +146,8 @@
 				  %angles 
 				  \pic [draw, visible on=<1>,"$\alpha$", angle eccentricity=1.5] {angle = C--A--B};
 				  \pic [draw, visible on=<1>,"$\alpha'$",above right, angle eccentricity=1,angle radius=3mm] {angle = C'--A'--B'};
-				  \pic [draw, visible on=<1>,"$\gamma$", angle eccentricity=1.5] {angle = B--C--A};
-				  \pic [draw, visible on=<1>,"$\gamma '$", angle eccentricity=1.6,angle radius=3mm] {angle = B'--C'--A'};
+				  \pic [draw, visible on=<1>,"$\beta$", angle eccentricity=1.5] {angle = B--C--A};
+				  \pic [draw, visible on=<1>,"$\beta '$", angle eccentricity=1.8,angle radius=3mm] {angle = B'--C'--A'};
 				  
 				  \pic [draw, visible on=<{2,3}>,"$\delta$", angle eccentricity=1.5] {angle = B'--A--B};
 				  \pic [draw, visible on=<{2,3}>,"$\epsilon$", angle eccentricity=1.5] {angle = C--A--A'};
@@ -184,9 +198,24 @@
 
    
 	   \end{columns}
-    
-    
-    
+     \notedir{%
+	   .1 Prouver thèses.
+	   .2 $\Delta A'B'C',\Delta ABC$ semblables.
+	   .3 Elément de théorie.
+	   .4 2 $\Delta$ semblables si 2 angles égaux..
+	   .3 Résolution..
+	   .4 $\alpha = \alpha '$ ($AA'$ diamètre)..
+	   .4 $\beta = \beta '$ (angles à côtés $\bot$.~: $AC'$ hauteur et $AA'$ diamètre)..
+	   .4 $\Delta A'B'C',\Delta ABC$ semblables..
+	   .2 $|A'C| = |BE|$.
+	   .3 Elément de théorie.
+	   .4 2 angles inscrits égaux interceptent cordes de même longueur (à montrer car non vu)..
+	   .3 Résolution.
+	   .4 $\delta = \epsilon$ car.
+	   .5 $\delta = \delta'$ car angles à côtés $\bot$ et $\delta '=\epsilon$ car angles inscrits..
+	   .4 $\delta = \epsilon\rightarrow \zeta = \zeta '$ car angle au centre = 2x angle inscrit..
+	   .5 $\Delta OBE,\Delta OCA'$ isométriques car même angle entre 2 côtés égaux $\rightarrow |A'C| = |BE|$..
+	   }   
     }
 	  
 	  \frame{ 
@@ -231,7 +260,7 @@
 				  %B'$
 				  \draw [name path=A'B] (A') -- (B);
 				  \path [name intersections={of=A'B and AC',by=B'}];			  
-				  \draw (A') -- (B') node[label=above :$B'$,xshift=0,yshift=0.5mm]{};
+				  \draw (A') -- (B') node[xshift=0,yshift=0.5mm]{};
 				  				 
 				  %Tangente
 				  \path[name path=tangente] (A') -- ($(A')!3cm!-90:(A)$);
@@ -251,11 +280,11 @@
 				  \draw (C') -- (inter);
 				
 				  %angles 
-				  \pic [draw,"$\eta$", angle eccentricity=2.2] {angle = B--A'--A};
+				  \pic [draw,"$\eta$", angle eccentricity=2, angle radius = 6mm] {angle = B--A'--A};
 				  \pic [draw,"$\eta '$", angle eccentricity=2] {angle = B--C--A};
 				  \pic [draw,"$\theta$", angle eccentricity=1.5] {angle = O'--A'--B'};
 				  \pic [draw,"$\theta '$", angle eccentricity=1.9] {angle = inter--C'--B'};
-				  \pic [draw,"$\iota$", angle eccentricity=1.8] {angle = A'--C--B};
+				  \pic [draw,"$\iota$", angle eccentricity=1.7, angle radius = 6mm] {angle = A'--C--B};
 				  \end{tikzpicture}
 				  \end{figure}
 				  \vspace{-4.5mm}
@@ -284,18 +313,28 @@
 		\begin{align*}
 		 \widehat{AA'O'}=& \eta + \theta , \\
 				=& \eta'+ \theta', \text{ (angles inscrits)} \\
-				=& \eta'+ \iota', \text{ (angles à côtés $\bot$)} \\
+				=& \eta'+ \iota, \text{ (angles à côtés $\bot$)} \\
 				=& 90^{\circ}.			        
 		\end{align*} 
 		
 		\bigskip
 		
-		$O'$ appartient à la tangente en $A'$. \hfill $\qed$
+		$O'$ appartient à la tangente en $A'$. \\ \medskip\hfill $\qed(c)$
 		
 
    
 	   \end{columns}
-    
+	    \notedir{%
+	   .1 Prouver thèses.
+	   .2 $O'A'\bot AA'$.
+	   .3 Elément de théorie.
+	   .4 2 angles inscrits interceptant le même arc sont égaux..
+	   .3 Résolution..
+	   .4 $\eta = \eta'$ et $\theta=\theta '$ car angles inscrits..
+	   .4 $\theta' = \iota$ car angles à cotés $\bot$ (hauteur et diamètre).. 
+	   .4 $\eta'+ \iota=90^{\circ}$ car $AA'$ diamètre..
+	   .5 $O'$ est sur la perpendiculaire au diamètre $AA'$ passant par $A'$ $\rightarrow$ est sur la tangente en $A'$..
+	   } 
             }
   
 \end{document}

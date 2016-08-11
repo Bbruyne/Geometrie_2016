@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -69,6 +78,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	   \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -128,7 +143,7 @@
 		 &|\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}| \\
 		 = \ & |\vect{BA}||\vect{BF}| + |\vect{CA}||\vect{CE}|, \\
 		 = \ & \vect{BA}\cdot\vect{BF} + \vect{CA}\cdot\vect{CE}, \text{ (points alignés)} \\
-		 = \ & \vect{BA}\cdot(\vect{BF} + \vect{FC}) + \vect{CA}\cdot(\vect{CE}+\vect{EB}), \text{ (\textcolor{blue}{1} et \textcolor{blue}{2})} \\
+		 = \ & \vect{BA}\cdot(\vect{BC} + \vect{CF}) + \vect{CA}\cdot(\vect{CE}+\vect{EB}), \text{ (\textcolor{blue}{1} et \textcolor{blue}{2})} \\
 		 = \ & \vect{BA}\cdot\vect{BC} + \vect{CA}\cdot\vect{CB}, \\
 		 = \ & \vect{BC}\cdot(\vect{BA} - \vect{CA}), \\
 		 = \ & \vect{BC}\cdot\vect{BC} = |\vect{BC}|^2.
@@ -140,9 +155,18 @@
 
    
 	   \end{columns}
-    
-    
-    
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
+	   .3 Elément de théorie.
+	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre..
+	   .3 Résolution à partir du membre de droite..
+	   .4 Les 2 produits de longueurs peuvent être exprimés en produits scalaires car points alignés..
+	   .4 Décomposition de $\vect{BF}$ et $\vect{CE}$  pour faire apparaître $\vect{BC}$.. 
+	   .5 $\vect{BA}\cdot\vect{CF}=0$ car $F$ projection orthogonale de $B$..
+	   .5 $\vect{CA}\cdot\vect{CE}=0$ car $E$ projection orthogonale de $B$..
+	   .4 Après changement de signe, thèse vérifiée..
+	   }
     }
 	  
   

@@ -1,6 +1,16 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -70,6 +80,12 @@
 	      \end{columns}
 	  \end{tcolorbox} \bigskip
 	   {\small Référence : BELLIGOI T.,BASTIN F., 2011. \textit{Géométrie et géométrie analytique.} Disponible sur le site de la faculté, 169p.}
+      \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     } 
      
     
@@ -135,9 +151,18 @@
 		\hfill $\qed$
    
 	   \end{columns}
-    
-    
-    
+     \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$.
+	   .3 Elément de théorie.
+	   .4 Pythagore car nombreux $\Delta$ rectangles..
+	   .3 Résolution..
+	   .4 Décomposition de $\vect{PA},\vect{PB}$ pour faire apparaître $M$..
+	   .4 $\vect{MB} + \vect{MA}=0$ car $M$ milieu de $[AB]$..
+	   .4 Exprimer $|\vect{PM}|^2$ avec Pythagore ds.~$\Delta PMO$..
+	   .4 Exprimer $|\vect{MB}|^2$ avec Pythagore ds.~$\Delta BMO$..
+	   .4 $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$..
+	   }
     }
 	  
   

@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -71,6 +80,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -126,6 +141,11 @@
 		\column{.5\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
+		\begin{align*}
+		 \vect{AD}=& \vect{AB} + \vect{BD}, \\
+		 \vect{AD'}=& \vect{AC} + \vect{CD'}. \\[0.5em]		 
+		\end{align*}
+		\vspace{-10mm}
 		
 		\begin{enumerate}
 		 \item $\begin{cases}\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD', \\ 
@@ -136,11 +156,8 @@
 		
 		$\rightarrow \vect{BD}=\vect{D'C}$. \\ \medskip
 		
-		\begin{align*}
-		 \vect{AD}=& \vect{AB} + \vect{BD}, \\
-		 \vect{AD'}=& \vect{AC} + \vect{CD'}. \\[0.5em]		 
-		\end{align*}
-		\vspace{-5mm}
+		
+		
 		\begin{align*}
 		 &|\vect{AD}|^2 + |\vect{AD'}|^2 \\[0.3em]
 		 &= |\vect{AB}|^2 + |\vect{AC}|^2 + 2|\vect{BD}|^2  \\
@@ -150,7 +167,19 @@
 		\end{align*}
 
 	   \end{columns}
-   
+   \notedir{%
+	   .1 Prouver thèse.
+	   .2 $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+	   .3 Elément de théorie.
+	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre..
+	   .3 Résolution à partir membre de gauche..
+	   .4 Décomposition des vecteurs pour faire apparaître $AB$ et $AC$.
+	   .4 $\vect{BD}=\vect{D'C}$ car.
+	   .5 $\Delta$ équilatéraux $\rightarrow\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD'$..
+	   .5 $\Delta$ équilatéraux $\rightarrow |BD|=|CD'|$..
+	   .4 Injecter décomposition en notant que $\vect{BD}=\vect{D'C}$..
+	   .4 Mise en évidence de $\vect{BD}$..
+	   }
     }
 	
 	\frame{ 
@@ -211,7 +240,7 @@
 		\heart $\vect{XY}\cdot\vect{XZ}=|\vect{XY}||\vect{XZ}|\cos(\widehat{ZXY})$. \\ \bigskip
 		
 		\begin{align*}
-		\vect{DB}\cdot\vect{DC}=&|\vect{BD}||\vect{CD}|\cos(\widehat{BDC}), \\
+		\vect{DB}\cdot\vect{DC}=&|\vect{DB}||\vect{CD}|\cos(\widehat{BDC}), \\
 				       =&\frac{|\vect{BC}|^2}{2}.
 		\end{align*} \bigskip
 		
@@ -219,7 +248,14 @@
 		
 
 	   \end{columns}
-   
+   \notedir{%
+	   .1 Prouver thèse.
+	   .2 Suite $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+	   .3 Inversion signe des 2 vecteurs ne change pas signe produit scalaire..
+	   .3 Produit scalaire de 2 vecteurs = produit de leur longueur et cosinus de l'angle entre les deux..
+	   .3 $\Delta$ equilatéral $\rightarrow$ $|DB|=|CD|=BC|$..
+	   .3 Thèse vérifiée..
+	   }
     }
   
 \end{document}

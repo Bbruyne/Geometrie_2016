@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -43,7 +52,7 @@
 	  \frametitle{Exercice sur le calcul de barycentre.}
 	  \renewcommand{\theenumi}{\alph{enumi})}
 	  Soit $ABC$ un triangle et $M$ un point quelconque du plan $ABC$. Soient
-	  $M_1$ , $M_2$ et $M_3$ les points symétriques respectifs de $M$ par rapport aux
+	  $M_1$, $M_2$ et $M_3$ les points symétriques respectifs de $M$ par rapport aux
 	  milieux des segments $[BC]$, $[CA]$ et $[AB]$. On note $G$ et $K$ les centre de
 	  gravité respectifs des triangles $ABC$ et $M_1M_2M_3$.
 	  \begin{enumerate}
@@ -82,6 +91,12 @@
 	  \end{tcolorbox}
 	  {\small Référence : SORTAY Y.,SORTAY R.,1988. \textit{Géométrie de l'espace
 	  et du plan}. Herman, 394p.}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -162,7 +177,18 @@
 		\end{enumerate}	
 		\hfill $\qed(a)$ \\
 
-	   \end{columns}   
+	   \end{columns}  
+	   \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\vect{MK}=2\vect{MG}$.
+	   .3 Elément de théorie.
+	   .4 Centre de gravité d'un $\Delta$ est la moyenne des 3 sommets du $\Delta$..
+	   .3 Résolution..
+	   .4 $\vect{MG}$ en fonction de $\vect{MA},\vect{MB},\vect{MC}$..
+	   .4 $\vect{MM_1},\vect{MM_2},\vect{MM_3}$ en fonction de $\vect{MA},\vect{MB},\vect{MC}$..
+	   .5 $\vect{MK}$ en fonction de $\vect{MA},\vect{MB},\vect{MC}$..
+	   .6 $\vect{MK}=2\vect{MG}$..
+	   }
     }
 	
         \frame{ 
@@ -242,6 +268,24 @@
 		\hfill $\qed(b)$
 
 	   \end{columns}   
+	   \notedir{%
+	   .1 Prouver thèse.
+	   .2 Milieux de $[AM_1],[BM_2], [CM_3], [GK]$ confondus.
+	   .3 Elément de théorie.
+	   .4 Milieu d'un segment est moyenne des 2 extrémités du segment..
+	   .3 Résolution..
+	   .4 Milieu de $[GK]$..
+	   .5 Utiliser résultat de a) que $\vect{MK}=2\vect{MG}$..
+	   .5 Reprise de l'égalité de $\vect{MG}$ slide précédent..
+	   .4 Milieu de $[AM_1]$..
+	   .5 Reprise de l'égalité de $\vect{MM_1}$ slide précédent..
+	   .4 Milieu de $[BM_2]$..
+	   .5 Reprise de l'égalité de $\vect{MM_2}$ slide précédent..
+	   .4 Milieu de $[CM_3]$..
+	   .5 Reprise de l'égalité de $\vect{MM_3}$ slide précédent..
+	   .4 Les vecteurs joignant $M$ aux milieux sont confondus..
+	   .5 Les milieux sont confondus..
+	   }
     }
 	
   

@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -76,6 +84,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Grand dessin.. 
+	}
     }
 
     \frame{ 
@@ -113,7 +127,7 @@
 				  \pic [draw,visible on=<1>,"$\alpha$",above right, angle eccentricity=1.5] {angle = A'--C--A};
 				  \pic [draw,visible on=<1>,"$\alpha '$", angle eccentricity=1.5,angle radius = 7mm] {angle = B--C--B'};
 				  \pic [draw,visible on=<2>,"$\beta $",above right,angle eccentricity=1.3,angle radius = 4mm] {angle = A--B--A'};
-				  \pic [draw,visible on=<2>,"$\beta '$", above left,angle eccentricity=1,angle radius = 3mm] {angle = C'--B--C};
+				  \pic [draw,visible on=<2>,"$\beta '$",above left,angle eccentricity=2,angle radius = 3mm] {angle = C'--B--C};
 				  \end{tikzpicture}
 				  \end{figure}
 				  \vspace{-3mm}
@@ -143,8 +157,8 @@
 		\onslide<+->\heart Deux $\Delta$ sont isométriques lorsqu'ils ont un angle de même mesure compris entre deux côtés de mêmes longueurs. \\
 		
 		 \begin{align*}
-			    |AB| =& |BC'|, \\
-			    |BC| =& |A'B|, \text{ ($\Delta$ equilatéraux)}\\		
+			    |A'C| =& |BC|, \\
+			    |AC| =& |B'C|, \text{ ($\Delta$ equilatéraux)}\\		
 			    \alpha =& \ 60\deg + \widehat{BCA} = \alpha ', \\
 		\end{align*}
 				
@@ -162,6 +176,19 @@
 		%\centering\noindent\rule{2cm}{0.4pt}
 	        %\hfill $\qed$
 	   \end{columns}   
+	   \notedir{%
+	   .1 Prouver thèse.
+	   .2 $|AA'|=|BB'| = |CC'|$.
+	   .3 Elément de théorie.
+	   .4 2 $\Delta$ isométriques ont des côtés de même longueurs..
+	   .3 Résolution..
+	   .4 $\Delta BCC', \Delta ABA'$ isométriques car.
+	   .5 $|A'C| = |BC|, |AC| = |B'C|$ car $\Delta$ équilatéraux..
+	   .5 $\alpha=\alpha'$ car égaux à $60^{\circ}$ du $\Delta$ équilatéral + $\widehat{BCA}$..
+	   .4 $\Delta BCC', \Delta ABA'$ isométriques $\rightarrow$ $|AA'|=|BB'|$..
+	   .4 De la même façon $|AA'|=|CC'|$ car $\Delta BCC', \Delta ABA'$ isométriques..
+	   .4 $|AA'|=|BB'| = |CC'|$..
+	   }
     }
 	
     \frame{ 
@@ -244,7 +271,7 @@
 		\column{.538\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		\onslide<+->Par (a), \\ \smallskip 
+		\onslide<+->Par a), \\ \smallskip 
 		$\Delta BCC', \Delta ABA'$ isométriques, \\ \smallskip
 		$\rightarrow \gamma = \gamma '$.  \\ \medskip
 		Il existe un cercle dont $[BI]$ est une corde et $\gamma,\gamma '$ angles inscrits. \\
@@ -260,6 +287,19 @@
 		
 		
 	   \end{columns}   
+	   \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\widehat{BIC}=\widehat{BIA}=120\deg$.
+	   .3 Elément de théorie.
+	   .4 Côtés opposés d'un quadrilatère convexe inscriptible dans cercle sont supplémentaires..
+	   .3 Résolution..
+	   .4 De a) $\Delta BCC', \Delta ABA'$ isométriques.
+	   .5 $\gamma = \gamma '$..
+	   .6 Il existe cercle où $[BI]$ est corde et passant\\ \hspace{5mm} par $C,A'$ d'où on voit $[BI]$ du même angle..
+	   .7 Quadrilatère $AC'BI$ est inscriptible dans\\ \hspace{5mm} cercle..
+	   .8 $\widehat{BIA}$ est supplémentaire d'un angle de $60\deg$ $\rightarrow$ $\widehat{BIA}=120\deg$..
+	   .4 De la même façon, quadrilatère $A'CIB$ inscriptible dans cercle et $\widehat{BIC}=120\deg$..
+	   }
     }
     
     \frame{ 
@@ -298,9 +338,9 @@
 				  \coordinate[label=right:$I$,xshift=1mm,yshift=0.5mm] () at (I);
 				  %ANGLES
 				  \pic [draw,"$\epsilon$", angle eccentricity=1.8,angle radius=2mm] {angle = A--I--B'};
-				  \pic [draw,"$\zeta$", angle eccentricity=1.8,angle radius=2mm] {angle = B'--I--C};
+				  \pic [draw,"$\zeta$", angle eccentricity=1.8,angle radius=3mm] {angle = B'--I--C};
 				  \pic [draw,"$\eta$", angle eccentricity=1.8,angle radius=2mm] {angle = C--A--I};
-				  \pic [draw,"$\eta'$", angle eccentricity=1.5,angle radius=6mm] {angle = C--B'--I};
+				  \pic [draw,"$\eta'$", angle eccentricity=1.5,angle radius=7mm] {angle = C--B'--I};
 				  \pic [draw,"$\theta$", angle eccentricity=1.8,angle radius=4mm] {angle = I--C--A};
 				   \pic [draw,"$\theta '$", angle eccentricity=1.5,angle radius=6mm] {angle = I--B'--A};
 				  
@@ -348,6 +388,23 @@
 		
 		
 	   \end{columns}   
+	   \notedir{%
+	   .1 Prouver thèse.
+	   .2 $AA',BB',CC'$ concourantes.
+	   .3 Elément de théorie.
+	   .4 $AA'$, $CC'$ sécantes en $I$.~Montrer que $\widehat{BIB'}=120\deg$ prouve la thèse..
+	   .3 Résolution..
+	   .4 Déduction de b) que $\epsilon + \zeta=\widehat{AIC}=180\deg$..
+	   .4 Déduction de a) que.
+	   .5 $\Delta AA'C, \Delta BB'C$ isométriques $\rightarrow \eta = \eta '$..
+	   .5 $\Delta BB'A, \Delta CC'A$ isométriques $\rightarrow \theta = \theta '$..
+	   .5 Donc $\epsilon = \zeta$ car. 
+	   .6 $\epsilon = 180\deg - \eta - 60\deg - \theta'$ dans $\Delta IAB'$..
+	   .6 $\zeta = 180\deg - \eta ' - 60\deg - \theta$ dans $\Delta IB'C$..
+	   .5 $\rightarrow \epsilon = \zeta = 60\deg$..
+	   .4 $\widehat{BIB'}=120 + \epsilon = 180\deg$..
+	   .5 $AA',BB',CC'$ concourantes..
+	   }
     }
   
 \end{document}

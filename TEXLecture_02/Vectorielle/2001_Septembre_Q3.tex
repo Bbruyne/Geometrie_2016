@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -85,6 +93,12 @@
 		
 	      \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Hypothèses (non visibles sur le dessin)..
+	.2 Thèse..
+	.2 Dessin non nécessaire car aucune figure géométrique..
+	}
     }
 
     \frame{ 
@@ -126,7 +140,16 @@
 			     =&\ 3\vect{AB}  - 5\vect{AC}  -2\vect{AD}.
 		       \end{align*} \hfill $\qed(a)$
 		\end{enumerate}	
-
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\g{v}$ indépendant de $M$.
+	   .3 Elément de théorie.
+	   .4 Décomposition de vecteurs..
+	   .3 Résolution..
+	   .4 Décomposer les vecteurs pour n'en avoir qu'un qui\\ \hspace{5mm} contient $M$..
+	   .5 Ce dernier est multiplier par $0$ car somme\\ \hspace{5mm} coefficient vaut $0$..
+	   .6 $\g{v}$ indépendant de $M$..
+	   }
     }
     
     \frame{ 
@@ -170,7 +193,16 @@
 			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2. 
 		       \end{align*} \hfill $\qed(b)$
 		\end{enumerate}	
-		
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\g{v}=0 \rightarrow x$ indépendant de $M$. 
+	   .3 Elément de théorie.
+	   .4 Décomposition de vecteurs..
+	   .3 Résolution..
+	   .4 Décomposer les vecteurs pour n'en avoir qu'un qui\\ \hspace{5mm} contient $M$..
+	   .5 Le carré d'un vecteur est le produit scalaire de\\ \hspace{5mm} celui-ci par lui-même..
+	   .6 Comme $\g{v}=0$, $x$ indépendant de $M$..
+	   }
     }
 	  
   
