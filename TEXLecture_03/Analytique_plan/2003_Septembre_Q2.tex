@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -56,6 +65,11 @@
 	     Dans un repère, déterminer les coordonnées de $A_1,A_2,P_1,P_2$ pour calculer $\vect{A_1P_1}\cdot\vect{A_2P_2}$.
  
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	.3 Poser un repère car aucun triangle, ni propriété géométrique à exploiter..
+	}
     }
 
     \frame{ 
@@ -93,8 +107,9 @@
 		\underline{Résolution}\\ \flushleft
 		\heart Equation ellipse : $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$. \\ \medskip
 		 Soit un repère orthonormé $R=(O,X,Y)$ avec : \\ \medskip
-		 $A_1\ (-a,0),\ A_2\ (a,0),\ P\ (x_p,\dfrac{b}{a}\sqrt{a^2-x_p^2})$.	\\ \bigskip
-		 $m(x_p) = \dfrac{b\ x_p}{a\sqrt{a^2-x_p^2}}$. \\ \bigskip
+		 $A_1\ (-a,0),\ A_2\ (a,0)$,\\ \medskip
+		 $P\ (x_p,\dfrac{b}{a}\sqrt{a^2-x_p^2}) \qquad x_p\in [-a,a]$.	\\ \bigskip
+		 $m(x_p) = \dfrac{b\ x_p}{a\sqrt{a^2-x_p^2}}$.\\ \medskip
 		 $t \equiv \begin{cases}
 		            \ni P, \\
 		            m(x_p).
@@ -109,6 +124,25 @@
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
 		\end{columns}
+		\notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 L'équation d'un ellipse est $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$..
+	.2 Résolution.
+	.3 Poser un repère.
+	.4 Equation de l'ellipse $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$..
+	.4 Coordonnées de $A_1,A_2$.
+	.4 Coordonnée de $P$.
+	.5 $P$ est dans partie supérieure de ellispe sans perte de généralité car symétrie..
+	.5 $x_p$ varie de $[-a,a]$..
+	.3 Equation de tangente $t$.
+	.4 Pente est la dérivée de l'équation de l'ellipse en $x_p$..
+	.4 Equation obtenue avec pente et point $P$..
+	.3 Coordonnées de $P_1$ et $P_2$.
+	.4 Intersections de $t$ avec $x=-a$ et $x=a$..
+	.3 Le produit scalaire est indépendant  de $P$..
+	.4 Les coordonnées des vecteurs sont obtenues en soustrayant coord.~des points..
+	}
     }
 	  
   

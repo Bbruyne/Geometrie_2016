@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -82,6 +91,18 @@
 
 	  \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	.3 $d$.
+	.4 Passe par origine..
+	.4 Parallèle aux plans..
+	.5 Son vecteur directeurs est inclu dans sous vectoriel directeur du plan..
+	.3 $d_1$.
+	.4 Direction est $\vect{d} \wedge \vect{d'}$ car.
+	.5 À la fois $\bot\ d$ et $\bot\ d'$..
+	.5 Elle intersecte $d$ et $d'$..
+	}
     }
 
     \frame{ 
@@ -111,7 +132,7 @@
 
 	  \end{columns}
 	  \end{tcolorbox}
-		
+		\centering
 		\underline{Résolution}\\ \flushleft
 		\vspace{-5mm}
 		\begin{align*}
@@ -134,7 +155,18 @@
 	                 \end{cases}$ $\rightarrow \qquad d \equiv \dfrac{x}{1} =\ \dfrac{y}{2} =\ \dfrac{z}{3}$. \hfill $\qed(a)$
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
-	  
+	  \notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Droite parallèle à plan si son vecteur directeur\\ \hspace{5mm} appartient au sous-vectoriel direct.~du plan..
+	.4 ie: Coordonnées du vecteur directeur vérifient l'équation du plan sans terme indépendant..
+	.2 Résolution.
+	.3 Equations de $d$.
+	.4 Vecteur directeur de $d$ doit vérifier équation du\\ \hspace{5mm} plan sans terme indep..
+	.5 Trouver une solution en essayant des valeurs..
+	.3 Equations de $d$ avec un point et vecteur directeur..
+	.4 Son équation $\dfrac{(x-0)}{d_x}=\dfrac{(y-0)}{d_y}=\dfrac{(z-0)}{d_z}$.. 
+	}
     }
     
      \frame{ 
@@ -244,7 +276,26 @@
 		\vspace{-3mm}
 		
 		\end{columns}
-		
+	 \notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Droite de direct\ion donnée, d'appui sur 2 droites est\\ \hspace{5mm} intersect\ion de 2 plans.
+	.4 Le premier formé par 1\iere\ droite et la direct\ion..
+	.4 Le deuxième formé par 2\ieme\ droite et la direct\ion..
+	.2 Résolution.
+	.3 Direction.
+	.4 $d_1$ $\bot$ à $d$ et $d'$ $\rightarrow \vect{d_1} = \vect{d} \wedge \vect{d'}$..
+	.3 Premier plan $\alpha$.
+	.4 Formé par $d$ et direction $\vect{d} \wedge \vect{d'}$..
+	.5 Formé par $D$, $\vect{d}$ et $\vect{d} \wedge \vect{d'}$..
+	.4 Son équation s'obtient en annulant le déterminant..
+	.3 Second plan $\alpha'$.
+	.4 Formé par $d'$ et direction $\vect{d} \wedge \vect{d'}$..
+	.5 Formé par $D'$, $\vect{d'}$ et $\vect{d} \wedge \vect{d'}$..
+	.4 Son équation s'obtient en annulant le déterminant..
+	.3 $d_1$ est intersection des 2 plans..
+	.4 Equations : éliminer au moins une inconnue dans équations du système..
+	}	
     }
 	  
   

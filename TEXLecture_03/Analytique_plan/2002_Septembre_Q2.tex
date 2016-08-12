@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -64,8 +73,8 @@
 	     \vspace{-1mm}
 	     \renewcommand{\theenumi}{\alph{enumi})}
 	     \begin{enumerate}
-	      \item $B'\equiv BB' \bot B'P$, \\ \smallskip
-		    $C'\equiv CC' \bot C'P$. 
+	      \item $B' : BB' \bot B'P$, \\ \smallskip
+		    $C' : CC' \bot C'P$. 
 	     \end{enumerate}
 	     
 	     \column{.34\textwidth}\centering
@@ -85,6 +94,19 @@
 
 	  \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	.3 Coordonnées de $B',C'$.
+	.4 $B'$ intersection de $AB$ avec perpendiculaire à $AB$ passant par $P$..
+	.4 $C'$ intersection de $AC$ avec perpendiculaire à $AC$ passant par $P$..	
+	.3 Lieu de $M$.
+	.4 $M$ est la moyenne de $B'$ et $C'$.. 
+	.4 Si $P\in [BC]$, $\lambda \in[-b,b]$..
+	.3 Equation de $d$ et point fixe.
+	.4 Perpendiculaire à $B'C'$..
+	.4 Passe par $P$..
+	}
     }
 
     \frame{ \onslide<+->
@@ -125,8 +147,8 @@
 				     
 				      \renewcommand{\theenumi}{\alph{enumi})}
 				      \begin{enumerate}
-					\item $B'\equiv BB' \bot B'P$, \\ \smallskip
-					      $C'\equiv CC' \bot C'P$. \\[0.6em]
+					\item $B' : BB' \bot B'P$, \\ \smallskip
+					      $C' : CC' \bot C'P$. \\[0.6em]
 				      
 					\item $M(\lambda)=\dfrac{B' + C'}{2}$,\\ \smallskip $\lambda \in[-b,b]$. \\[0.6em]
 				    
@@ -164,11 +186,27 @@
 		             x \in [-\dfrac{b^3}{a^2+b^2},\dfrac{b^3}{a^2+b^2}], \\
 		             y = \dfrac{a\ b^2}{a^2+b^2}. 
 		            \end{cases}\hspace{-4mm} \qed(b)$
-
-		
-		
-		
 		\end{columns}
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Coordonnées de $B'$ et $C'$ (commencer par $B'$).
+	.3 Element de théorie.
+	.4 $B'$ intersection de $AB$ avec perpendiculaire à $AB$ passant par $P$..
+	.3 Résolution.
+	.4 Equation de $B'P$, perpendiculaire à $AB$ passant par $P$.
+	.5 Pente est opposé de l'inverse de celle de $AB$ car perpendiculaire..
+	.5 Equation obtenue avec pente et point $P$..
+	.4 Coordonnées de $B'$ est intersection de $BB'$ et $B'P$.
+	.6 Résoudre système et trouver coordonnées..
+	.3 Coordonnées de $C'$.
+	.4 De la même façon, $C'$ intersection de $CC'$ et $C'P$..
+	.2 Lieu de $M$.
+	.3 Coordonnées de $M$ sont moyennes des coord.~de $B'$ et $C'$..
+	.4 On a équations paramétriques de $Q$..
+	.5 En faisant varier $\lambda$ dans $[-b,b]$, on a coordonnées\\ \hspace{5mm} des points..
+	.6 $y$ reste constant et $x$ varie entre deux points..
+	.7 Segment de droite horizontal..
+	}
     }
 	
 	\frame{ \onslide<+->
@@ -207,8 +245,8 @@
 				     
 				      \renewcommand{\theenumi}{\alph{enumi})}
 				      \begin{enumerate}
-					\item $B'\equiv BB' \bot B'P$, \\ \smallskip
-					      $C'\equiv CC' \bot C'P$. \\[0.6em]
+					\item $B' : BB' \bot B'P$, \\ \smallskip
+					      $C' : CC' \bot C'P$. \\[0.6em]
 				      
 					\item $M(\lambda)=\dfrac{B' + C'}{2}$,\\ \smallskip $\lambda \in[-b,b]$. \\[0.6em]
 				    
@@ -230,14 +268,20 @@
 		$m_{C'B'} = -\dfrac{\lambda}{a} \quad \rightarrow \quad m_{d}=\dfrac{a}{\lambda}$. \\ \bigskip
 		
 		$d \equiv \begin{cases}
-		           y=\dfrac{a}{\lambda}(x-\lambda),& \lambda\neq 0. \\
+		           y=\dfrac{a}{\lambda}x-a,& \lambda\neq 0. \\
 		           x=0,& \lambda=0.
 		          \end{cases}$ \\ \bigskip
 		Le point fixe est $(0,-a)$. \hfill $\qed(c)$
-
-		
-		
 		\end{columns}
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Equation de $d$ et point fixe.
+	.3 Pente est opposé de l'inverse de celle de $B'C'$ car perpendiculaire..
+	.4 Equation obtenue avec pente et point $P$..
+	.5 Si $\lambda=0$, pente $\infty \rightarrow$ $x=0$..
+	.3 Si point fixe existe $\forall \lambda$, doit être sur $x=0$.
+	.4 Toutes les droites ont même ordonnée à l'origine $(0,-a)$..
+	}
     }
   
 \end{document}

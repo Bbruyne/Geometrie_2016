@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -92,6 +101,10 @@
 
 	  \end{columns}
 	  \end{tcolorbox}
+	   \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	}
     }
 
     \frame{ 			
@@ -196,6 +209,26 @@
 		\end{align*} \hfill $\qed(b)$
 		
 		\end{columns}	\hfill
+		\notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Exprimer $d_1,d_2,d_3$ avec un vecteur direct.~et un point.. 
+	.4 Coordonnées d'um vecteur directeur sont solutions du système sans les termes indépendants..
+	.4 Coordonnées d'un point sont solutions du système avec les termes indépendants..
+	.2 Résolution.
+	.3 Equation de $\alpha$.
+	.4 $\alpha$ est déterminé par un point et 2 vecteurs direct..
+	.5 Son équation s'obtient en annulant le déterminant:.
+	.6 1\iere\ colonne : $x - D_{1_x}$,$y - D_{1_y}$, $z - D_{1_z}$..
+	.6 2\ieme\ colonne : coordonnée de $\vect{d_1}$..
+	.6 3\ieme\ colonne : coordonnée de $\vect{d_3}$..	
+	.3 Equation de $\beta$.
+	.4 $\beta$ est déterminé par un point et 2 vecteurs direct..
+	.5 Son équation s'obtient en annulant le déterminant:.
+	.6 1\iere\ colonne : $x - D_{2_x}$,$y - D_{2_y}$, $z - D_{2_z}$..
+	.6 2\ieme\ colonne : coordonnée de $\vect{d_2}$..
+	.6 3\ieme\ colonne : coordonnée de $\vect{d_3}$..	
+	}
     }
 	\frame{ 			
 				  \begin{tcolorbox}[basic] 
@@ -274,6 +307,23 @@
 		                        y+z=-5.
 		                       \end{cases}
 		\end{align*} \hfill $\qed(c)$
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Droite de direct\ion donnée, d'appui sur 2 droites est\\ \hspace{5mm} intersect\ion de 2 plans.
+	.4 Le premier formé par 1\iere\ droite et la direct\ion..
+	.4 Le deuxième formé par 2\ieme\ droite et la direct\ion..
+	.2 Résolution.
+	.3 Preuve élément théorie.
+	.4 $d$ intersecte $d_1$ $\rightarrow$ $d$ intersecte plan $\alpha$..
+	.4 $d$ parallèle à $d_3$ $\rightarrow$ $d$ parallèle à plan $\alpha$..
+	.5 Si $d$ intersecte et est parallèle à $\alpha$, elle est contenue dans $\alpha$..
+	.4 $d$ intersecte $d_2$ $\rightarrow$ $d$ intersecte plan $\beta$..
+	.4 $d$ parallèle à $d_3$ $\rightarrow$ $d$ parallèle à plan $\beta$..
+	.5 Si $d$ intersecte et est parallèle à $\beta$, elle est contenue dans $\beta$..
+	.4 $d$ est intersection de $\alpha$ et $\beta$..
+	.5 Equations : éliminer au moins une inconnue dans équations du système..
+	}
     }  
   
 \end{document}

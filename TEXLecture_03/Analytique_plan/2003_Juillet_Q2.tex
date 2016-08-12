@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -54,6 +63,11 @@
 	     Dans un repère, établir les coordonnées de $D$ pour trouver l'équation cartésienne.
 
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	.3 Poser un repère car énoncé évoque "équations cartésiennes"..
+	}
     }
 
     \frame{\begin{columns}[t]
@@ -107,6 +121,24 @@
 
 		%\centering\noindent\rule{2cm}{0.4pt}
 		\end{columns}
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Centre de gravité d'un $\Delta$ est la moyenne des 3 sommets..
+	.2 Résolution.
+	.3 Poser repère en général pour $\Delta$.
+	.4 $Ox$ sur un coté..
+	.4 $Oy$ sur hauteur $\bot$ à $Ox$..
+	.3 Coordonnées de $D$, point de $AC$.
+	.4 Equation de $AC$.
+	.5 Cas particulier $C$ est à l'origine.
+	.6 $AC$ droite verticale et $D(0,y_D)$ et $y_D\in \mathbb{R}$..
+	.6 Coord.~de $G$ est moyenne de coord.~de $A,B,D$..
+	.7 On a équations paramétriques de $G$..
+	.7 En faisant varier $y_D$ dans $\mathbb{R}$, on a coordonnées points..
+	.6 $x$ reste constant et $y$ varie de $-\infty$ à $+\infty$..
+	.7 Droite verticale $x=\dfrac{b}{3}$..
+	}
     }
     
     \frame{ \begin{columns}[t]
@@ -160,6 +192,24 @@
 
 		%\centering\noindent\rule{2cm}{0.4pt}
 		\end{columns}
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Suite.
+	.3 Coordonnées de $D$, point de $AC$.
+	.4 Equation de $AC$.
+	.5 Cas général $C$ n'est pas à l'origine.
+	.6 Equation de $AC$ obtenue avec coord.~de $A$ et $C$..
+	.7 Coordonnée de $D$ sur $AC$.
+	.8 Paramètre est $x_D\in \mathbb{R}$.
+	.9 $y_D$ donné par équat\ion de $AC$..
+	.6 Coord.~de $G$ est moyenne de coord.~de $A,B,D$..
+	.7 On a équations paramétriques de $G$..
+	.7 En faisant varier $x_D$ dans $\mathbb{R}$, on a coordonnées points..
+	.7 Equations paramétriques vers cartésiennes.	
+	.8 Isoler $x_D$ et observer domaine de variation de $x$ qui est $\mathbb{R}$..
+	.8 Injecter $x_D$ dans une autre équation pour l'éliminer..
+	.7 L'équation du lieu est une droite car $x\in \mathbb{R}$..
+	}
     }
 	  
   

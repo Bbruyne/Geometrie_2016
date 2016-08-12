@@ -1,6 +1,15 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -91,6 +100,17 @@
 	     \end{enumerate}
 	  \end{columns}
 	  \end{tcolorbox}
+	  \notedir{%
+	.1 Enoncé.
+	.2 Procédé : reformuler ce qu'il faut déterminer..
+	.3 2 droites sont gauches si elles ne sont ni $\parallel$ ni $\nmid$..
+	.3 Plan $\pi$.
+	.4 Il contient $P$..
+	.4 Son sous-vectoriel contient les vecteurs directeurs de $d_1$ et $d_2$..
+	.3 $d_3$.
+	.4 Direction est perpendiculaire à $\pi$..
+	.4 Appui sur $d_1$ et $d_2$..
+	}
     }
 
     \frame{ 
@@ -157,7 +177,21 @@
 		$\vect{d_1}$ n'est pas multiple de $\vect{d_2}$ $\qquad \rightarrow \qquad$ $d_1,d_2$ non parallèles. \\ \medskip
 		Système $d_1 \cap d_2$ impossible $\qquad \rightarrow \qquad$ $d_1,d_2$ non sécantes. \\ \medskip
 		$d_1,d_2$ sont gauches. \hfill $\qed(a)$
-
+\notedir{%
+	.1 Suivre procédé.
+	.2 Exprimer $d_1,d_2$ avec un vecteur direct.~et un point.. 
+	.3 Coordonnées d'um vecteur directeur sont solutions du système sans les termes indépendants..
+	.3 Coordonnées d'un point sont solutions du système avec les termes indépendants..
+	.2 $d_1,d_2$ gauches.
+	.3 Element de théorie.
+	.4 2 droites sont gauches si elles ne sont ni $\parallel$ ni $\nmid$..
+	.3 Résolution.
+	.4 Non parallèles car vecteurs directeurs non multiples l'un de l'autre.. 
+	.4 Non sécantes car aucune intersection.
+	.5 Le système avec équations cartésiennes de $d_1,d_2$\\ \hspace{5mm} n'admet pas de solution..
+	.6 $d_2(1): x=1$, $d_1(1): y=2$, $d_2(2): z=4$ or $d_1(2): 3 - 4 \neq 0$..
+	.4 $d_1,d_2$ gauches..
+	}
     }
 	 \frame{ 
 	  % résolution ex1
@@ -218,7 +252,16 @@
 			   \ni P(1,1,1).
 			   \end{cases} \qquad \rightarrow \qquad \pi \equiv x-2y+z=0.$ \\
 			   \hfill $\qed(b)$
-
+\notedir{%
+	.1 Suivre procédé.
+	.2 Equation du plan $\pi$..
+	.3 Résolution.
+	.4 $\pi$ est déterminé par un point et 2 vecteurs direct..
+	.5 Son équation s'obtient en annulant le déterminant:.
+	.6 1\iere\ colonne : $x - P_{1_x}$,$y - P_{1_y}$, $z - P_{1_z}$..
+	.6 2\ieme\ colonne : coordonnée de $\vect{d_1}$..
+	.6 3\ieme\ colonne : coordonnée de $\vect{d_2}$..	
+	}
     }  
   
   
@@ -340,7 +383,26 @@
 		\vspace{-3mm}
 		\end{columns}
 
-		
+	\notedir{%
+	.1 Suivre procédé.
+	.2 Element de théorie.
+	.3 Droite de direct\ion donnée, d'appui sur 2 droites est\\ \hspace{5mm} intersect\ion de 2 plans.
+	.4 Le premier formé par 1\iere\ droite et la direct\ion..
+	.4 Le deuxième formé par 2\ieme\ droite et la direct\ion..
+	.2 Résolution.
+	.3 Direction.
+	.4 $d_3$ a la direction du vecteur normal au plan $\pi$..
+	.3 Premier plan $\alpha$.
+	.4 Formé par $d_1$ et direction $\vect{n_\pi}$..
+	.5 Formé par $D_1$, $\vect{d_1}$ et $\vect{n_\pi}$..
+	.4 Son équation s'obtient en annulant le déterminant..
+	.3 Premier plan $\alpha '$.
+	.4 Formé par $d_2$ et direction $\vect{n_\pi}$..
+	.5 Formé par $D_2$, $\vect{d_2}$ et $\vect{n_\pi}$..
+	.4 Son équation s'obtient en annulant le déterminant..
+	.3 $d_3$ est intersection des 2 plans..
+	.4 Equations : éliminer au moins une inconnue dans équations du système..
+	}		
 
     } 
 \end{document}
