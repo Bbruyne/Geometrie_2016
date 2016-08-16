@@ -1,0 +1,107 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \frametitle{Q1}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  \vfill
+	  
+	  \pause
+	  
+	   \begin{tcolorbox}[basic] \smallskip
+	     \centering\underline{Traduction}
+	     \begin{columns}[c]
+	     \column{.5\textwidth}\centering 
+	     \renewcommand{\theenumi}{\alph{enumi})}
+	     \begin{enumerate}
+	      \item 
+
+	     \end{enumerate}
+	     \column{.5\textwidth}\centering 
+	     \begin{enumerate}
+	      \item[b).]
+
+	     \end{enumerate}
+
+	  \end{columns}
+	  \end{tcolorbox}
+    }
+
+    \frame{ 
+	  % résolution ex1
+
+		
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \centering\underline{Traduction}
+				    \begin{columns}[c]
+				    \column{.5\textwidth}\centering 
+				    \renewcommand{\theenumi}{\alph{enumi})}
+				    \begin{enumerate}
+				      \item 
+
+				    \end{enumerate}
+				    \column{.5\textwidth}\centering 
+				    \begin{enumerate}
+				      \item[b).]
+
+				    \end{enumerate}
+
+				    \end{columns}
+				    \end{tcolorbox}
+		
+		
+		
+		\centering\underline{Résolution}\\ \flushleft
+		
+		\begin{enumerate}
+		 \item 
+		\end{enumerate}	
+		
+		\heart
+		
+		%\centering\noindent\rule{2cm}{0.4pt}
+	
+    }
+	  
+  
+\end{document}
