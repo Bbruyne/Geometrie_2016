@@ -1,6 +1,13 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -62,12 +69,16 @@
 				   \textit{Condition} : Droite orthogonale à deux droites sécantes du plan. \\ \bigskip
 				   \textit{Implication} : Droite orthogonale à toutes les droites du plan.
 				  
-
+  \notedir{%
+  .1 Perpendicularité droite - plan.
+  .2 Condition : droite orthogonale à 2 droites sécantes du plan..
+  .2 Implication : droite orthogonale à tt droites du plan..
+  }
     }
 
     \frame{ \frametitle{Positions des droites.}
-    \begin{columns}
-     \column{.5\textwidth}
+    \begin{columns}[t]
+     \column{.3333\textwidth}
 				  \begin{figure}[h]
 				  \begin{tikzpicture}[scale=0.85]
 			          %projection ($(X)!(B')!(B)$)
@@ -80,8 +91,8 @@
 			          \draw (1.5,1.5,1.5)node[above]{$d_2$} -- (-1.5,0.5,-1.5);
 				  \end{tikzpicture}
 				  \end{figure}
-				  2 droites sont sécantes si elles sont coplanaires et non paralèlles.
-     \column{.5\textwidth}
+				  \textit{Sécantes} : coplanaires et non paralèlles.
+     \column{.34\textwidth}
 				  \begin{figure}[h]
 				  \begin{tikzpicture}[scale=0.85]
 			          %projection ($(X)!(B')!(B)$)
@@ -90,8 +101,8 @@
 			          
 			          %\draw[help lines] (-3,-3) grid (3,3);
 			          \draw[dotted] (-2,2,-2) -- (2,2,2) node[above left]{} -- (2,0,2) -- (-2,0,-2);
-			          \draw (-1.5,1.5,-1.5) -- (1.5,1.5,1.5)node[right](d_1){$d_1$};
-			          \draw (1.5,0.5,1.5)node[right]{$d_2$} -- (-1.5,0.5,-1.5);
+			          \draw (-1.5,1.5,-1.5)node[left](d_1){$d_1$} -- (1.5,1.5,1.5);
+			          \draw (1.5,0.5,1.5) -- (-1.5,0.5,-1.5)node[left]{$d_2$};
 			          \draw (-1,1.5,-1) -- (1,0.5,1);
 			          \coordinate (A) at (-1,1.5,-1);
 			          \coordinate (B) at (1,0.5,1);
@@ -101,10 +112,29 @@
 			          \pic [draw, angle eccentricity=1.5] {angle = A--B--D};
 				  \end{tikzpicture}
 				  \end{figure}
-				  2 droites coplanaires sont paralèlles si les angles correspondants qu'elles déterminent avec une troisième droite sont égaux.
+				  \textit{Paralèlles} : coplanaires et angles correspondants  égaux.
+	\column{.3333\textwidth}
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          
+			          %\draw[help lines] (-3,-3) grid (3,3);
+			          
+			          \draw (-1.5,1.5,-1.5)node[left](d_1){$d_1$} -- (1.5,1.5,1.5);
+			          \draw (1.5,0.5,0) -- (-1.5,0.5,0)node[left]{$d_2$};
+				  \end{tikzpicture}
+				  \end{figure} \vspace{3.4em}
+				  \textit{Gauches} : ni paralèlles ni sécantes.			  
     \end{columns}
 
-	 
+	\notedir{%
+	.1 Positions des droites.
+	.2 Sécantes si coplanaires et non paralèlles..
+	.2 Paralèlles si coplanaires et angles correspondants égaux..
+	.2 Gauches si ni sécantes ni paralèlles..
+	} 
     }
 	  
   

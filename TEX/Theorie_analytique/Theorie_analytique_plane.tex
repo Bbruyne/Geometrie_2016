@@ -1,6 +1,13 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -102,7 +109,21 @@
 				  \end{itemize}
 	  \end{columns}
 
-	 
+	\notedir{%
+	.1 Equations d'éléments 2D à connaitres.
+	.2 Parabole..
+	.3 $(x_s,y_s)$ sommet..
+	.3 $a$ courbure..
+	.4 $a<0$ concavité vers le bas..
+	.4 $a>0$ concavité vers le haut..
+	.2 Cercle..
+	.3 $(x_s,y_s)$ centre..
+	.3 $r$ rayon..
+	.2 Ellipse..
+	.3 $(x_s,y_s)$ centre..
+	.3 $a$ demi-axe horizontal..
+	.3 $b$ demi-axe vertical..
+	}
     }
 \frame{\frametitle{Droites perpendiculaires.}
 \begin{figure}[h]
@@ -118,7 +139,14 @@
 				  \end{tikzpicture}
 				  \end{figure}
 				  Deux droites sont perpendiculaires $ssi.$ le produit de leur pente vaut -1.
-
+\notedir{%
+.1 Droites perpendiculaires.
+.2 Droites perp.~ssi produit pente vaut -1..
+.3 Explication 'ssi'..
+.4 La propriété est vrai dans les 2 sens.
+.5 Si deux droites sont perp.~alors le produit vaut -1..
+.5 Si le produit vaut -1 alors les deux droites sont perp..
+}
 }
 	  
   

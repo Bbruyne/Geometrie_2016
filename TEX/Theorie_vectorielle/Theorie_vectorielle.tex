@@ -1,6 +1,13 @@
 \documentclass[10pt]{beamer}
-
+\usepackage[french]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -52,8 +59,8 @@
 			          \coordinate[label=above:$B$](B) at (2,2);
 			          \coordinate[label=below:$C$](C) at (4,0);
 			          \coordinate[label=below:$B_{\bot}$](B_bot) at (2,0);
-			          \draw[->] (A) -- (B);
-			          \draw[->] (A) -- (C);
+			          \draw[->,thick] (A) -- (B);
+			          \draw[->,thick] (A) -- (C);
 			          \draw[dotted] (B) -- (B_bot);
 			          \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = C--A--B};
 			         % \pic [draw, angle eccentricity=1.5] {angle = A--B--D};
@@ -64,7 +71,16 @@
 				  \vect{AB}\cdot\vect{AC}=&\ |AC||AB|\operatorname{cos}(\alpha), \\[0.5em]
 							 =&\ |AC||AB_{\bot}|. 
 				  \end{align*}
-				  
+	\notedir{%
+	.1 Produit scalaire.
+	.2 Définition.
+	.3 Opération qui associe à 2 vecteurs un nombre. 
+	.4 Produit de la longueur d'un vecteur par la longueur de la projection de l'autre vecteur sur le 1\ier..
+	.2 Questions sur concept.
+	.3 Produit de 2 vecteurs $\bot$ ? Rep.~Nul..
+	.3 Produit de 2 vecteurs $\parallel$ ? Rep.~Produit des longueurs..
+	.3 Produit d'un vecteur par ce même vecteur ? Rep.~Longueur du vecteur au carré..
+	}			  
     }
 
     \frame{ \frametitle{Produit vectoriel.}
@@ -79,9 +95,9 @@
 			          \coordinate[label=above:$B$](B) at (2,0,0);
 			          \coordinate[label=below:$C$](C) at (0,0,1.5);
 			          \coordinate[label=above:$D$](D) at (0,3,0);
-			          \draw[->] (A) -- (B);
-			          \draw[->] (A) -- (C);
-			          \draw[->] (A) -- (D);
+			          \draw[->,thick] (A) -- (B);
+			          \draw[->,thick] (A) -- (C);
+			          \draw[->,thick] (A) -- (D);
 			          \draw[dotted] (-0.5,0,3) -- (3,0,3) -- (3,0,-1.5) -- (-0.5,0,-1.5) -- cycle;
 			          \pic [draw,"$\alpha$", angle eccentricity=1.5,angle radius = 3mm] {angle = C--A--B};
 			         % \pic [draw, angle eccentricity=1.5] {angle = A--B--D};
@@ -90,6 +106,17 @@
 				  Produit vectoriel est une opération qui associe à 2 vecteurs un autre vecteur. Il est perpendiculaire aux 2 premiers.
 				  Sa longueur vaut \\
 				  $$|\vect{AB}\wedge\vect{AC}|\ =\ |\vect{AD}|\ =\ |AB||AC|\operatorname{sin}(\alpha).$$
+	\notedir{%
+	.1 Produit vectoriel.
+	.2 Définition.
+	.3 Opération qui associe à 2 vecteurs un autre vecteur..
+	.4 Direction : perpendiculaire au 2 premiers..
+	.4 Longueur : Aire du parallélogramme de côté $AB$ et $AC$..
+	.2 Questions sur concept.
+	.3 Produit de 2 vecteurs $\bot$ ? Rep.~Produit des longueurs..
+	.3 Produit de 2 vecteurs $\parallel$ ? Rep.~Nul..
+	.3 Produit d'un vecteur par ce même vecteur ? Rep.~Nul..
+	}
     }
     \frame{ \frametitle{Centre de gravité.}\centering
     $O$, un point quelconque. 
@@ -107,9 +134,9 @@
 			          \coordinate[label=above:$M$](M) at (2,0);
 			          \coordinate[label=below:$O$](O) at (1,-1.5);
 			          \draw (A) -- (B);
-			          \draw[->] (O) -- (A);
-			          \draw[->] (O) -- (B);
-			          \draw[->] (O) -- (M); 
+			          \draw[->,thick] (O) -- (A);
+			          \draw[->,thick] (O) -- (B);
+			          \draw[->,thick] (O) -- (M); 
 			         % \pic [draw, angle eccentricity=1.5] {angle = A--B--D};
 				  \end{tikzpicture}
 				  \end{figure}
@@ -129,10 +156,10 @@
 			          \coordinate[label=above:$G$](G) at ($(A)!.33!(B)!.33!(C)$);
 			          \coordinate[label=below:$O$](O) at (1,-1.5);
 			          \draw (A) -- (B) -- (C) -- cycle;
-			          \draw[->] (O) -- (A);
-			          \draw[->] (O) -- (B);
-			          \draw[->] (O) -- (C);
-			          \draw[->] (O) -- (G); 
+			          \draw[->,thick] (O) -- (A);
+			          \draw[->,thick] (O) -- (B);
+			          \draw[->,thick] (O) -- (C);
+			          \draw[->,thick] (O) -- (G); 
 			         % \pic [draw, angle eccentricity=1.5] {angle = A--B--D};
 				  \end{tikzpicture}
 				  \end{figure}
@@ -140,7 +167,15 @@
 				  $\vect{OG}=\dfrac{1}{3}\vect{OA}+\dfrac{1}{3}\vect{OB}+\dfrac{1}{3}\vect{OC}$.
 				  
     \end{columns}
-
+    \notedir{%
+    .1 Centre de gravité.
+    .2 2 points.
+    .3 Centre de gravité de 2 points est le milieu du segment..
+    .4 Vecteur joignant point quelconque au milieu est la moyenne des vecteurs joignant ce point aux 2 points..
+    .2 3 points.
+    .3 Centre de gravité de 3 points est le centre de gravité\\ \hspace{5mm} du triangle..
+    .4 Vecteur joignant point quelconque au centre de gravité est la moyenne des vecteurs joigant ce point aux 3 points.
+    }
     }
   
 \end{document}

@@ -1,6 +1,14 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+  \def \ion {$^{\circ}$ }
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -88,7 +96,16 @@
 	  Un vecteur est $\parallel$ à la droite s'il vérifie l'équation sans termes indép.
 	  
 	 \end{columns}
-
+\notedir{%
+.1 Représenter les droites par des équations.
+.2 Droite définie par point et direction (vecteur)..
+.3 Equations paramétriques.
+.4 En variant paramètre, on obtient les points..
+.4 En variant paramètre, sans termes indépendants, on obtient vecteurs directeurs..
+.3 Equations cartésiennes.
+.4 Point appartient à droite s'il vérifie équations..
+.4 Vecteur parallèle à droite s'il vérifie équations sans termes indépendants..
+}
     }
 
     \frame{ \frametitle{Droites.}
@@ -151,7 +168,17 @@
 	  \textit{Gauches} : Ni parallèles ni sécantes. \\ \medskip
 	  \textit{Orthogonales} : Gauches et directions perpendiculaires.
 	    \end{columns}
-
+\notedir{%
+.1 Positions des droites..
+.2 Parallèles..
+.3 vecteurs multiples l'un de l'autre..
+.4 Confondues si point en commun..
+.2 Sécantes..
+.3 Système pour trouver intersect\ion et solution est un point..
+.2 Gauches..
+.3 Vecteurs non multiples l'un de l'autre et pas\\ \hspace{5mm} d'intersect\ion..
+.4 Orthogonales si vecteurs perpendiculaires..
+}
 	  }
 	
     \frame{ \frametitle{Plans.}
@@ -173,16 +200,16 @@
 	  \end{tikzpicture}
 	  \end{figure}
 	  \begin{align*}
-	   \pi \equiv& P + \lambda \vect{u_1} + \mu \vect{u_2} , \quad (\lambda,\mu \in \mathbb{R}) \\
+	   \pi \equiv&\ P + \lambda \vect{u_1} + \mu \vect{u_2} , \quad (\lambda,\mu \in \mathbb{R}) \\
 	     \equiv& \begin{cases}
-	              x = P_x + \lambda u_{1_x} + \lambda u_{2_x}, \\
-	              y = P_y + \lambda u_{1_y} + \lambda u_{2_y}, \\
-	              z = P_z + \lambda u_{1_z} + \lambda u_{2_z}. \\
+	              x = P_x + \lambda u_{1_x} + \mu u_{2_x}, \\
+	              y = P_y + \lambda u_{1_y} + \mu u_{2_y}, \\
+	              z = P_z + \lambda u_{1_z} + \mu u_{2_z}. \\
 	             \end{cases} 
 	  \end{align*} 
 	  \medskip
 	  
-	  On fait varier le paramètre, on obtient les points du plan. \\ \medskip
+	  On fait varier les paramètres, on obtient les points du plan. \\ \medskip
 	  Sans les termes indépendants, on a les vecteurs directeurs du plan.
 	  \column{.5\textwidth}\centering
 	  \underline{Equations cartésiennes.} \\ \bigskip
@@ -205,6 +232,18 @@
 	  Un point appartient au plan si ses coordonnées vérifient l'équation. \\ \medskip
 	  Un vecteur est $\parallel$ au plan s'il vérifie l'équation sans termes indép.
 	 \end{columns}
+	 
+	 \notedir{%
+.1 Représenter les plans par des équations.
+.2 Plan défini par point et 2 directions (vecteurs)..
+.3 Equations paramétriques.
+.4 En variant paramètres, on obtient les points..
+.4 En variant paramètres, sans termes indépendants, on obtient vecteurs directeurs..
+.3 Equations cartésiennes.
+.4 Formée avec vecteur perpendiculaire au plan..
+.4 Point appartient au plan s'il vérifie équation..
+.4 Vecteur parallèle au plan s'il vérifie équations sans termes indépendants..
+}
     }
 	
 	\frame{ \frametitle{Plans.}
@@ -254,7 +293,14 @@
 	  
 	  \textit{Sécantes} : Solution du système formé par les équations cartésiennes des plans est une droite.
 	    \end{columns}
-
+\notedir{%
+.1 Positions des plans..
+.2 Parallèles..
+.3 vecteurs normaux multiples l'un de l'autre..
+.4 Confondus si point en commun..
+.2 Sécants..
+.3 Système pour trouver intersect\ion et solution est une droite..
+}
 	  }
 	  
 	  \frame{ \frametitle{Droites et Plans.}
@@ -305,7 +351,14 @@
 	  
 	  \textit{Sécantes} : vecteur de la droite ne vérifie pas équation cartésienne du plan sans termes indep.
 	    \end{columns}
-
+\notedir{%
+.1 Positions des droites et plans..
+.2 Parallèles..
+.3 Vecteur directeur de droite vérifie équation cartésienne\\ \hspace{5mm} plan sans terme indépendant..
+.4 Confondus si point en commun..
+.2 Sécants..
+.3 Vecteur directeur de droite ne vérifie pas équation cartésienne plan sans terme indépendant..
+}
 	  }
 	  
 	  \frame{\frametitle{Distances.}
@@ -345,7 +398,7 @@
 	  \end{tikzpicture}
 	  \end{figure} 
 	  \column{.8\textwidth}\centering
-	  $\mathcal{D}(A,\pi) = \dfrac{n_{\pi_x}A_x + n_{\pi_y}A_y + n_{\pi_z}A_z + d}{|\vect{n_{\pi}}|}$.
+	  $\mathcal{D}(A,\pi) = \dfrac{|n_{\pi_x}A_x + n_{\pi_y}A_y + n_{\pi_z}A_z + d|}{|\vect{n_{\pi}}|}$.
 	  \end{columns}
 	  \begin{columns}[c]
 	   \column{.3\textwidth}\centering
@@ -367,7 +420,16 @@
 	  \column{.8\textwidth}\centering
 	  $\mathcal{D}(A,d) = \dfrac{|\vect{AP}\wedge\vect{u}|}{|\vect{u}|}$.
 	  \end{columns}
-
+\notedir{%
+.1 Distances..
+.2 Point - Point..
+.3 Point - Plan..
+.4 Valeur absolue de l'équation cartésienne du plan en remplaçant x,y,z par coordonnées du point divisé par longueur du vecteur normal..
+.4 Si oubli, calculer distance entre le point et sa projection sur le plan..
+.3 Point - Droite..
+.4 Valeur absolue de produit vectoriel de $\vect{AP}$ et $\vect{u}$ divisé par longueur de $\vect{u}$ ($P$ point quelconque appartenant à la droite)..
+.4 Si oubli, calculer distance entre le point et sa projection sur la droite..
+}
 	  }
   
 \end{document}

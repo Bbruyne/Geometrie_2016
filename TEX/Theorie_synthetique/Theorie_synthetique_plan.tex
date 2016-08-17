@@ -1,6 +1,13 @@
 \documentclass[10pt]{beamer}
 
 \usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{tikz-3dplot}
@@ -86,7 +93,11 @@
 	  \end{center}
 	  
 
-	  
+	\notedir{%
+	.1 Droites remarquables.
+	.2 Définitions..
+	.2 Points remarquables..
+	}
 	  
 	
     }
@@ -115,6 +126,24 @@
 	\parbox{2.2cm}{Implications}& \parbox{4.2cm}{\bigskip \centering 3 côtés égaux et\\ 3 angles égaux.}&\parbox{4.2cm}{\bigskip \centering 3 côtés proportionnels et\\ 3 angles égaux.} \\ 				
 	  
 	  \end{tabular}
+	  \notedir{%
+	  .1 Triangles isométriques et semblables.
+	  .2 Isométriques.
+	  .3 Conditions.
+	  .4 Côté de même longueur compris entre 2 angles de mêmes mesures..
+	  .4 Angle de même mesure compris entre 2 côtés de mêmes longueurs..
+	  .4 Longueurs de leurs côtés sont 2 à 2 égales..
+	  .3 Implications.
+	  .4 Longueurs des côtés 2 à 2 égales..
+	  .4 Angles 2 à 2 égaux..
+	  .2 Semblables.
+	  .3 Conditions.
+	  .4 Côtés proportionnels..
+	  .4 2 angles de l'un égaux à 2 angles de l'autre..
+	  .4 2 côtés de l'un proportionnels à 2 côtés de l'autre et angle entre les 2 côtés égaux.
+	  .3 Implications.
+	  .4 Côtés proportionnels et angles 2 à 2 égaux..
+	  }
     }
 \frame{ \frametitle{Triangles.}
 	\underline{Pythagore généralisé.}
@@ -162,6 +191,16 @@
 				  \end{figure}
 				  $$|AM| = |BM| $$
 				  La médiane issue de l'angle droit d'un $\Delta$ rectangle vaut la moitié de l'hypothénuse.
+				  
+		\notedir{%
+		.1 Relations de longueurs.
+		.2 Pythagore généralisé..
+		.3 Formule valable pour n'importe quel côté.~Pas seulement pour le côté le plus long..
+		.3 Énoncé en français aide à connaître formule..
+		.2 Médiane issue de l'angle droit d'un triangle rectangle.
+		.3 Car $\Delta$ rect.~inscriptible dans demi-cercle de centre $M$.. 
+		.4 $A,B,C$ sont à équidistance de $M$..
+		}
 }
 \frame{ \frametitle{Cercles.}
 \underline{Angles particuliers.} \\ \bigskip
@@ -196,6 +235,14 @@
 				  \end{figure}
 				Pour un même arc intercepté, l'angle inscrit est égal à l'angle tangentiel. L'angle au centre vaut le double de ces deux derniers.\\ \bigskip
 				Tous les angles inscrits interceptant le même arc sont égaux.
+				
+	\notedir{%
+	.1 Angles particuliers.
+	.2 Définitions..
+	.2 Relations entre angles.
+	.3 Pour un même arc, angle inscrit = angle tangentiel = 1/2 angle au centre..
+	.3 Tous angles inscrits interceptant même arc sont égaux..
+	}
 }				
 \frame{\frametitle{Cercles.}
 	\underline{Figures inscrites.}\\ \bigskip
@@ -250,6 +297,11 @@
 				  \end{figure}
 				  Un quadrilatère inscrit dans un cercle a ses angles opposés supplémentaires.
 	\end{columns}
+	\notedir{%
+	.1 Figures inscrites.
+	.2 Triangle inscrit dans demi-cercle est rectangle..
+	.2 Quadrilatère inscrit dans cercle a angles opposés supplémentaires..
+	}
 }
 \frame{ \frametitle{Cercles.} \underline{Cordes.} \\ \bigskip \centering
  \begin{figure}
@@ -276,5 +328,10 @@
 				  \end{tikzpicture}
 				  \end{figure}
 				  La droite passant par le centre d'un cercle et le milieu d'une des cordes est perpendiculaire à cette corde.
+				  
+	\notedir{%
+	.1 Médiatrice d'un corde.
+	.2 Droite passant par centre et milieu corde est perpendiculaire à corde..
+	}
 }				
 \end{document}
