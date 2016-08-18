@@ -1,0 +1,523 @@
+\documentclass[10pt]{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage[french]{babel}
+\usepackage{dirtree}
+\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{intersections,calc,,angles,quotes,through}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cases}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {\mathcal{C}}
+\def \orthog {\underline{\perp}}
+\def\arcos{\operatorname{arcos}}
+\def \deg {^{\circ}}
+
+\newcommand{\vect}[1] {
+  \overrightarrow{#1}}
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+\tikzset{
+    invisible/.style={opacity=0},
+    visible on/.style={alt={#1{}{invisible}}},
+    alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+  }
+
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    
+    
+    \frame{
+	  
+	  \frametitle{Q4 Juillet 2011.}
+	  Dans un repère orthonormé de l’espace, on considère la droite $d_1$ , pas-
+	  sant par les points $A$ et $B$ respectivement de coordonnées $(1, 2, 3)$ et
+	  $(-1, 0, 2)$ et la droite $d_2$ , passant par les points $C$,$D$ respectivement
+	  de coordonnées $(0, 1, 7)$ et $(2, 0, 5)$.
+	  \renewcommand{\theenumi}{(\alph{enumi})}
+	  \begin{enumerate}
+	   \item Déterminer l’équation cartésienne du plan $\Pi$ parallèle à la droite
+		 $d_1$ et contenant la droite $d_2$.
+	   \item Déterminer la distance entre la droite $d_1$ et le plan $\Pi$.
+	   \item Déterminer des équations paramétriques et des équations carté-
+		 siennes de la droite $d_3$ passant par $C$ et orthogonale à $d_1$ et $d_2$.
+	   \item Déterminer un point $P_1$ de $d_1$ et point $P_2$ de $d_2$ tels que le vecteur
+		 joignant $P_1$ à $P_2$ soit orthogonal à $d_1$ et à $d_2$ .
+	  \end{enumerate}
+
+	  
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	  \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+	  \end{tcolorbox}
+	  \notedir{%
+	  .1 Énoncé.
+	  .2 Procédé : reformuler ce qu'il faut déterminer..
+	  .3 Équation de $\Pi$.
+	  .4 Parallèle à $d_1$ et inclus $d_2$..
+	  .3 Distance entre $d_1$ et $\Pi$..
+	  .3 Équation de $d_3$.
+	  .4 Perpendiculaire à $d_1$ et à $d_2$..
+	  .4 Passe par $C$..
+	  .3 Points $P_1,P_2$.
+	  .4 $P_1$ est sur $d_1$..
+	  .4 $P_2$ est sur $d_2$..
+	  .4 $\vect{P_1P_2}$ perpendiculaire à $d_1$ et à $d_2$..
+	   }
+    }
+
+   \frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+				    \end{tcolorbox}
+	
+		\centering\underline{Résolution}\\ \flushleft
+		\medskip
+		\begin{columns}[c]
+	
+		\column{.5\textwidth}\centering
+		\begin{align*}
+	        d_1 &\equiv \begin{cases} 
+		      A(1,2,3), \\
+		      B(-1,0,2).
+			    \end{cases} \\ 			    
+	        d_1 &\equiv \begin{cases}
+		            \vect{AB} = (-2,-2,-1), \\
+		            A(1,2,3).
+		            \end{cases}      
+		\end{align*}
+					       
+		\column{.5\textwidth}\centering			       
+		 \begin{align*}
+	        d_2 &\equiv \begin{cases} 
+		      C(0,1,7), \\
+		      D(2,0,5).
+			    \end{cases} \\ 			    
+	        d_2 &\equiv \begin{cases}
+		            \vect{CD} = (2,-1,-2), \\
+		            C(0,1,7).
+		            \end{cases}      
+		\end{align*}
+		\end{columns}
+		\bigskip
+			
+		\begin{align*}
+		\Pi \equiv& \begin{cases}
+		                C, \\
+		                \vect{AB}, \\
+		                \vect{CD}.
+		               \end{cases} \\
+		       \equiv&\ x-2y+2z-12=0.
+		\end{align*} \hfill $\qed(a)$
+    \notedir{%
+    .1 Équation de $\Pi$.
+    .2 Exprimer droites avec point et vecteur..
+    .2 $\Pi$ défini par.
+    .3 Point $C$..
+    .3 Direction de $d_1$..
+    .3 Direction de $d_2$..
+    .2 Équations cartésiennes obtenues en annulant le déterminant.
+    .3 1\iere\ colonne : $x - C_x$,$y - C_y$, $z - C_z$..
+    .3 2\ieme\ colonne : coordonnée de $\vect{AB}$..
+    .3 3\ieme\ colonne : coordonnée de $\vect{CD}$..
+    }
+    }
+    \frame{ 
+	    			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+				    \end{tcolorbox}
+		\centering 
+		$\mathcal{D}(d_1,\Pi)=\mathcal{D}(A,\Pi)\quad \text{ car $d_1\parallel\Pi$}$ \\ \vspace{8mm}
+		\begin{columns}[c]	
+		\column{.5\textwidth}\centering
+		\begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          
+			          %\draw[help lines] (-3,-3) grid (3,3);
+			          \draw[dotted] (2,0,0) -- (2,0,2) node[above left]{$\Pi$} -- (-2,0,2) -- (-2,0,0);
+			          \coordinate[label=above:$A$](A) at (0,0.8,1);
+			          \fill (A) circle (0.025);
+				  \draw (-1.5,0.8,1) -- (1.5,0.8,1)node[right]{$d_1$};
+			          \draw (A) -- (0,0,1);
+			           \draw[->] (-1.5,0,1) -- (-1.5,0.5,1) node[left]{$\vect{n_\Pi}$};
+			          \draw (0,0,0.85) -- (0,0,1.15) (-0.08,0,1) -- (0.08,0,1);
+			          
+				  \end{tikzpicture}
+				  \end{figure}
+		\column{.5\textwidth}\centering
+		\heart Distance point $A$ à un plan $\Pi$ de vecteur normal $\vect{n_{\Pi}}$ est donnée par: \\ \medskip
+		$$\mathcal{D}(A,\Pi) = \frac{|n_{\Pi_x}A_x + n_{\Pi_y}A_y + n_{\Pi_z}A_z|}{|\vect{n_{\Pi}}|}$$
+		\end{columns} \vspace{8mm}
+		De (a), $\ \Pi \equiv x-2y+2z-12=0 \quad \rightarrow \quad \vect{n_{\Pi}}=(1,-2,2)$. \\ \bigskip
+		$$\mathcal{D}(A,\Pi) = 3.$$ \hfill $\qed(b)$
+	\notedir{%
+	.1 Distance entre $d_1$ et $\Pi$.
+	.2 C'est distance entre point de $d_1$ et $\Pi$ car $d_1\parallel\Pi$..
+	.3 Formule distance point-plan.
+	.4 Mémo : valeur absolue de équation du plan en remplaçant x,y,z par coordonnées du point divisé par longueur vecteur normal..
+	.2 Coordonnées du vecteur normal sont coefficient de l'équation du plan..
+	.2 Distance vaut 3..
+	}
+    }
+  \frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+				    \end{tcolorbox}
+	
+		\flushleft
+		
+		\begin{columns}[c]
+	
+		\column{.5\textwidth}\centering
+				    
+	        $d_1 \equiv \begin{cases}
+		            \vect{AB} = (-2,-2,-1), \\
+		            A(1,2,3).
+		            \end{cases}$
+					       
+		\column{.5\textwidth}\centering			       		    
+	        $d_2 \equiv \begin{cases}
+		            \vect{CD} = (2,-1,-2), \\
+		            C(0,1,7).
+		            \end{cases}$
+		\end{columns}\bigskip
+		\centering
+		$d_3 \equiv \begin{cases}
+		                C, \\
+		               \vect{d_3} = \vect{AB}\wedge\vect{CD}=(3,-6,6).
+		               \end{cases}$ \\ \bigskip
+		\begin{columns}[c]
+		 \column{.5\textwidth}\centering
+		 \begin{align*}
+		  d_3 \equiv&\ C + \lambda \vect{d_3}, \quad \forall\lambda \in \mathbb{R}\\
+		      \equiv& \begin{cases}
+		               x= 0 + \lambda.3\\
+		               y= 1 + \lambda.(-6)\\
+		               z= 7 + \lambda.6 \\
+		              \end{cases}
+		 \end{align*}
+		 \column{.5\textwidth}\centering
+		 $$d_3 \equiv \frac{x-0}{3}=\frac{y-1}{-6}=\frac{z-7}{6}.$$
+		\end{columns}
+		\hfill $\qed(c)$
+	\notedir{%
+	.1 Équations cartésiennes et paramétriques $d_3$.
+	.2 $d_3$ défini par.
+	.3 Contient $C$..
+	.3 Direction est $\bot$ à $d_1,d_2$..
+	.4 Comment faire un produit vectoriel ?..
+	.3 Avec point et vecteur on trouve.
+	.4 Équations paramétriques..
+	.5 $C$ plus un multiple du vecteur directeur..
+	.6 On projette sur $x,y,z$..
+	.4 Équations cartésiennes..
+	.5 Formule d'une droite dans l'espace.
+	.6 $\dfrac{(x-C_x)}{d_{3_x}}=\dfrac{(y-C_y)}{d_{3_y}}=\dfrac{(z-C_z)}{d_{3_z}}$. 
+	}
+    }
+    
+    \frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+				    \end{tcolorbox}
+	
+		\flushleft
+		\medskip
+		\begin{columns}[c]
+	
+		\column{.5\textwidth}\centering
+		\begin{align*}			    
+	        d_1 &\equiv \begin{cases}
+		            \vect{AB} = (-2,-2,-1), \\
+		            A(1,2,3).
+		            \end{cases} \\
+		 d_1 &\equiv A + \lambda\ \vect{AB}, \quad\forall\lambda\in\mathbb{R}. \\
+		 P_1 &= A + p_1\ \vect{AB}, \quad p_1\in\mathbb{R}.\\[0.5em]  
+		     &=\ (\ 1 - 2p_1,\ 2 -2p_1,\ 3 -p_1). 
+		\end{align*}
+					       
+		\column{.5\textwidth}\centering			       
+		 \begin{align*}
+	        d_2 &\equiv \begin{cases}
+		            \vect{CD} = (2,-1,-2), \\
+		            C(0,1,7).
+		            \end{cases} \\			    
+	        d_2 &\equiv C + \lambda\ \vect{CD}, \quad\forall\lambda\in\mathbb{R}. \\ 
+	        P_2 &= C + p_2\ \vect{CD}, \quad p_2\in\mathbb{R}. \\[0.5em]
+		    &=\ (\ 2p_2,\ 1 -p_2,\ 7 -2p_2).
+		\end{align*}
+		\end{columns}		
+		\vspace{5mm}
+		\centering
+		De (c), $\vect{d_1}\wedge\vect{d_2}=\vect{AB}\wedge\vect{CD}=(3,-6,6)$.	\\[0.5em]
+		\begin{align*}
+		\overrightarrow{P_1P_2}\ &\alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}, \\[0.5em]
+		(\ 2p_2-1+2p_1,\ -1-p_2+2p_1,\ 4 -2p_2 + p_1)\ &\alpha\ (\ 3,\ -6,\ 6), \\   
+		\end{align*}
+    \notedir{%
+    .1 Coordonnées $P_1,P_2$.
+    .2 Exprimer $d_1,d_2$ en équations paramétriques.
+    .3 Exprimer coordonnées de $P_1,P_2$ avec paramètres..
+    .4 Exprimer vecteur $\vect{P_1P_2}$ avec paramètres..
+    .2 De (c), coordonnées de $\vect{d_1}\wedge\vect{d_2}$..
+    .2 Exprimer que $\vect{P_1P_2}$ multiple de $\vect{d_1}\wedge\vect{d_2}$..
+    }
+    }
+    \frame{ 			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \medskip
+	  \centering\underline{Inconnues}
+	  \medskip
+	      \begin{columns}[c]
+		 
+		 \column{.25\textwidth}\centering
+		      
+		      
+		         $\Pi$     $\begin{cases} 
+		                    \overrightarrow{d_1} \\
+		                    \supset{d_2}
+		                   \end{cases}$
+		 \column{.20\textwidth}\centering       
+		      $\mathcal{D}(d_1,\Pi)$
+		      
+
+		  
+		  \column{.25\textwidth}\centering
+		      
+		          $d_3$	  $\begin{cases} 
+		                    \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    \ni C
+		                   \end{cases}$
+		  \column{.30\textwidth}\centering
+				   $\begin{cases} 
+				    P_1 \in d_1 \\
+				    P_2 \in d_2 \\
+		                    \overrightarrow{P_1P_2}\ \alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}  \\
+		                    
+		                   \end{cases}$
+		      
+		      
+		
+	      \end{columns}
+				    \end{tcolorbox}
+	
+		\flushleft
+		
+		\begin{align*}
+		\overrightarrow{P_1P_2}\ &\alpha\ \overrightarrow{d_1}\wedge \overrightarrow{d_2}, \\[0.5em]
+		(\ 2p_2-1+2p_1,\ -1-p_2+2p_1,\ 4 -2p_2 + p_1)\ &\alpha\ (\ 3,\ -6,\ 6), \\   
+		\end{align*}
+		$\begin{cases}
+		  2p_2-1+2p_1 &=\ \alpha.3 \\
+		  -1-p_2+2p_1 &=\ \alpha.(-6) \\
+		  4 -2p_2 + p_1 &=\ \alpha.6
+		 \end{cases}\qquad \rightarrow \qquad p_1 = 0 \text{ et } p_2 = 1$. \\ \bigskip
+		 \centering $P_1 = (1,2,3) \qquad \text{ et } \qquad P_2=(2,0,5)$. \\
+		 \hfill $\qed(d)$
+	\notedir{%
+    .1 Suite Coordonnées $P_1,P_2$.
+    .2 Système de 3 équations à 3 inconnues..
+    .3 Trouver coefficients $p_1,p_2$..
+    .4 Trouver coordonnées de $P_1,P_2$..
+    }
+    }
+\end{document}
