@@ -1,0 +1,185 @@
+\documentclass[10pt]{beamer}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {$\mathcal{C}$}
+
+
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    
+    \frame{ % énoncé ex1
+	  
+	  \frametitle{Q1 Juillet 2016.} 
+	  
+	  
+	  Par un point $P$ intérieur à un cercle $\mathcal{C}$ de centre $O$ et de rayon $r$, on
+	  mène deux droites perpendiculaires $d_1$ et $d_2$ . On note $A_1$ un des points
+	  d’intersection de $d_1$ avec $\mathcal{C}$, et $A_2$ un des points d’intersection de $d_2$
+	  avec $\mathcal{C}$. Le milieu de la corde $[A_1 A_2 ]$ est noté $M$. Démontrer l’égalité
+	  $$ |OM|^2 + |PM|^2 = r^2,$$
+	  où $|XY|$ dénote la longueur du segment $[XY]$.
+	  
+	  \vfill
+	  
+	  \pause
+	  % hypothèses et thèse
+	  \begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.5\textwidth}\centering
+		      
+		      \underline{Hypothèses} 
+		      \begin{itemize}
+		      \item $d_1 \bot d_2$,
+		      \item $|A_1M|=|MA_2|$.
+		      \end{itemize}
+
+		  
+		  \column{.5\textwidth}\centering
+		      
+		      \underline{Thèse} \\
+		      \smallskip
+		      $ |OM|^2 + |PM|^2 = r^2$.
+		
+	      \end{columns}
+	  \end{tcolorbox}
+	\notedir{%
+	.1 Énoncé.
+	.2 Choix : Géométrie synthétique.
+	.3 Égalité de longueurs et présence de $\Delta$..
+	.4 Hypothèses (non visibles sur le dessin)..
+	.4 Thèse..
+	.4 Grand dessin.. 
+	}
+    
+    }
+    
+    \frame{ % résolution ex1
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.8]
+					%\draw[help lines] (-3,-3) grid (3,3); 
+					
+					%CERCLE
+					\coordinate[label=below left:$O$] (O) at (0,0);
+					\fill (O) circle (0.025);
+					\draw[name path=cercle] (O) circle (2cm);
+					\node[below left] (C) at (-110:2) {$\mathcal{C}$};
+					
+					% P
+					\coordinate[label=left:$P$] (P) at (160:1.5);
+					
+					%D_1 et D_2
+					\draw[name path=d_1] (P) -- +(3,-3) node[right]() {$d_1$};
+					\draw (P) -- +(-1,1);
+					\draw[name path=d_2] (P) -- +(2,2) node [right]() {$d_2$};
+					\draw (P) -- +(-1,-1);
+							
+					%A_1,A_2 et M 
+					\path [name intersections={of=d_1 and cercle,by=A_1}];
+					\node [below] at (A_1) {$A_1$};
+					\path [name intersections={of=d_2 and cercle,by=A_2}];
+					\node [above left] at (A_2) {$A_2$}; 
+					\draw (A_1) -- (A_2) coordinate[pos=0.5,label=right:$M$](M);
+					
+					
+					%segments [PM],[OM],[OA_1]
+					\draw (P) -- (M);
+					\draw (O) -- (A_1);
+					\draw (O) -- (M);
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \underline{Hypothèses} 
+				    \begin{enumerate}
+				    \item  $d_1 \bot d_2$,
+				    \item  $|A_1M|=|MA_2|$.
+				    \end{enumerate}
+							      
+				    \underline{Thèse} \\
+				    \smallskip
+				    $ |OM|^2 + |PM|^2 = r^2$.
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\centering
+		
+		\underline{Résolution}\\
+		
+		\begin{enumerate}
+		 \item $\Delta A_1A_2P$ rectangle,
+		 \item $[PM]$ médiane du $\Delta A_1A_2P$. 
+		\end{enumerate}
+		
+		\begin{itemize} 
+		\item[$\heartsuit$]La longueur de la médiane issue de l'angle droit d'un $\Delta$ rectangle vaut la moitié de celle de l'hypothénuse.
+		\end{itemize}
+		
+		$|PM| = |MA_1|$ \\
+		\medskip 
+		\flushleft Thèse : $|OM|^2 + |MA_1|^2 = r^2$\\	\centering
+		$i.e.$ $\Delta OMA_1$ est rectangle. \\
+		
+		\begin{itemize} 
+		\item[$\heartsuit$]La droite passant par le centre d'un cercle et le milieu d'une de ses cordes est perpendiculaire à cette dernière.
+		\end{itemize}
+		
+		$OM \bot A_1A_2$ \\
+		\medskip 
+		\hfill $\Delta OMA_1$ est rectangle. \hfill $\qed$
+
+   
+	   \end{columns}
+	   \notedir{%
+	   .1 Prouver la thèse.
+	   .2 Élément de théorie.
+	   .3 Pythagore..
+	   .4 Égalité de longueurs..
+	   .4 Somme de carrés..
+	   .2 Résolution.
+	   .3 Si $|PM| = |MA_1|$ et $\Delta OMA_1$ rectangle, thèse vérifiée.
+	   .4 Théorème de la médiane issue de l'angle droit..
+	   .5 Application à $\Delta A_1A_2P \rightarrow |PM| = |MA_1|$..
+	   .4 Théorème de la médiatrice d'une corde..
+	   .5 Application à $OM$ et $A_1A_2$ $\rightarrow \Delta OMA_1$ rectangle..
+	   .3 Thèse vérifiée..
+	   }   
+	   }
+	 
+ 
+  
+	  
+	  
+\end{document}

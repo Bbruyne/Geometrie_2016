@@ -4,8 +4,8 @@
 \usepackage{pgfpages}
 \usepackage[french]{babel}
 \usepackage{dirtree}
-%\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -169,11 +169,11 @@
 	   \end{columns}
    \notedir{%
 	   .1 Prouver thèse.
-	   .2 $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+	   .2 $|\vect{AD}|^2 + |\vect{AD'}|^2= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
 	   .3 Élément de théorie.
-	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre..
+	   .4 Décomposer les vecteurs d'un membre de la thèse pour faire apparaître ceux du 2\ieme\ membre et tenir compte hypothèses..
 	   .3 Résolution à partir membre de gauche..
-	   .4 Décomposition des vecteurs pour faire apparaître $AB$ et $AC$.
+	   .4 Décomposition des vecteurs pour faire apparaître $\vect{AB}$ et $\vect{AC}$.
 	   .4 $\vect{BD}=\vect{D'C}$ car.
 	   .5 $\Delta$ équilatéraux $\rightarrow\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD'$..
 	   .5 $\Delta$ équilatéraux $\rightarrow |BD|=|CD'|$..

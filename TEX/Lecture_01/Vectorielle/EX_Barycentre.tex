@@ -4,8 +4,8 @@
 \usepackage{pgfpages}
 \usepackage[french]{babel}
 \usepackage{dirtree}
-%\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -73,7 +73,7 @@
 		      \underline{Hypothèses} 
 		      \begin{itemize}
 		      \item $G$ centre de gravité de $\Delta ABC$,
-		      \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux côtés du $\Delta ABC$,
+		      \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux milieux des côtés du $\Delta ABC$,
 		      \item $K$ centre de gravité de $\Delta M_1M_2M_3$.		     
 		      \end{itemize}
 
@@ -102,7 +102,7 @@
     \frame{ 
 	  % résolution ex1
 	  \begin{columns}[t]
-		\column{.565\textwidth}\centering 
+		\column{.609\textwidth}\centering 
 		
 
 			\underline{Dessin}\\
@@ -147,7 +147,7 @@
 				    \underline{Hypothèses} 
 				    \begin{enumerate}
 				    \item $G$ centre de gravité de $\Delta ABC$,
-				    \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux côtés du $\Delta ABC$,
+				    \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux milieux des côtés du $\Delta ABC$,
 				    \item $K$ centre de gravité de $\Delta M_1M_2M_3$.    
 				    \end{enumerate}
 							      
@@ -194,7 +194,7 @@
         \frame{ 
 	  % résolution ex1
 	  \begin{columns}[t]
-		\column{.565\textwidth}\centering 
+		\column{.609\textwidth}\centering 
 		
 
 			\underline{Dessin}\\
@@ -239,7 +239,7 @@
 				    \underline{Hypothèses} 
 				    \begin{enumerate}
 				    \item $G$ centre de gravité de $\Delta ABC$,
-				    \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux côtés du $\Delta ABC$,
+				    \item $M_1,M_2,M_3$ symétriques de $M$ p/r aux milieux des côtés du $\Delta ABC$,
 				    \item $K$ centre de gravité de $\Delta M_1M_2M_3$.    
 				    \end{enumerate}
 							      
@@ -256,11 +256,11 @@
 		
 		\underline{Résolution}\\ \flushleft
 		\begin{align*}
-		 \frac{1}{2}\vect{MK} + \frac{1}{2}\vect{MG} = \ & \frac{3}{2}\vect{MG} \text{ ( \textcolor{blue}{a.} )} \\
-							     = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} \\[1.5em]
 		 \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MM_1} = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} \\[0.7em]
 		 \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MM_2} = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} \\[0.7em] 
-		 \frac{1}{2}\vect{MC} + \frac{1}{2}\vect{MM_3} = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} 
+		 \frac{1}{2}\vect{MC} + \frac{1}{2}\vect{MM_3} = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} \\[1.5em]
+		 \frac{1}{2}\vect{MK} + \frac{1}{2}\vect{MG} = \ & \frac{3}{2}\vect{MG} \text{ ( \textcolor{blue}{a.} )} \\
+							     = \ & \frac{1}{2}\vect{MA} + \frac{1}{2}\vect{MB} + \frac{1}{2}\vect{MC} 
 		\end{align*}
 		\bigskip
 		
@@ -274,15 +274,15 @@
 	   .3 Élément de théorie.
 	   .4 Milieu d'un segment est moyenne des 2 extrémités du segment..
 	   .3 Résolution..
-	   .4 Milieu de $[GK]$..
-	   .5 Utiliser résultat de a) que $\vect{MK}=2\vect{MG}$..
-	   .5 Reprise de l'égalité de $\vect{MG}$ slide précédent..
 	   .4 Milieu de $[AM_1]$..
 	   .5 Reprise de l'égalité de $\vect{MM_1}$ slide précédent..
 	   .4 Milieu de $[BM_2]$..
 	   .5 Reprise de l'égalité de $\vect{MM_2}$ slide précédent..
 	   .4 Milieu de $[CM_3]$..
 	   .5 Reprise de l'égalité de $\vect{MM_3}$ slide précédent..
+	   .4 Milieu de $[GK]$..
+	   .5 Utiliser résultat de a) que $\vect{MK}=2\vect{MG}$..
+	   .5 Reprise de l'égalité de $\vect{MG}$ slide précédent..
 	   .4 Les vecteurs joignant $M$ aux milieux sont confondus..
 	   .5 Les milieux sont confondus..
 	   }

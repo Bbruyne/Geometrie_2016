@@ -3,7 +3,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{pgfpages}
 \usepackage{dirtree}
-%\setbeameroption{show notes on second screen =left} %hide nodes, show only notes, show notes on second screen = left.
 \setbeamertemplate{note page}[plain]
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
@@ -189,7 +188,7 @@
 			     \begin{align*}
 	                      \onslide<+->{\delta =& \delta ', \text{ (angles à côtés $\bot$)} \\
 					  \delta =& \epsilon, \text{ (angles inscrits)} \\}
-			      \onslide<+->{2\zeta=& 2\zeta ', \\
+			      \onslide<+->{\frac{\zeta}{2}=& \frac{\zeta '}{2}, \\
 					    \zeta=& \zeta ' \text{ $\rightarrow \Delta OBE,\Delta OCA'$ isométriques. } \\[1em]
 					    &|A'C| = |BE|. \\
 					    &\omit\hfill \qed(b)\\}	      
@@ -260,7 +259,7 @@
 				  %B'$
 				  \draw [name path=A'B] (A') -- (B);
 				  \path [name intersections={of=A'B and AC',by=B'}];			  
-				  \draw (A') -- (B') node[xshift=0,yshift=0.5mm]{};
+				  \draw (A') -- (B') node[above,yshift=1mm,xshift=0.7mm]{$B'$};
 				  				 
 				  %Tangente
 				  \path[name path=tangente] (A') -- ($(A')!3cm!-90:(A)$);
