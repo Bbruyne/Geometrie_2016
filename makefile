@@ -1,4 +1,5 @@
-
+# Compile les fichiers .tex dans le dossier TEX vers le dossier PDF selon la même architecture.
+# Non optimal. Si il y a un modification dans un .tex, il les recompile tous...
 TEX := $(shell  find . -name '*.tex')
 PDF_SANS_NOTES := $(patsubst ./TEX/%.tex, ./PDF/sans_notes/%.pdf,$(TEX))
 PDF_AVEC_NOTES := $(patsubst ./TEX/%.tex, ./PDF/avec_notes/%.pdf,$(TEX))
