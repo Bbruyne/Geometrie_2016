@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -186,11 +187,12 @@
 		$\Delta A'B'C',\Delta ABC$ semblables.  \hfill $\qed(a)$
 		\centering\noindent\rule{2cm}{0.4pt}\flushleft
 			     \begin{align*}
-	                      \onslide<+->{\delta =& \delta ', \text{ (angles à côtés $\bot$)} \\
-					  \delta =& \epsilon, \text{ (angles inscrits)} \\}
-			      \onslide<+->{\frac{\zeta}{2}=& \frac{\zeta '}{2}, \\
-					    \zeta=& \zeta ' \text{ $\rightarrow \Delta OBE,\Delta OCA'$ isométriques. } \\[1em]
-					    &|A'C| = |BE|. \\
+	                      \onslide<+->{\delta =&\ \delta ', \text{ (angles à côtés $\bot$)} \\
+					  \delta '=&\ \epsilon, \text{ (angles inscrits)} \\
+					  \delta =&\ \epsilon. \\ }
+			      \onslide<+->{\frac{\zeta}{2}=&\ \frac{\zeta '}{2}, \\
+					    \zeta=&\ \zeta ' \text{ $\rightarrow \Delta OBE,\Delta OCA'$ isométriques. } \\[1em]
+					    &|A'C| =\ |BE|. \\
 					    &\omit\hfill \qed(b)\\}	      
 	                     \end{align*}
 		

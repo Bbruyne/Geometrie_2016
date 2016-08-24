@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -187,7 +188,7 @@
 		 \item[2.] \begin{align*}
 			x=\ &4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2, \\[0.3em]
 			 =\ &4|\vect{MA}|^2 + 3|(\vect{MA} + \vect{AB})|^2 - 5|(\vect{MA} + \vect{AC})|^2 -2|(\vect{MA} + \vect{AD})|^2, \\[0.3em]
-			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + \vect{MA}\cdot(3\vect{AB}  - 5\vect{AC}  -2\vect{AD}), \\[0.3em]
+			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + 2\vect{MA}\cdot(3\vect{AB}  - 5\vect{AC}  -2\vect{AD}), \\[0.3em]
 			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + \vect{MA}\cdot\vect{\g{v}},\\[0.3em]
 			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2. 
 		       \end{align*} \hfill $\qed(b)$
