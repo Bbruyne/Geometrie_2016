@@ -7,7 +7,6 @@
 *.toc
 *.dvi
 *.tex.backup
-*.org
 *~
 *.pdfpc
 *.tex.bak
