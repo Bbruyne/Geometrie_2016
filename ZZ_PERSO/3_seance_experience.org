@@ -1,0 +1,6 @@
+
+* Droite définie par point et direction. (2D,3D). Avec point et direction, on a équation paramétrique ou cartésienne.
+
+* Plan défini par point et 2 direction. (2D,3D_. Avec point et 2 direction, a équation paramétrique ou cartésienne.
+
+* Justifier la méthode utilisée pour trouver une droite de direction donnée qui s'appuie sur 2 autres droites.
