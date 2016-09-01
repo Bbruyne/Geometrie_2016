@@ -13,3 +13,5 @@
 * Faire le dessin entier au tableau et expliquer que je ne représente sur les slides que les parties du dessin qui sont nécessaires à la résolution pour la clarté. Sinon, élèves n'arrivent pas à recopier tous les dessins sur leurs feuilles.
 
 * Améliorer l'acces au slides. Peut-être imprimer les dessins succesifs et donner copie à chacun.
+
+* Ajouter ex avec recherche de lieu et parametre sous cos et sin pour montrer elevation au carré
