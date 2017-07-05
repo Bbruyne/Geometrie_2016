@@ -4,7 +4,6 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
-\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -45,6 +44,129 @@
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
+    
+    \frame{\frametitle{Angles égaux.}
+	
+	\begin{columns}[t]
+	 \column{.25\textwidth}\centering
+	 \underline{Opposés} \\
+	 \underline{par le sommet.}
+	 \begin{figure}
+				  \begin{tikzpicture}[scale=0.55]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersections \path [name intersections={of=d and gb,name=G}];
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  \coordinate(A) at (200:2);
+				  \coordinate(B) at (20:2);
+				  \coordinate(C) at (150:2);
+				  \coordinate(D) at (-30:2);
+				  \coordinate(O) at (0,0);
+
+				  \draw (A) -- (B) (C) -- (D);
+				  \pic [draw, angle eccentricity=1.5, angle radius=4mm] {angle = C--O--A};
+				  \pic [draw, angle eccentricity=1.5, angle radius=4mm] {angle = D--O--B};
+				  \end{tikzpicture}
+				  \end{figure}
+				
+	 \column{.25\textwidth}\centering
+	 \underline{À cotés} \\
+	 \underline{perpendiculaires.}
+	 \begin{figure}
+				  \begin{tikzpicture}[scale=0.55]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersections \path [name intersections={of=d and gb,name=G}];
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  \coordinate(O) at (0,0);
+				  \coordinate(A) at (2,0);
+				  \coordinate(B) at (2,2);
+				  \draw (A) -- (O) -- (B);
+				  
+				  \coordinate(C) at (1,2);
+				  \coordinate(D) at (1,-0.2);
+				  \coordinate(E) at (1.8,1.2);
+				  \draw (D)--(C)--(E);
+				  
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = A--O--B};
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = D--C--E};
+				  \end{tikzpicture}
+				  \end{figure}
+	\column{.25\textwidth}\centering
+	 \underline{À côtés} \\
+	 \underline{parallèles.}
+	 \begin{figure}
+				  \begin{tikzpicture}[scale=0.55]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersections \path [name intersections={of=d and gb,name=G}];
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  \coordinate(O) at (0,0);
+				  \coordinate(A) at (-0.2,0);
+				  \coordinate(B) at (1.5,0);
+				  \coordinate(C) at (-0.2,1);
+				  \coordinate(D) at (1,1);
+				  \coordinate(E) at (1.5,1);
+				  \coordinate(F) at (1,2);
+				  \coordinate(G) at (0,1);
+				  
+				  \draw(A) -- (B) (C) -- (E) (O) -- (D) (G) -- (F);
+				  
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = B--O--D};
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = D--G--F};
+				  \end{tikzpicture}
+				  \end{figure}
+				  
+	\column{.25\textwidth}\centering
+	 \underline{Alternes -} \\
+	 \underline{internes.}
+	 \begin{figure}
+				  \begin{tikzpicture}[scale=0.55]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersections \path [name intersections={of=d and gb,name=G}];
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  \coordinate(O) at (0,0);
+				  \coordinate(A) at (-0.2,0);
+				  \coordinate(B) at (1.5,0);
+				  \coordinate(C) at (-0.2,2);
+				  \coordinate(D) at (1,2);
+				  \coordinate(E) at (1.5,2);
+				  
+				  \draw(A) -- (B) (C) -- (E) (O) -- (D);
+				  
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = B--O--D};
+				  \pic [draw, angle eccentricity=1.5, angle radius=3mm] {angle = C--D--O};
+				  \end{tikzpicture}
+				  \end{figure}
+	\end{columns}
+	
+}
+    
     \frame{
     
 	  \frametitle{Triangles.}
@@ -147,6 +269,7 @@
     }
 \frame{ \frametitle{Triangles.}
 	\underline{Pythagore généralisé.}
+	\vspace{-3mm}
 	\begin{figure}
 				  \begin{tikzpicture}[scale=0.54]
 			          %projection ($(X)!(B')!(B)$)
@@ -167,7 +290,7 @@
 				  \end{tikzpicture}
 				  \end{figure}
 				  $$a^2 = b^2 + c^2 -2bc\operatorname{cos}(\alpha)$$
-				  Le carré d'un côté vaut la somme des carrés des deux autres côtés moins le produit des deux autres côtés et le cosinus de l'angle entre les deux. \\ \bigskip
+				  Le carré d'un côté est égal à la somme des carrés des deux autres côtés diminué du double produit de ces deux côtés multiplié par le cosinus de l'angle qu'ils forment. \\ \medskip
 	\underline{Médiane issue de l'angle droit d'un triangle rectangle.} \\
 				  \begin{figure}
 				  \begin{tikzpicture}[scale=0.55]
@@ -202,6 +325,45 @@
 		.4 $A,B,C$ sont à équidistance de $M$..
 		}
 }
+
+\frame{ \frametitle{Triangles.}
+	\underline{Relation des sinus.}
+	\begin{figure}
+				  \begin{tikzpicture}[scale=0.54]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersections \path [name intersections={of=d and gb,name=G}];
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  \coordinate[label=left:$B$](B) at (-3,0);
+				  \coordinate[label=right:$A$](A) at (1.5,0);
+				  \coordinate[label=above:$C$](C) at (0,2);
+				  \draw (A) -- node[below]{$c$}  (B) -- node[above left]{$a$} (C) -- node[above right]{$b$} (A);
+				  \pic [draw,"$\alpha$", angle eccentricity=1.5, angle radius=4mm] {angle = C--A--B};
+				  \pic [draw,"$\beta$", angle eccentricity=1.5] {angle = A--B--C};
+				  \pic [draw,"$\gamma$", angle eccentricity=1.5, angle radius=4mm] {angle = B--C--A};
+				  \end{tikzpicture}
+				  \end{figure}
+				  $$\frac{a}{\operatorname{sin}\alpha} = \frac{b}{\operatorname{sin}\beta} = \frac{c}{\operatorname{sin}\gamma}$$
+				 \medskip
+				 
+				 Les rapports de la longueur d'un côté sur le sinus de l'angle opposé sont égaux.
+		\notedir{%
+		.1 Relations de longueurs.
+		.2 Pythagore généralisé..
+		.3 Formule valable pour n'importe quel côté.~Pas seulement pour le côté le plus long..
+		.3 Énoncé en français aide à connaître formule..
+		.2 Médiane issue de l'angle droit d'un triangle rectangle.
+		.3 Car $\Delta$ rect.~inscriptible dans demi-cercle de centre $M$.. 
+		.4 $A,B,C$ sont à équidistance de $M$..
+		}
+}
+
 \frame{ \frametitle{Cercles.}
 \underline{Angles particuliers.} \\ \bigskip
 				  \begin{figure}
@@ -270,7 +432,7 @@
 				  \draw (A) -- (B) -- (C) -- cycle;				
 				  \end{tikzpicture}
 				  \end{figure}
-				  Un triangle inscrit dans un demi-cercle est rectangle.
+				  Un triangle est inscrit dans un demi-cercle \textit{ssi} il est rectangle.
 	 \column{.5\textwidth}    
 				  \begin{figure}
 				  \begin{tikzpicture}[scale=0.55]
@@ -295,7 +457,7 @@
 				  \draw (A) -- (B) -- (C) -- (D)-- cycle;				
 				  \end{tikzpicture}
 				  \end{figure}
-				  Un quadrilatère inscrit dans un cercle a ses angles opposés supplémentaires.
+				  Un quadrilatère convexe est inscrit dans un cercle \textit{ssi} ses angles opposés sont supplémentaires.
 	\end{columns}
 	\notedir{%
 	.1 Figures inscrites.
