@@ -41,24 +41,42 @@
     },
   }
 
+  \def\enonce{\frametitle{Q3 Septembre 2002.}
+	  
+	  Soit $ABC$ un triangle dont les angles sont aïgus. Le cercle de diamètre $AB$ coupe
+	  la hauteur issue de $C$ en des points $X$ et $Y$ ; le cercle de diamètre $AC$ coupe la
+	  hauteur issue de $B$ en des points $Z$ et $T$.
+	  \begin{enumerate}
+            \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Montrer que $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$.
+	   \item En déduire que les points $X, Y, Z$ et $T$ sont sur un même cercle, dont on
+		 déterminera le centre.
+	  \end{enumerate}}
+
+        \def\hypotheses{ \underline{Hypothèses}
+          \begin{enumerate}
+                      \item $CX,BZ$ sont des hauteurs,
+		      \item $AB,AC$ sont des diamètres.
+		      \end{enumerate}
+                    }
+
+                    \def\these{\underline{Thèse} 
+		      \begin{enumerate}
+                        \renewcommand{\theenumi}{\alph{enumi})}
+                      \item $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$,
+                      \item $X,Y,Z,T$ cocycliques.\\ + centre du cercle.
+		      \end{enumerate}}
+
+                    \def\dessin{
+                      }
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
     \frame{
+	  \enonce
 	  
-	  \frametitle{Q3 Septembre 2002.}
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  Soit $ABC$ un triangle dont les angles sont aïgus. Le cercle de diamètre $AB$ coupe
-	  la hauteur issue de $C$ en des points $X$ et $Y$ ; le cercle de diamètre $AC$ coupe la
-	  hauteur issue de $B$ en des points $Z$ et $T$.
-	  \begin{enumerate}
-	   \item Montrer que $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$.
-	   \item En déduire que les points $X, Y, Z$ et $T$ sont sur un même cercle, dont on
-		 déterminera le centre.
-	  \end{enumerate}
-
 	  \vfill
 	  
 	  \pause
@@ -68,20 +86,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $AB,AC$ sont des diamètres,
-		      \item $CX,BT$ sont des hauteurs.
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} 
-		      \begin{enumerate}
-		       \item $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$,
-		       \item $X,Y,Z,T$ cocycliques.\\ + centre du cercle.
-		      \end{enumerate}
+		      \these
 
 		
 	      \end{columns}
@@ -95,10 +105,8 @@
     }
 
     \frame{ 
-	  % résolution ex1
 	  \begin{columns}[t]
-		\column{.5\textwidth}\centering 
-		
+		\column{.5\textwidth}\centering 	
 
 			\underline{Dessin}\\
 				  \vspace{-10mm}
@@ -138,50 +146,37 @@
 				  \end{tikzpicture}
 				  \end{figure}
 			
-				  \begin{tcolorbox}[basic] 
-				      
-				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AB,AC$ sont des diamètres,
-				    \item $CX,BT$ sont des hauteurs.
-				    \end{enumerate}
-			            \renewcommand{\theenumi}{\alph{enumi})}		      
-				    \underline{Thèse}
-				    \begin{enumerate}
-				    \item $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$,
-				    \item $X,Y,Z,T$ cocycliques.\\ + centre du cercle.
-				    \end{enumerate}
+		
+		
+                                  \column{.6\textwidth}\centering
+                                  \vspace{-2mm}
+                                   \begin{tcolorbox}[basic] 
+				      \centering
+				    \medskip
+				    \hypotheses
+                                    	\medskip
+				    \these
 				    \end{tcolorbox}
-		
-		
-		\column{.5\textwidth}\centering
-		
+
+                                    
+                                  \end{columns}\bigskip
+                \centering           
 		\underline{Résolution}\\ \flushleft
 		\vspace{-3mm}
 		\begin{align*}
-		|\vect{AX}|^2=& \ (\vect{AB}+\vect{BX})\cdot(\vect{AX}), \\
-			     =& \ \vect{AB}\cdot\vect{AX}, \text{ (\textcolor{blue}{1.})} \\
-			     =& \ \vect{AB}\cdot(\vect{AC}+\vect{CX}), \\
+                  |\vect{AX}|^2=&\ \vect{AX}\cdot\vect{AX} \\
+                             =& \ (\vect{AB}+\vect{BX})\cdot(\vect{AC}+\vect{CX}), \\
+                  =& \ \vect{AB}\cdot\vect{AC} + \vect{AB}\cdot\vect{CX} + \vect{BX}\cdot\vect{AC} + \vect{BX}\cdot\vect{CX}, \\
+                  =& \  \vect{AB}\cdot\vect{AC} + \vect{BX}\cdot\vect{AC} + \vect{BX}\cdot\vect{CX}, \text{ (\textcolor{blue}{1.})} \\
+                   =& \  \vect{AB}\cdot\vect{AC} + \vect{BX}\cdot\vect{AX} \\
 			     =& \ \vect{AB}\cdot\vect{AC}. \text{ (\textcolor{blue}{2.})}
 		\end{align*}
 		\hfill $\qed(a)$ \\
-		De la même façon, \\ \smallskip
-		$|\vect{AY}|^2=\vect{AB}\cdot\vect{AC}$. \\
-		\centering\noindent\rule{2cm}{0.4pt}\flushleft
-		\vspace{-3mm}
-		\begin{align*}
-		 |\vect{AZ}|^2=& \ (\vect{AC}+\vect{CZ})\cdot(\vect{AZ}), \\
-			     =& \ \vect{AC}\cdot\vect{AZ}, \text{ (\textcolor{blue}{1.})} \\
-			     =& \ \vect{AC}\cdot(\vect{AB}+\vect{BZ}), \\
-			     =& \ \vect{AC}\cdot\vect{AB}. \text{ (\textcolor{blue}{2.})}
-		\end{align*}
-		De la même façon, \\ \smallskip
-		$|\vect{AT}|^2=\vect{AB}\cdot\vect{AC}$. \\
-	        %\hfill $\qed$
+	
+		
+	       
 
    
-	   \end{columns}
     \notedir{%
 	   .1 Prouver thèse.
 	   .2 $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$.
@@ -189,11 +184,11 @@
 	   .4 Produit scalaire de 2 vecteurs $\bot$ est nul..
 	   .3 Résolution..
 	   .4 Partir d'un membre et faire apparaître vecteurs de\\ \hspace{5mm} l'autre membre..
-	   .5 Utiliser les hypothèses..
-	   .4 Décomposer 1\ier\ $\vect{AX}$ pour faire apparaître $\vect{AB}$.
-	   .5 $\vect{BX}\cdot\vect{AX}=0$ car $AB$ diamètre..
-	   .4 Décomposer 2\ieme\ $\vect{AX}$ pour faire apparaître $\vect{AC}$.
+           .4 Le carré de la longueur d'un vecteur est le produit scalaire de celui-ci par lui-même.. 
+	   .4 Décomposer les $\vect{AX}$ pour faire apparaître $\vect{AB}$ et $\vect{AC}$..
 	   .5 $\vect{AB}\cdot\vect{CX}=0$ car $CX$ hauteur..
+           .5 $\vect{AC} + \vect{CX}=\vect{AX}$ par Chasles..
+           .5 $\vect{BX}\cdot\vect{AX}=0$ car $AB$ diamètre..
 	   .4 $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$..
 	   }
     }
@@ -241,44 +236,149 @@
 				  \end{tikzpicture}
 				  \end{figure}
 			
-				  \begin{tcolorbox}[basic] 
-				      
-				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AB,AC$ sont des diamètres,
-				    \item $CX,BT$ sont des hauteurs.
-				    \end{enumerate}
-			            \renewcommand{\theenumi}{\alph{enumi})}		      
-				    \underline{Thèse}
-				    \begin{enumerate}
-				    \item $|\vect{AX}|^2=\vect{AB}\cdot\vect{AC}$,
-				    \item $X,Y,Z,T$ cocycliques.\\ + centre du cercle.
-				    \end{enumerate}
+				  
+		
+		
+                                 \column{.6\textwidth}\centering
+                                  \vspace{-2mm}
+                                   \begin{tcolorbox}[basic] 
+				      \centering
+				    \medskip
+				    \hypotheses
+                                    	\medskip
+				    \these
 				    \end{tcolorbox}
-		
-		
-		\column{.5\textwidth}\flushleft
-		
-		$|\vect{AX}|^2=|\vect{AY}|^2=|\vect{AZ}|^2=|\vect{AT}|^2$. \\ \bigskip
-		$\rightarrow X,Y,Z,T$ cocycliques. \\ \medskip Le centre du cercle est $A$.
-	   \end{columns}
+
+                                    
+                                  \end{columns}\bigskip
+                \centering           
+		\underline{Résolution}\\ \flushleft
+		\vspace{-3mm}
+		\begin{align*}
+		  |\vect{AZ}|^2=&\ \vect{AZ}\cdot\vect{AZ} \\
+                             =& \ (\vect{AB}+\vect{BZ})\cdot(\vect{AC}+\vect{CZ}), \\
+                  =& \ \vect{AB}\cdot\vect{AC} + \vect{AB}\cdot\vect{CZ} + \vect{BZ}\cdot\vect{AC} + \vect{BZ}\cdot\vect{CZ}, \\
+                  =& \  \vect{AB}\cdot\vect{AC} + \vect{AB}\cdot\vect{CZ} + \vect{BZ}\cdot\vect{CZ}, \text{ (\textcolor{blue}{1.})} \\
+                   =& \  \vect{AB}\cdot\vect{AC} + \vect{AZ}\cdot\vect{CZ} \\
+			     =& \ \vect{AB}\cdot\vect{AC}. \text{ (\textcolor{blue}{2.})}
+		\end{align*}
+	  
     \notedir{%
 	   .1 Prouver thèse.
 	   .2 $X,Y,Z,T$ cocycliques.\\ + centre du cercle.
 	   .3 Élément de théorie.
 	   .4 Des points cocycliques sont à égal distance d'un point (le centre du cercle)..
 	   .3 Résolution..
-	   .4 De la même façon qu'en a) $|\vect{AY}|^2=\vect{AB}\cdot\vect{AC}$..
-	   .4 $|\vect{AZ}|^2 = \vect{AB}\cdot\vect{AC}$ car.
-	   .5 Décomposer 1\ier\ $\vect{AZ}$ pour faire apparaître $\vect{AC}$.
-	   .5 $\vect{CZ}\cdot\vect{AZ}=0$ car $AC$ diamètre..
-	   .4 Décomposer 2\ieme\ $\vect{AZ}$ pour faire apparaître $\vect{AB}$.
-	   .5 $\vect{AC}\cdot\vect{BZ}=0$ car $BZ$ hauteur..
-	   .4 De la même façon que pour $Z$, $|\vect{AT}|^2 = \vect{AB}\cdot\vect{AC}$..
-	   .4 $X,Z,Y,T$ sont à même distance de $A$..
-	   .5 Ils sont cocycliques et centre est $A$..
+	   .4 Partir d'un membre et faire apparaître vecteurs de\\ \hspace{5mm} l'autre membre..
+           .4 Le carré de la longueur d'un vecteur est le produit scalaire de celui-ci par lui-même.. 
+	   .4 Décomposer les $\vect{AZ}$ pour faire apparaître $\vect{AB}$ et $\vect{AC}$..
+	   .5 $\vect{BZ}\cdot\vect{AC}=0$ car $BZ$ hauteur..
+           .5 $\vect{AB} + \vect{BZ}=\vect{AZ}$ par Chasles..
+           .5 $\vect{AZ}\cdot\vect{CZ}=0$ car $AC$ diamètre..
+	   .4 $|\vect{AZ}|^2=\vect{AB}\cdot\vect{AC}$..
 	   }
     }  
-  
+
+    	\frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+				  \vspace{-10mm}
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.74]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  
+				   %TRIANGLE ABC
+				  \coordinate[label=below left:$C$] (C) at (-1.5,0);
+				  \coordinate[label=below right:$B$] (B) at (3,0);
+				  \coordinate[label=above:$A$] (A) at (0,2.5);
+				  \draw (A) -- (B) -- (C) -- cycle;			
+				  %CERCLES
+				  \node [draw,name path=C_AB] at ($(A)!0.5!(B)$) [circle through=(A)] {};
+				  \node [draw,name path=C_AC] at ($(A)!0.5!(C)$) [circle through=(A)] {};
+				  %T,Z
+				  \path [name path=BZ] (B) -- +($2*(A)!(B)!(C)-2*(B)$);
+				  \path [name intersections={of=BZ and C_AC,name=k}];				
+				  \coordinate[label=below left:$T$](T) at (k-1);
+				  \coordinate[label= above left:$Z$](Z) at (k-2);
+				  \fill (T) circle (0.065);
+				  \draw (B) -- (Z);
+				  %X,Y
+				  \path [name path=CY] (C) -- +($2*(A)!(C)!(B)-2*(C)$);
+				  \path [name intersections={of=CY and C_AB,name=l}];				
+				  \coordinate[label=above:$X$](X) at (l-1);
+				  \coordinate[label= below right:$Y$](Y) at (l-2);
+				  \fill (Y) circle (0.065);
+				  \draw (C) -- (X);
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  
+		
+		
+                                  \column{.6\textwidth}\centering
+                                  \vspace{-2mm}
+                                   \begin{tcolorbox}[basic] 
+				      \centering
+				    \medskip
+				    \hypotheses
+                                    	\medskip
+				    \these
+				    \end{tcolorbox}
+
+                                    
+                                  \end{columns}\bigskip
+                \centering           
+		\underline{Résolution}\\ \flushleft
+		\vspace{-3mm}
+                De façon similaire, on montre que \\
+                $$ |\vect{AY}|^2 = \vect{AB}\cdot\vect{AC} \text{ et } |\vect{AT}|^2 = \vect{AB}\cdot\vect{AC}$$
+                Donc,
+		$$|\vect{AX}|^2=|\vect{AY}|^2=|\vect{AZ}|^2=|\vect{AT}|^2$$ 
+		$\rightarrow X,Y,Z,T$ cocycliques et le centre du cercle est $A$.
+	  
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $X,Y,Z,T$ cocycliques + centre du cercle.
+	   .3 Élément de théorie.
+	   .4 Des points cocycliques sont à égal distance d'un point (le centre du cercle)..
+	   .3 Résolution..
+	   .4 Partir d'un membre et faire apparaître vecteurs de\\ \hspace{5mm} l'autre membre..
+           .4 Le carré de la longueur d'un vecteur est le produit scalaire de celui-ci par lui-même.. 
+	   .4 Décomposer les $\vect{AZ}$ pour faire apparaître $\vect{AB}$ et $\vect{AC}$..
+	   .5 $\vect{BZ}\cdot\vect{AC}=0$ car $BZ$ hauteur..
+           .5 $\vect{AB} + \vect{BZ}=\vect{AZ}$ par Chasles..
+           .5 $\vect{AZ}\cdot\vect{CZ}=0$ car $AC$ diamètre..
+	   .4 $|\vect{AZ}|^2=\vect{AB}\cdot\vect{AC}$..
+           .4 Par mêmes calculs, $ |\vect{AY}|^2 = \vect{AB}\cdot\vect{AC} = |\vect{AT}|^2$.
+           .4 Comme $|\vect{AX}|^2,\ |\vect{AY}|^2,\ |\vect{AZ}|^2 \text{ et }|\vect{AT}|^2$ sont tous égaux à\\ \hspace{5mm} un même nombre, ils sont égaux entre eux.
+           .5 Donc les 4 points $X,\ Y,\ Z\text{ et } T$ sont à la même distance de $A$..
+	   }
+         }
+
+         \frame{\enonce
+           \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer l'égalité d'une expression vectorielle = décomposer vecteurs d'un membre avec les vecteurs du second membre.
+	  \item $|\vect{AB}|^2=\vect{AB}\cdot\vect{AB}$.
+          \item Montrer que des points sont cocycliques = montrer qu'ils sont à la même distance d'un point (le centre du cercle).
+          \end{itemize}
+
+           }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

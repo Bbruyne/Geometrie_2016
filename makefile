@@ -4,7 +4,7 @@ TEX := $(shell  find . -name '*.tex')
 PDF_SANS_NOTES := $(patsubst ./TEX/%.tex, ./PDF/sans_notes/%.pdf,$(TEX))
 PDF_AVEC_NOTES := $(patsubst ./TEX/%.tex, ./PDF/avec_notes/%.pdf,$(TEX))
 
-all: $(PDF_AVEC_NOTES) $(PDF_SANS_NOTES)
+all: $(PDF_SANS_NOTES)  $(PDF_AVEC_NOTES)
 
 ./PDF/sans_notes/%.pdf : ./TEX/%.tex
 	sed -i -e '/\\setbeameroption{show notes on second screen =left}/d' $<

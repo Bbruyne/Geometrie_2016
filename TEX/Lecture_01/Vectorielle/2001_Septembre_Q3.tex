@@ -44,6 +44,37 @@
     },
   }
 
+  \def\enonce{ \frametitle{Q3 Septembre 2001. }
+	  
+	  On donne quatre points $A,B,C,D$ dans le plan. \\
+	  \begin{enumerate}
+            \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Montrer que si $M$ est un point du plan, le vecteur \\
+	   $$\g{v}=4\vect{MA}+3\vect{MB}-5\vect{MC}-2\vect{MD}$$ \\
+	   est indépendant du point $M$.
+	   \item Montrer que si le vecteur $\g{v}$ de $a).$ est nul, le nombre \\
+	   $$x=4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$$ \\
+	   est aussi indépendant du point $M$.
+         \end{enumerate}}
+
+       
+        \def\hypotheses{ \underline{Hypothèses}
+		      \begin{enumerate}
+		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
+					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
+		      \item $\g{v}=\g{0}$, \\ \smallskip
+		      
+			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
+		      \end{enumerate}
+                    }
+
+                    \def\these{\underline{Thèse} 
+		      \begin{enumerate}
+                      \renewcommand{\theenumi}{\alph{enumi})}
+                      \item $\g{v}$ indépendant de $M$,
+		       \item $x$ indépendant de $M$.
+		      \end{enumerate}}
+       
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -51,17 +82,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q3 Septembre 2001. }
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  On donne quatre points $A,B,C,D$ dans le plan. \\
-	  \begin{enumerate}
-	   \item Montrer que si $M$ est un point du plan, le vecteur \\
-	   $$\g{v}=4\vect{MA}+3\vect{MB}-5\vect{MC}-2\vect{MD}$$ \\
-	   est indépendant du point $M$.
-	   \item Montrer que si le vecteur $\g{v}$ de $a).$ est nul, le nombre \\
-	   $$x=4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$$ \\
-	   est aussi indépendant du point $M$.
-	  \end{enumerate}
+	  \enonce
 
 	  \vfill
 	  
@@ -72,25 +93,12 @@
 		 
 		 \column{.55\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{enumerate}
-		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
-					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
-		      \item $\g{v}=\g{0}$, \\ \smallskip
-		      
-			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
-		      \end{enumerate}
-
+		      \hypotheses
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse}
-		      \begin{enumerate}
-		       \item $\g{v}$ indépendant de $M$,
-		       \item $x$ indépendant de $M$.
-		      \end{enumerate}
+		      \these
 
-		
 	      \end{columns}
 	  \end{tcolorbox}
 	  \notedir{%
@@ -107,26 +115,12 @@
 	      \begin{columns}[t]
 		 
 		 \column{.55\textwidth}\centering
-		      
-		      \underline{Hypothèses} 
-		      \begin{enumerate}
-		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
-					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
-		      \item $\g{v}=\g{0}$, \\ \smallskip
-		      
-			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
-		      \end{enumerate}
 
+                 \hypotheses
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse}
-		      \renewcommand{\theenumi}{\alph{enumi})}
-		      \begin{enumerate}
-		       \item $\g{v}$ indépendant de $M$,
-		       \item $x$ indépendant de $M$.
-		      \end{enumerate}
-
+		   \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -136,7 +130,7 @@
 		\begin{enumerate}
 		 \item \begin{align*}
 			\g{v}=&\ 4\vect{MA} + 3\vect{MB} - 5\vect{MC} - 2\vect{MD},\\
-			     =&\ 4\vect{MA} + 3\vect{MA} + 3\vect{AB} -5\vect{MA} - 5\vect{AC} - 2\vect{MA} -2\vect{AD}, \\
+			     =&\ 4\vect{MA} + 3(\vect{MA} + \vect{AB}) -5(\vect{MA} - \vect{AC}) - 2(\vect{MA} -\vect{AD}), \\
 			     =&\ 3\vect{AB}  - 5\vect{AC}  -2\vect{AD}.
 		       \end{align*} \hfill $\qed(a)$
 		\end{enumerate}	
@@ -147,7 +141,7 @@
 	   .4 Décomposition de vecteurs..
 	   .3 Résolution..
 	   .4 Décomposer les vecteurs pour n'en avoir qu'un qui\\ \hspace{5mm} contient $M$..
-	   .5 Ce dernier est multiplier par $0$ car somme\\ \hspace{5mm} coefficient vaut $0$..
+	   .5 Ce dernier s'annule car somme\\ \hspace{5mm} coefficient vaut $0$..
 	   .6 $\g{v}$ indépendant de $M$..
 	   }
     }
@@ -159,25 +153,11 @@
 		 
 		 \column{.55\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{enumerate}
-		      \item $\g{v}=4\vect{MA}+3\vect{MB}$ \\ 
-					  \smallskip$\phantom{{}=1} -5\vect{MC}-2\vect{MD}$.
-		      \item $\g{v}=\g{0}$, \\ \smallskip
-		      
-			    $x=4|\vect{MA}|^2 + 3|\vect{MB}|^2$\\ \smallskip$\phantom{{}=1} - 5|\vect{MC}|^2 -2 |\vect{MD}|^2$.
-		      \end{enumerate}
-
+		      \hypotheses
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse}
-		      \renewcommand{\theenumi}{\alph{enumi})}
-		      \begin{enumerate}
-		       \item $\g{v}$ indépendant de $M$,
-		       \item $x$ indépendant de $M$.
-		      \end{enumerate}
-
+		      \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -186,11 +166,50 @@
 		
 		\begin{enumerate}
 		 \item[2.] \begin{align*}
-			x=\ &4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2, \\[0.3em]
-			 =\ &4|\vect{MA}|^2 + 3|(\vect{MA} + \vect{AB})|^2 - 5|(\vect{MA} + \vect{AC})|^2 -2|(\vect{MA} + \vect{AD})|^2, \\[0.3em]
-			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + 2\vect{MA}\cdot(3\vect{AB}  - 5\vect{AC}  -2\vect{AD}), \\[0.3em]
-			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2 + \vect{MA}\cdot\vect{\g{v}},\\[0.3em]
-			 =\ &3|\vect{AB}|^2 - 5|\vect{AC}|^2 -2|\vect{AD}|^2. 
+                        x=\ &4|\vect{MA}|^2 + 3|\vect{MB}|^2 - 5|\vect{MC}|^2 -2 |\vect{MD}|^2, \\[0.3em]
+                         =\ &4\vect{MA}\cdot\vect{MA} + 3\vect{MB}\cdot\vect{MB} - 5\vect{MC}\cdot\vect{MC} -2\vect{MD}\cdot\vect{MD}, \\[0.3em]
+                         =\ &4\vect{MA}\cdot\vect{MA} + 3(\vect{MA} + \vect{AB})\cdot(\vect{MA} + \vect{AB})\\
+                            &- 5(\vect{MA} + \vect{AC})\cdot(\vect{MA} + \vect{AC})\\
+                            & -2(\vect{MA} + \vect{AD})\cdot(\vect{MA} + \vect{AD}), 
+		       \end{align*}
+		\end{enumerate}	
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $\g{v}=0 \rightarrow x$ indépendant de $M$. 
+	   .3 Élément de théorie.
+	   .4 Décomposition de vecteurs..
+	   .3 Résolution..
+	   .4 Décomposer les vecteurs pour n'en avoir qu'un qui\\ \hspace{5mm} contient $M$..
+	   .5 Le carré d'un vecteur est le produit scalaire de\\ \hspace{5mm} celui-ci par lui-même..
+	   }
+    }
+
+        \frame{ 
+	  % résolution ex1
+		\begin{tcolorbox}[basic] 
+	      \begin{columns}[t]
+		 
+		 \column{.55\textwidth}\centering
+		      
+		  \hypotheses
+		  
+		  \column{.5\textwidth}\centering
+		      
+		  \these
+		
+	      \end{columns}
+	  \end{tcolorbox}
+		
+		\centering\underline{Résolution}\\ \flushleft
+		
+		\begin{enumerate}
+		 \item[2.] \begin{align*}
+                        x=\ &4\vect{MA}\cdot\vect{MA} + 3(\vect{MA}\cdot\vect{MA} + 2\vect{MA}\cdot\vect{AB} + \vect{AB}\cdot\vect{AB}) \\
+                            & - 5(\vect{MA}\cdot\vect{MA} +2\vect{MA}\cdot\vect{AC} + \vect{AC}\cdot\vect{AC})\\
+                            & -2(\vect{MA}\cdot\vect{MA} + 2\vect{MA}\cdot\vect{AD} + \vect{AD}\cdot\vect{AD}), \\[0.3em]
+			 =\ &2\vect{MA}\cdot(3\vect{AB}  - 5\vect{AC}  -2\vect{AD}) + 3\vect{AB}\cdot\vect{AB} - 5\vect{AC}\cdot\vect{AC} -2\vect{AD}\cdot\vect{AD}, \\[0.3em]
+			 =\ &2\vect{MA}\cdot\vect{\g{v}} + 3\vect{AB}\cdot\vect{AB} - 5\vect{AC}\cdot\vect{AC} -2\vect{AD}\cdot\vect{AD},\\[0.3em]
+			 =\ &3\vect{AB}\cdot\vect{AB} - 5\vect{AC}\cdot\vect{AC} -2\vect{AD}\cdot\vect{AD}. 
 		       \end{align*} \hfill $\qed(b)$
 		\end{enumerate}	
     \notedir{%
@@ -201,9 +220,25 @@
 	   .3 Résolution..
 	   .4 Décomposer les vecteurs pour n'en avoir qu'un qui\\ \hspace{5mm} contient $M$..
 	   .5 Le carré d'un vecteur est le produit scalaire de\\ \hspace{5mm} celui-ci par lui-même..
+           .5 Le produit scalaire est distributif comme le \\ \hspace{5mm} produit entre deux nombres.
 	   .6 Comme $\g{v}=0$, $x$ indépendant de $M$..
 	   }
+         }
+
+             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer qu'une expression vectorielle est indépendante d'un point = décomposer vecteurs pour n'en avoir plus qu'un qui contient ce point.
+	  \item $|\vect{AB}|^2=\vect{AB}\cdot\vect{AB}$.
+          \end{itemize}
     }
-	  
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
