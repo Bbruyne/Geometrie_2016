@@ -1,5 +1,5 @@
 (TeX-add-style-hook
- "2002_Septembre_Q3"
+ "2003_Juillet_Q3"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("beamer" "10pt")))
@@ -33,7 +33,6 @@
     "arcos"
     "enonce"
     "hypotheses"
-    "these"
-    "dessin"))
+    "these"))
  :latex)
 

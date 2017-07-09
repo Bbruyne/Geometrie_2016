@@ -1,10 +1,10 @@
 (TeX-add-style-hook
- "2002_Septembre_Q3"
+ "2004_Septembre_Q3"
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("beamer" "10pt")))
    (TeX-add-to-alist 'LaTeX-provided-package-options
-                     '(("babel" "french") ("inputenc" "utf8")))
+                     '(("inputenc" "utf8") ("babel" "french")))
    (add-to-list 'LaTeX-verbatim-environments-local "semiverbatim")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperref")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "hyperimage")
@@ -17,9 +17,9 @@
     "latex2e"
     "beamer"
     "beamer10"
-    "babel"
     "inputenc"
     "pgfpages"
+    "babel"
     "dirtree"
     "tcolorbox"
     "tikz"
@@ -31,9 +31,9 @@
     '("vect" 1)
     '("notedir" 1)
     "arcos"
+    "cos"
     "enonce"
     "hypotheses"
-    "these"
-    "dessin"))
+    "these"))
  :latex)
 

@@ -42,18 +42,28 @@
     },
   }
 
-    
+  \def\enonce{ \frametitle{Q3 Juillet 2004.}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  Soit $ABC$ un triangle tel que l’angle $\widehat{A}$ soit obtus. On note $E$ la projection
+	  orthogonale de $B$ sur $AC$ et $F$ la projection orthogonale de $C$ sur $AB$. \\ \smallskip
+	  Démontrer que $|\vect{BC}|^2 = |\vect{BF}||\vect{AB}| + |\vect{AC}||\vect{CE}|$.  }
+        \def\hypotheses{  \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $FC \bot BA$,
+		      \item $BE \bot AC$.
+		      \end{enumerate}
+        }
+
+        \def\these{\underline{Thèse} \\
+		      \smallskip
+		      $|\vect{BC}|^2 = |\vect{BF}||\vect{AB}| + |\vect{AC}||\vect{CE}|$.  }
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q3 Juillet 2004.}
-	  %\renewcommand{\theenumi}{\alph{enumi})}
-	  Soit $ABC$ un triangle tel que l’angle $\widehat{A}$ soit obtus. On note $E$ la projection
-	  orthogonale de $B$ sur $AC$ et $F$ la projection orthogonale de $C$ sur $AB$. \\ \smallskip
-	  Démontrer que $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
+	 \enonce
 	  \vfill
 	  
 	  \pause
@@ -63,18 +73,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $BE \bot AC$,
-		      \item $CF \bot AB$.
-		      \end{itemize}
-
+		    
+                 \hypotheses
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
+		      \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -111,7 +115,7 @@
 				  \coordinate[label=below right:$B$] (B) at (3,0);
 				  \coordinate[label=above:$A$] (A) at (0,1.5);
 				  \draw (A) -- (B) -- (C) -- cycle;		
-				  
+				  \fill (A) circle (0.08);
 				  %E,F
 				  \draw [name path=BE] (B) -- ($(A)!(B)!(C)$) coordinate[label=above left:$E$] (E) -- (A);
 				  \draw [name path=CF] (C) -- ($(A)!(C)!(B)$) coordinate[label=above left:$F$] (F) -- (A);
@@ -121,34 +125,28 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				     \item $BE \bot AC$,
-				     \item $CF \bot AB$.  
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
+				    \these
 				    \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\centering
+		\column{.52\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
 		
 		\heart Le produit scalaire de 2 vecteurs perpendiculaires est nul.\\
 		
 		\begin{align*}
-		 &|\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}| \\
-		 = \ & |\vect{BA}||\vect{BF}| + |\vect{CA}||\vect{CE}|, \\
-		 = \ & \vect{BA}\cdot\vect{BF} + \vect{CA}\cdot\vect{CE}, \text{ (points alignés)} \\
-		 = \ & \vect{BA}\cdot(\vect{BC} + \vect{CF}) + \vect{CA}\cdot(\vect{CB}+\vect{BE}), \text{ (\textcolor{blue}{1} et \textcolor{blue}{2})} \\
-		 = \ & \vect{BA}\cdot\vect{BC} + \vect{CA}\cdot\vect{CB}, \\
-		 = \ & \vect{BC}\cdot(\vect{BA} - \vect{CA}), \\
-		 = \ & \vect{BC}\cdot\vect{BC} = |\vect{BC}|^2.
-		\end{align*} \\
-		\hfill $\qed$
+                  |\vect{BC}|^2 =& \vect{BC}\cdot\vect{BC}, \\[0.5em]
+                  =& (\vect{BF} + \vect{FC})\cdot (\vect{BA} + \vect{AC}),\\[0.5em]
+                  =& \vect{BF}\cdot\vect{BA} + \vect{BF}\cdot\vect{AC} + \vect{FC}\cdot\vect{BA} + \vect{FC}\cdot\vect{AC},\\[0.5em]
+                  =&  \vect{BF}\cdot\vect{BA} + \vect{BF}\cdot\vect{AC} + \vect{FC}\cdot\vect{AC}, (\textcolor{blue}{1.})\\[0.5em]
+                  =&  \vect{BF}\cdot\vect{BA} + (\vect{BF}+\vect{FC})\cdot\vect{AC},\\[0.5em]
+                  =&  \vect{BF}\cdot\vect{BA} + \vect{BC}\cdot\vect{AC},\\[0.5em]
+                  =&  \vect{BF}\cdot\vect{BA} + (\vect{BE} + \vect{EC})\cdot\vect{AC},\\[0.5em]
+                  =&  \vect{BF}\cdot\vect{BA} + \vect{EC}\cdot\vect{AC}, (\textcolor{blue}{2.})\\[0.5em]
+		\end{align*}
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
 	        %\hfill $\qed$
@@ -160,14 +158,100 @@
 	   .2 $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
 	   .3 Élément de théorie.
 	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre et tenir compte des hypothèses..
-	   .3 Résolution à partir du membre de droite..
-	   .4 Les 2 produits de longueurs peuvent être exprimés en produits scalaires car points alignés..
-	   .4 Décomposition de $\vect{BF}$ et $\vect{CE}$  pour faire apparaître $\vect{BC}$\\ \hspace{5mm} et vecteurs $\bot$ à $\vect{AB}$ et $\vect{AC}$.. 
-	   .5 $\vect{BA}\cdot\vect{CF}=0$ car $F$ projection orthogonale de $B$..
-	   .5 $\vect{CA}\cdot\vect{CE}=0$ car $E$ projection orthogonale de $B$..
-	   .4 Après changement de signe, thèse vérifiée..
+	   .4 Décomposition de $\vect{BC}$  pour faire apparaître $\vect{BF}$ et\\ \hspace{5mm} $\vect{AB}$.. 
+	   .5 $\vect{FC}\cdot\vect{BA}=0$ car $F$ projection orthogonale de $B$..
+           .4 $\vect{BF}+\vect{FC}=\vect{BC}$ par Chasles.. 
+           .4 Décomposition de $\vect{BC}$  pour faire apparaître $\vect{CE}$.. 
+	   .5 $\vect{BE}\cdot\vect{AC}=0$ car $E$ projection orthogonale de $B$..
 	   }
     }
-	  
-  
+
+        \frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.8]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,name=G}];
+			          %animation  \draw[visible on=<1>] 
+				  %           \draw[visible on=<{2,4}>]
+				  %angle arc[radius = 6mm, start angle= 180, end angle= 225] node [below left,pos=0.3]{$\alpha$}
+				  %angle \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = A'--A--B};
+				  %perpendiculaire ($(A')!3cm!-90:(A)$)
+				  %cercle par point \node [draw] at (A) [circle through=(B)] {};
+				  
+				   %TRIANGLE ABC
+				  \coordinate[label=below left:$C$] (C) at (-1.5,0);
+				  \coordinate[label=below right:$B$] (B) at (3,0);
+				  \coordinate[label=above:$A$] (A) at (0,1.5);
+				  \draw (A) -- (B) -- (C) -- cycle;		
+				  \fill (A) circle (0.08);
+				  %E,F
+				  \draw [name path=BE] (B) -- ($(A)!(B)!(C)$) coordinate[label=above left:$E$] (E) -- (A);
+				  \draw [name path=CF] (C) -- ($(A)!(C)!(B)$) coordinate[label=above left:$F$] (F) -- (A);
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				    \hypotheses
+							      
+				    \these
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\centering
+		
+		\underline{Résolution}\\ \flushleft
+		
+	
+		\begin{align*} 
+                  &= |\vect{BF}||\vect{BA}|\cos(0) + |\vect{EC}||\vect{AC}|\cos(0)\\[0.5em]
+                                 &=  |\vect{BF}||\vect{BA}| + |\vect{EC}||\vect{AC}|\\[0.5em]
+                                 &=  |\vect{BF}||\vect{AB}| + |\vect{CE}||\vect{AC}|\\[0.5em]
+		\end{align*}
+	        \hfill $\qed$
+
+   
+	   \end{columns}
+       \notedir{%
+	   .1 Prouver thèse.
+	   .2 $|\vect{BC}|^2 = |\vect{AB}||\vect{BF}| + |\vect{AC}||\vect{CE}|$.  
+	   .3 Élément de théorie.
+	   .4 Décomposer les vecteurs d'un membre de la thèse avec ceux du 2\ieme\ membre et tenir compte des hypothèses..
+	   .4 Décomposition de $\vect{BC}$  pour faire apparaître $\vect{BF}$ et\\ \hspace{5mm} $\vect{AB}$.. 
+	   .5 $\vect{FC}\cdot\vect{BA}=0$ car $F$ projection orthogonale de $B$..
+           .4 $\vect{BF}+\vect{FC}=\vect{BC}$ par Chasles.. 
+           .4 Décomposition de $\vect{BC}$  pour faire apparaître $\vect{CE}$.. 
+	   .5 $\vect{BE}\cdot\vect{AC}=0$ car $E$ projection orthogonale de $B$..
+           .4 Exprimer les produits scalaires en termes de \\ \hspace{5mm} longueurs et angles..
+           .5 L'angle entre $\vect{BF}$ et $\vect{BA}$ est nul..
+           .5 L'angle entre $\vect{EC}$ et $\vect{AC}$ est nul..
+           .4 La longeur d'un vecteur est indépendante de la \\ \hspace{5mm} direction de celui-ci..
+           .5 $|\vect{BA}|=|\vect{AB}|$ et $|\vect{EC}|=|\vect{CE}|$..
+	   }
+    }
+    \frame{\enonce
+           \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer l'égalité d'une expression vectorielle = décomposer vecteurs d'un membre avec les vecteurs du second membre.
+	  \item $|\vect{AB}|^2=\vect{AB}\cdot\vect{AB}$.
+          \item   Le produit scalaire de 2 vecteurs perpendiculaires est nul.
+          \item  La longeur d'un vecteur est indépendante de la direction de celui-ci.
+            
+            \end{itemize}
+            }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

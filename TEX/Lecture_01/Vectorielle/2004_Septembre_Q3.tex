@@ -48,14 +48,26 @@
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q3 Septembre 2004.}
+
+    \def\enonce{  \frametitle{Q3 Septembre 2004.}
 	  %\renewcommand{\theenumi}{\alph{enumi})}
 	  On considère un triangle $ABC$ (non isocèle) du plan. On construit sur le côté
 	  $BC$ et dans le plan du triangle $ABC$ deux triangles équilatéraux $BDC$ et $BD'C$.
 	  Démontrer la relation \\ \medskip
 	  $|\vect{AD}|^2 + |\vect{AD'}|^2 = |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+        }
+        \def\hypotheses{ \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $\Delta BDC, \Delta BD'C$ équilatéraux.
+		      \end{enumerate}
+                    }
+                    \def\these{  \underline{Thèse} \\
+		      \smallskip
+		      $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+                      }
+    \frame{
+	  
+	\enonce
 
 	  \vfill
 	  
@@ -66,17 +78,12 @@
 		 
 		 \column{.52\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $\Delta BDC, \Delta BD'C$ équilatéraux.
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+		    \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -127,14 +134,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $\Delta BDC, \Delta BD'C$ équilatéraux. 
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+				  \these
 				    \end{tcolorbox}
 		
 		
@@ -143,23 +145,25 @@
 		\underline{Résolution}\\ \flushleft
 		\begin{align*}
 		 \vect{AD}=& \vect{AB} + \vect{BD}, \\
-		 \vect{AD'}=& \vect{AC} + \vect{CD'}. \\[0.5em]		 
+		 \vect{AD'}=& \vect{AC} + \vect{CD'}. 		 
 		\end{align*}
-		\vspace{-10mm}
 		
-		\begin{enumerate}
-		 \item $\begin{cases}\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD', \\ 
+		 $\begin{cases}\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD', \\ 
 		       |BD|=|CD'|.
-		       \end{cases}$
-		       
-		\end{enumerate}	\medskip
+		       \end{cases} \textcolor{blue}{(1.)}
+$ 		 
+	\vspace{-2mm}	
+\flushright$\rightarrow \vect{BD}=\vect{D'C}$ \\[0.5em]\medskip
 		
-		$\rightarrow \vect{BD}=\vect{D'C}$. \\ \medskip
-		
-		
+	\begin{align*}
+		 \vect{AD}=& \vect{AB} + \vect{BD}, \\
+		 \vect{AD'}=& \vect{AC} - \vect{BD}. 		 
+		\end{align*}		
 		
 		\begin{align*}
-		 &|\vect{AD}|^2 + |\vect{AD'}|^2 \\[0.3em]
+                  &|\vect{AD}|^2 + |\vect{AD'}|^2 \\[0.3em]
+                  &=\vect{AD}\cdot\vect{AD} + \vect{AD'}\cdot\vect{AD'} \\[0.3em]
+                  &=(\vect{AB} + \vect{BD})\cdot(\vect{AB} + \vect{BD}) \\ &\hspace{20mm}+ (\vect{AC} - \vect{BD})\cdot(\vect{AC} - \vect{BD}) \\[0.3em]
 		 &= |\vect{AB}|^2 + |\vect{AC}|^2 + 2|\vect{BD}|^2  \\
 		          &\phantom{{}=1}+ 2\vect{BD}\cdot(\vect{CA} + \vect{AB}), \\[0.3em]
 		 &= |\vect{AB}|^2 + |\vect{AC}|^2 +2\vect{BD}\cdot (\vect{CB} + \vect{BD}), \\[0.3em]
@@ -178,11 +182,10 @@
 	   .5 $\Delta$ équilatéraux $\rightarrow\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD'$..
 	   .5 $\Delta$ équilatéraux $\rightarrow |BD|=|CD'|$..
 	   .4 Injecter décomposition en notant que $\vect{BD}=\vect{D'C}$..
-	   .4 Mise en évidence de $\vect{BD}$..
 	   }
     }
-	
-	\frame{ 
+
+        \frame{ 
 	  % résolution ex1
 	  \begin{columns}[t]
 		\column{.5\textwidth}\centering 
@@ -221,41 +224,62 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $\Delta BDC, \Delta BD'C$ équilatéraux. 
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+				  \these
 				    \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\flushleft
+		\column{.60\textwidth}\centering
 		
-		$=|\vect{AB}|^2 + |\vect{AC}|^2 +2\vect{BD}\cdot\vect{CD}$, \\ \medskip
-		$=|\vect{AB}|^2 + |\vect{AC}|^2 +2\vect{DB}\cdot\vect{DC}$, \\ \bigskip
-		
-		\heart $\vect{XY}\cdot\vect{XZ}=|\vect{XY}||\vect{XZ}|\cos(\widehat{ZXY})$. \\ \bigskip
+		\underline{Résolution}\\ \flushleft
 		
 		\begin{align*}
-		\vect{DB}\cdot\vect{DC}=&|\vect{DB}||\vect{CD}|\cos(\widehat{BDC}), \\
-				       =&\frac{|\vect{BC}|^2}{2}.
-		\end{align*} \bigskip
+		 &= \vect{AB}\cdot\vect{AB} + \vect{AC}\cdot\vect{AC}   \\
+                 &\phantom{{}=1}+ 2\vect{BD}\cdot(\vect{CA} + \vect{AB} + \vect{BD}), \\[0.3em]
+                 &= \vect{AB}\cdot\vect{AB} + \vect{AC}\cdot\vect{AC}+ 2\vect{BD}\cdot\vect{CD}, \\[0.3em]
+                 &= \vect{AB}\cdot\vect{AB} + \vect{AC}\cdot\vect{AC}+ 2(-\vect{BD}\cdot-\vect{CD}), \\[0.3em]
+                 &= \vect{AB}\cdot\vect{AB} + \vect{AC}\cdot\vect{AC}+ 2\vect{DB}\cdot\vect{DC}, \\[0.3em]
+                 &=  |\vect{AB}||\vect{AB}|\cos(0) + |\vect{AC}||\vect{AC}|\cos(0)\\ &\hspace{30mm}+ 2|\vect{DB}||\vect{DC}|\cos(\underbrace{\widehat{BDC}}_{60^\circ}), \\[0.3em]
+                 &=  |\vect{AB}||\vect{AB}| + |\vect{AC}||\vect{AC}|+|\vect{DB}||\vect{DC}|, \\[0.3em]
+                   &= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2.\ \textcolor{blue}{(1.)}
+                \end{align*}
 		
-		$=|\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$. \hfill $\qed$
-		
+                \hfill \qed
 
 	   \end{columns}
    \notedir{%
 	   .1 Prouver thèse.
-	   .2 Suite $|\vect{AD}|^2 + |\vect{AD'}|^2$ \\ \smallskip$= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
-	   .3 Inversion signe des 2 vecteurs ne change pas signe produit scalaire..
-	   .3 Produit scalaire de 2 vecteurs = produit de leur longueur et cosinus de l'angle entre les deux..
-	   .3 $\Delta$ équilatéral $\rightarrow$ $|DB|=|CD|=BC|$..
-	   .3 Thèse vérifiée..
+	   .2 $|\vect{AD}|^2 + |\vect{AD'}|^2= |\vect{AB}|^2 + |\vect{AC}|^2 + |\vect{BC}|^2$.
+	   .3 Élément de théorie.
+	   .4 Décomposer les vecteurs d'un membre de la thèse pour faire apparaître ceux du 2\ieme\ membre et tenir compte hypothèses..
+	   .3 Résolution à partir membre de gauche..
+	   .4 Décomposition des vecteurs pour faire apparaître $\vect{AB}$ et $\vect{AC}$.
+	   .4 $\vect{BD}=\vect{D'C}$ car.
+	   .5 $\Delta$ équilatéraux $\rightarrow\alpha = \alpha ' = 60\deg \rightarrow BD \parallel CD'$..
+	   .5 $\Delta$ équilatéraux $\rightarrow |BD|=|CD'|$..
+	   .4 Réexprimer décomposition en notant que $\vect{BD}=\vect{D'C}$..
+           .4 Évaluer membre de gauche avec les décompositions..
+           .5 Produit scalaire commutatif et distributif..
+	   .4 Mise en évidence de $\vect{BD}$ et $\vect{CA} + \vect{AB} + \vect{BD}=\vect{CD}$ par \\ \hspace{5mm} Chasles..
+           .4 Exprimer le dernier produit scalaire avec des vecteurs de même origine..
+           .4 Exprimer les produits scalaires en termes de longueurs et angles..
 	   }
     }
-  
+
+      \frame{\enonce
+           \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer l'égalité d'une expression vectorielle = décomposer vecteurs d'un membre avec les vecteurs du second membre.
+	  \item $|\vect{AB}|^2=\vect{AB}\cdot\vect{AB}$.
+          \item  $\vect{AB}\cdot\vect{AC}=|\vect{AB}||\vect{AC}|\cos(\widehat{BAC})$
+            
+            \end{itemize}
+            }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
