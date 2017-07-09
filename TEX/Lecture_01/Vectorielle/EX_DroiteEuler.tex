@@ -41,20 +41,31 @@
       \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
     },
   }
-
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Exercice sur les points particuliers du triangle. }
+  \def\enonce{ \frametitle{Exercice sur les points particuliers du triangle. }
 	  %\renewcommand{\theenumi}{\alph{enumi})}
 	  Dans un triangle $ABC$ avec $O$ le centre du cercle circonscrit au triangle, $G$ le
 	  centre de gravité, montrer que si \\
 	  $$H = O + 3\vect{OG},$$  \\
 	  alors $H$ est l'orthocentre du triangle.
+    }
+
+    \def\hypotheses{ \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $H = O + 3\vect{OG}$,
+		      \item $G$ centre de gravité.
+		      \end{enumerate}
+                    }
+                    \def\these{\underline{Thèse} \\
+		      \smallskip
+		      $H$ orthocentre.
+                      }
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  \enonce
+	 
 	  \vfill
 	  
 	  \pause
@@ -63,22 +74,15 @@
 	      \begin{columns}[t]
 		 
 		 \column{.5\textwidth}\centering
-		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $G$ centre de gravité,
-		      \item $H = O + 3\vect{OG}$.
-		      \end{itemize}
-
+		     
+\hypotheses
 		  
-		  \column{.5\textwidth}\centering
-		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $H$ orthocentre.
+\column{.5\textwidth}\centering
+
+		      \these
 		
 	      \end{columns}
-	  \end{tcolorbox}
+v	  \end{tcolorbox}
 	  \notedir{%
 	.1 Énoncé.
 	.2 Hypothèses (non visibles sur le dessin)..
@@ -127,7 +131,7 @@
 				  \fill(H) circle (0.025);
 				  %M_1,M_2,M_3
 				  \coordinate (M_1) at ($(B)!.5!(C)$);
-				  \draw[visible on=<2>] (O) -- (M_1) node[above right] {$M_1$};
+				  \draw[] (O) -- (M_1) node[above right] {$M_1$};
 				  
 				  \coordinate (M_2) at ($(A)!.5!(C)$);
 				  %\draw[visible on=<3>] (O) -- (M_2) node[above left] {$M_2$};
@@ -140,33 +144,32 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $G$ centre de gravité,
-				    \item $H = O + 3\vect{OG}$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $H$ orthocentre.
+				    \these
 				    \end{tcolorbox}
 		
 		
 		\column{.58\textwidth}\centering
 		
-		\underline{Résolution}\\ \flushleft
-		
-		\onslide<+->\begin{enumerate}
-			    \item $\vect{OG} = \frac{1}{3}\ \vect{OA} + \frac{1}{3}\ \vect{OB} + \frac{1}{3}\ \vect{OC}$, \\[1em]
-			    \item $\vect{OH} =  \vect{OA} + \vect{OB} + \vect{OC}$.
-			    \end{enumerate}	
-		
-		
-		\onslide<+->\begin{align*}
-			    \vect{AH}= \vect{AO} + \vect{OH} =\ & \vect{OB}+\vect{OC}, \\[0.3em]
-							     =\ & \vect{OM_1} + \vect{M_1B} + \vect{OM_1} + \vect{M_1C}, \\[0.3em]
+		\underline{Résolution} \flushleft
+                \underline{$AH\bot BC$:}\medskip
+                
+			   $\vect{AH}= \vect{AO} + \vect{OH}$ \\[1em]
+
+                         Comme  $\vect{OH} =  3\vect{OG},  \textcolor{blue}{(1.)}$ \\[1em]	
+                         et	 $\vect{OG} = \frac{1}{3}\ \vect{OA} + \frac{1}{3}\ \vect{OB} + \frac{1}{3}\ \vect{OC}$, \textcolor{blue}{(2.)}\\[1em]
+                         On a
+                  $ \vect{OH}  =  \vect{OA} + \vect{OB} + \vect{OC}$. 
+                           
+        
+                
+              
+
+                	\begin{align*}
+			    \rightarrow \vect{AH}=\vect{AO} + \vect{OH} =\ & \vect{OB}+\vect{OC}, \\[0.3em]
 							     =\ & 2\ \vect{OM_1}. \text{ ($M_1$ milieu de $[BC]$)}
-			    \end{align*} 
+        \end{align*}
 			\flushleft
 		
 		
@@ -182,15 +185,15 @@
 	   .3 Élément de théorie.
 	   .4 Orthocentre est intersection de 2 hauteurs..
 	   .3 Résolution..
+           .4 Décomposer $\vect{AH}$ avec $\vect{OH}$ vu hypothèses..
+           .5 $\vect{OH}$ est 3x $\vect{OG}$ (hypothèse 1)..
 	   .4 $\vect{OG}$ par rapport aux sommets du $\Delta$..
-	   .4 $\vect{OH}$ est 3x $\vect{OG}$..
+           .5 $\vect{OH}$ par rapport aux sommets du $\Delta$..
+           .4 $\vect{AH}$ en fonction des sommets et ensuite du milieu de $[BC]$..
 	   .4 $AH$ hauteur issue de $A$ car.
-	   .5 Direction $\vect{AH}$ obtenue à partir $\vect{OH}$..
-	   .6 Décomposer avec $M_1$..
-	   .7 $\vect{AH}=2\ \vect{OM_1}$ car $\vect{M_1B}+\vect{M_1C}=0$..
-	   .7 Droite passant par centre et milieu corde,\\ \hspace{5mm} est $\bot$ corde..
-	   .8 $AH$ parallèle à $OM_1$ $\rightarrow AH\bot BC$.. 
-	   .9 $AH\bot BC$ et passe par $A$ $\rightarrow$ $AH$ hauteur..
+	   .5 $AH$ parallèle à $OM_1$ $\rightarrow AH\bot BC$..
+            .6 Droite passant par centre et milieu corde est\\ \hspace{5mm}$\bot$ corde..
+	   .5 $AH\bot BC$ et passe par $A$ $\rightarrow$ $AH$ hauteur..
 	   }
     }
     \frame{ 
@@ -232,8 +235,8 @@
 				  \coordinate[label=above right:$H$] () at (H);
 				  \fill(H) circle (0.025);
 				  %M_1,M_2,M_3
-				  %\coordinate (M_1) at ($(B)!.5!(C)$);
-				  %\draw (O) -- (M_1) node[above right] {$M_1$};
+				  \coordinate (M_1) at ($(B)!.5!(C)$);
+				  \draw (O) -- (M_1) node[above right] {$M_1$};
 				  
 				  \coordinate (M_2) at ($(A)!.5!(C)$);
 				  \draw (O) -- (M_2) node[above] {$M_2$};
@@ -247,25 +250,19 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $G$ centre de gravité,
-				    \item $H = O + 3\vect{OG}$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $H$ orthocentre.
+				    \these
 				    \end{tcolorbox}
 		
 		
 		\column{.58\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		De la même façon,\\ \medskip
+		De la même façon,
+                
 		\begin{align*}
-			    \vect{BH}= \vect{BO} + \vect{OH} =\ & \vect{OA}+\vect{OC},\ (eq.\ 2) \\[0.3em]
-							     =\ & \vect{OM_2} + \vect{M_2A} + \vect{OM_2} + \vect{M_2C}, \\[0.3em]
+			    \vect{BH}= \vect{BO} + \vect{OH} =\ & \vect{OA}+\vect{OC}, \\[0.3em]
 							     =\ & 2\ \vect{OM_2}. \text{ ($M_2$ milieu de $[AC]$)}
 			    \end{align*} 
 			\flushleft
@@ -283,19 +280,37 @@
 		
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
-	   \end{columns} 
-	   \notedir{%
+              \end{columns}
+                 \notedir{%
 	   .1 Prouver thèse.
-	   .2 Suite $H$ orthocentre.
-	   .3 $BH$ hauteur issue de $B$ car.
-	   .4 Direction $\vect{BH}$ obtenue à partir $\vect{OH}$..
-	   .5 Décomposer avec $M_2$..
-	   .6 $\vect{BH}=2\ \vect{OM_2}$ car $\vect{M_2A}+\vect{M_2C}=0$..
-	   .6 Droite passant par centre et milieu corde,\\ \hspace{5mm} est $\bot$ corde..
-	   .7 $BH$ parallèle à $OM_2$ $\rightarrow BH\bot AC$.. 
-	   .8 $BH\bot AC$ et passe par $B$ $\rightarrow$ $BH$ hauteur..
-	   .3 $H$ appartient aux hauteurs $AH,BH$ $\rightarrow$ $H$ orthocentre..
-	   }
+	   .2 $H$ orthocentre.
+	   .3 Élément de théorie.
+	   .4 Orthocentre est intersection de 2 hauteurs..
+	   .3 Résolution..
+           .4 Décomposer $\vect{BH}$ avec $\vect{OH}$ vu hypothèses..
+           .5 $\vect{OH}$ par rapport aux sommets du $\Delta$..
+           .4 $\vect{BH}$ en fonction des sommets et ensuite du milieu de $[AC]$..
+	   .4 $BH$ hauteur issue de $B$ car.
+	   .5 $BH$ parallèle à $OM_2$ $\rightarrow BH\bot AC$..
+            .6 Droite passant par centre et milieu corde est\\ \hspace{5mm}$\bot$ corde..
+            .5 $BH\bot AC$ et passe par $B$ $\rightarrow$ $BH$ hauteur..
+            .3 $H$ appartient aux hauteurs $AH,BH$ $\rightarrow$ $H$ orthocentre..
+          }
     }
-  
+   \frame{\enonce
+           \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item L'orthocentre est l'intersection des hauteurs d'un $\Delta$,
+	  \item Montrer qu'un point est l'orthocentre d'un $\Delta$ = montrer que les droites passant par ce point et chacun des sommets sont des hauteurs,
+            \item Montrer qu'une droite passant par un sommet est une hauteur = montrer qu'elle est $\bot$ au côté opposé,
+            \item Si $M$ est le milieu de $[AB]$ alors \\[0.3em]$\vect{OM}=\frac{1}{2}\vect{OA}+\frac{1}{2}\vect{OB} \rightarrow \vect{OA}+\vect{OB}= 2\vect{OM}$.
+            
+            \end{itemize}
+            }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

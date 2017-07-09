@@ -43,6 +43,24 @@
     },
   }
 
+  \def\enonce{ \frametitle{Exemple de démonstration.}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  On considère un cercle $\C$ de centre $O$ et de rayon $r$, et un point $P$. Une droite $d$ issue
+	  de $P$ coupe le cercle $\C$ en deux points $A$ et $B$. \\
+	  On appelle la puissance du point $P$ par rapport au cercle $\C$ le produit scalaire $$\vect{PA}\cdot\vect{PB}$$
+	  Propriété : La puissance de $P$ ne dépend pas l'inclinaison de $d$. \medskip
+          
+          \textit{Suggestion} : Utiliser le point $M$, milieu de $[AB]$.}
+        \def\hypotheses{  
+		      \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $AB$ corde de $\C$.
+		      \end{enumerate}
+        }
+        \def\these{ \underline{Thèse} \\
+		      \smallskip
+		      $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$.
+          }
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -50,12 +68,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Exemple de démonstration.}
-	  %\renewcommand{\theenumi}{\alph{enumi})}
-	  On considère un cercle $\C$ de centre $O$ et de rayon $r$, et un point $P$. Une droite $d$ issue
-	  de $P$ coupe le cercle $\C$ en deux points $A$ et $B$. \\
-	  On appelle la puissance du point $P$ par rapport au cercle $\C$ le produit scalaire $$\vect{PA}\cdot\vect{PB}$$
-	  Propriété : La puissance de $P$ ne dépend pas l'inclinaison de $d$.
+	 \enonce
 	  \vfill
 	  
 	  \pause
@@ -64,18 +77,12 @@
 	      \begin{columns}[t]
 		 
 		 \column{.5\textwidth}\centering
-		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $AB$ corde de $\C$.
-		      \end{itemize}
-
+		    
+\hypotheses
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$.
+		     \these
 		
 	      \end{columns}
 	  \end{tcolorbox} \bigskip
@@ -84,7 +91,8 @@
 	.1 Énoncé.
 	.2 Hypothèses (non visibles sur le dessin)..
 	.2 Thèse..
-	.2 Grand dessin.. 
+	.2 Grand dessin..
+        .2 Éventuellement laisser les élèves tenter l'exercice..
 	}
     } 
      
@@ -125,21 +133,19 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AB$ corde de $\C$. 
-				    \end{enumerate}
-							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$.
+				   \hypotheses	      
+				    \these
 				    \end{tcolorbox}
 		
 		
 		\column{.5\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		
+		\heart La droite passant par le centre d’un cercle et le milieu d’une des cordes est perpendiculaire à cette corde.
+                \medskip
+
+                $\rightarrow \Delta PMO, \Delta AMO$ sont rectangles.
+                
 		\begin{align*}
 		 \vect{PA}\cdot\vect{PB} &=\ (\vect{PM}+\vect{MA})\cdot(\vect{PM}+\vect{MB}), \\[0.5em]	
 					 &=\ (\vect{PM}+\vect{MA})\cdot(\vect{PM}-\vect{MA}), \\[0.5em]	
@@ -163,7 +169,22 @@
 	   .4 Exprimer $|\vect{MA}|^2$ avec Pythagore ds.~$\Delta AMO$..
 	   .4 $\vect{PA}\cdot\vect{PB}$ indépendant de $A,B$..
 	   }
-    }
+         }
+               \frame{\enonce
+           \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer qu’une expression vectorielle est indépendante d’un point  = décomposer vecteurs pour n’en avoir plus qu’un qui contient ce
+point.
+	  \item $|\vect{AB}|^2=\vect{AB}\cdot\vect{AB}$.
+          \item Penser à pythagore si $\Delta$ rectangle.            
+            \end{itemize}
+            }
 	  
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
