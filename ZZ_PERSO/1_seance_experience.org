@@ -1,5 +1,5 @@
 
-* Bien expliquer que produit scalaire d'un vecteur par ce meme vecteur est le carré de la longueur de ce vecteur et inversément.
+* DONE Bien expliquer que produit scalaire d'un vecteur par ce meme vecteur est le carré de la longueur de ce vecteur et inversément.
 
 * Pas eu le temps pour
 
@@ -9,6 +9,5 @@
 
 ** ex droite euler
 
-* 2015 Juillet q2 : GB perpendiculaire à d, pas à BC.
 
-* 2001 Sept q3 : à la 2eme these, on utilise l'expression de v indépendante de M.
+* DONE 2001 Sept q3 : à la 2eme these, on utilise l'expression de v indépendante de M.

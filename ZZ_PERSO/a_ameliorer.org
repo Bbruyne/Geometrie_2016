@@ -1,7 +1,7 @@
 
 * Décider de mettre \ni ou non lors de la définition d'une droite
 
-* Ne pas copier-coller encadrer
+* DONE Ne pas copier-coller encadrer
 
 * 2002 Juillet Q1 these c : plus facile en disant angle inscrit = angle tangentiel interceptant meme arc
 ** Angle ACA' vaut angle AA'O

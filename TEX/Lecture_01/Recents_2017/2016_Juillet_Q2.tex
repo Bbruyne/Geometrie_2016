@@ -1,0 +1,238 @@
+\documentclass[10pt]{beamer}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pgfpages}
+\usepackage{dirtree}
+\setbeamertemplate{note page}[plain]
+\AtEndNote{\vfill \begin{center} mm:hh \end{center}}
+\newcommand{\notedir}[1] {
+  \note{\dirtree{#1}}}
+\def \ion {$^{\circ}$ }
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\def \heart {\textcolor{blue}{$\heartsuit$} }
+\def \C {$\mathcal{C}$}
+
+
+
+\tcbset{%
+	basic/.style={colframe=black,
+		      colback=white,
+		      top= 0mm,
+		      bottom = 2mm,
+		      boxsep=0mm
+		      }
+}
+
+\def\enonce{	\frametitle{Q2 Juillet 2016.} 
+	  
+	  On donne une droite $d$ tangente à un cercle $\mathcal{C}$, et on considère le lieu
+	  des points dont la distance à $\mathcal{C}$ est égale à la distance à $d$. On demande
+	  de caractériser ce lieu à l’aide d’équations cartésiennes, de préciser la
+	  nature de celui-ci, et de le représenter graphiquement.
+}
+\def\procede{ \underline{Procédé} \\
+		      \begin{itemize}
+		       \item Poser un repère orthonormé,
+		       \item Exprimer la condition pour qu'un point $P$ appartienne au lieu. 		            
+		      \end{itemize}
+		   	 $\mathcal{D}(P,d) = \mathcal{D}(P,\mathcal{C})$.
+}
+
+\begin{document}  
+ \beamertemplatenavigationsymbolsempty
+ 
+  \frame{ % énoncé ex2
+	
+\enonce
+	  	  
+	  \vfill
+	  
+	  \pause	  
+	  % Conditions
+	  \begin{tcolorbox}[basic] 
+		
+		      \centering \smallskip
+		     	  \procede
+	  \end{tcolorbox}
+	  	  
+	 \notedir{%
+	.1 Énoncé.
+	.2 Choix : géométrie analytique.
+	.3 Énoncé évoque équations cartésiennes..
+	.4 Procédé : reformuler ce qu'il faut déterminer..
+	.5 Lieu = ensemble de points vérifiant une condition..
+	}  
+	}
+	
+  \frame{ %Résolution
+	
+	\begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.67]
+					%\draw[help lines] (-3,-3) grid (3,3); 
+					
+					%AXES
+					\draw[->] (0,-3) -- (0,3) coordinate[label=below right:$y$]();
+					\draw[->] (-3,0) -- (3,0) coordinate[label=above left:$x$]();
+					%CERCLE									
+					\draw (0,0) coordinate[label=below left:$O$] circle (1.5cm);
+					\node[below left] (C) at (110:2) {$\mathcal{C}$};
+					\coordinate[label=above:$r$] () at (1.5/2,0);
+					%DROITE D
+					\draw (-3,-1.5) coordinate[label= below right:$d$]() -- (3,-1.5); 
+					%Point P
+					\coordinate[label=above:$P$] (P) at (-30:2);
+                                        % Projection P sur d
+                                        \coordinate[label=below:$P_{\bot}$] (P') at (1.73,-1.5);
+                                        
+                                        % Projection P sur C
+                                        \coordinate[label=above left:$P_\mathcal{C}$] (Pc) at (-30:1.5);
+                                        
+					\fill (P) circle (0.05cm);
+                                        \fill (P') circle (0.05cm);
+                                         \fill (Pc) circle (0.05cm);
+
+                                         \draw[dotted] (P) -- (P');
+                                           \draw[dotted] (P) -- (Pc);
+
+				
+				  \end{tikzpicture}
+				  \end{figure}
+			\begin{tcolorbox}[basic]
+			\centering \smallskip
+		      \procede	  
+			\end{tcolorbox}
+			
+		\column{.5\textwidth}\centering
+		
+		\underline{Résolution}\\
+		Soit un repère orthonormé $R=(O,X,Y)$ avec :
+		\begin{itemize}
+		 \item[$\bullet$] $P=(x,y)$,
+		 \item[$\bullet$] $\mathcal{C} \equiv x^2 + y ^2 = r^2$,
+		 \item[$\bullet$] $d \equiv y = -r$.
+		\end{itemize} \medskip
+		
+		\begin{enumerate}\item
+		  \begin{align*}\mathcal{D}(P,d) =& \mathcal{D}(P,P_\bot)\\
+                    =& \sqrt{(y-(-r))^2 + (x-x)^2}\\
+                    =& |y+r|\end{align*}
+                \item
+                  \begin{align*}\mathcal{D}(P,\mathcal{C})=&\mathcal{D}(P,P_\mathcal{C}) \\=&|\mathcal{D}(O,P) -\mathcal{D}(O,P_\mathcal{C})|  \\=& |\sqrt{(x-0)^2+(y-0)^2}-r|  \\=& |\sqrt{x^2+y^2}-r|\end{align*}
+		\end{enumerate}
+		
+		
+	\end{columns}
+	\notedir{%
+	.1 Déterminer le lieu.
+	.2 Représenter les éléments dans repère.
+	.3 $P$: point vérifiant la condition du lieu..
+	.3 $\mathcal{C}$: cercle de rayon r centré sur $O$..
+	.3 $d$: tangente au cercle..	
+	.2 Résolution.
+	.3 Condition: $\mathcal{D}(P,d) = \mathcal{D}(P,\mathcal{C})$.
+	.4 $\mathcal{D}$ point-droite = $\mathcal{D}$ entre point et sa projection.. 
+	.4 $\mathcal{D}$ point-cercle = $\mathcal{D}$ point et centre - rayon..
+	}
+	}
+  
+  \frame{%Résolution
+	 \centering
+	 \bigskip
+	 $|y+r| = |\sqrt{x^2+y^2}-r|$ \medskip
+	 \begin{columns}[t]
+	  \column{.5\textwidth}\centering
+	  Pour :
+	  \begin{itemize}
+	   \item $P$ au-dessus de $d$ et $P$ à l'extérieur du cercle, ou
+	   \item $P$ en dessous de $d$ et $P$ à l'intérieur du cercle (imp.).
+	  \end{itemize}
+	  \begin{align*}
+	  y+r &= \sqrt{x^2+y^2}-r \\
+	  y&=\dfrac{x^2}{4r}-r\quad (r\neq0).\\
+	  \end{align*}
+	  
+
+	  \column{.5\textwidth}\centering
+	  Pour :
+	  \begin{itemize}
+	   \item $P$ au-dessus de $d$ et $P$ à l'intérieur du cercle, ou
+	   \item $P$ en dessous de $d$ et $P$ à l'extérieur du cercle.
+	  \end{itemize}
+	  \begin{align*}
+	  y+r =& -(\sqrt{x^2+y^2}-r) \\
+	  y   =& -\sqrt{x^2+y^2} \quad (\rightarrow y\leq0) \\
+	  x   =& 0\quad  (\text{ et } y\leq0). \\
+	  \end{align*}
+	 \end{columns}
+	
+	\vspace{-5mm}
+	\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.58]
+					%\draw[help lines] (-3,-3) grid (3,3); 
+					
+					%AXES
+					\draw[->] (0,-3) -- (0,3) coordinate[label=below right:$y$]();
+					\draw[->] (-5,0) -- (5,0) coordinate[label=above left:$x$]();
+					%CERCLE									
+					\draw (0,0) circle (1.5cm);
+					\node[below left] (C) at (110:2) {$\mathcal{C}$};
+					\coordinate[label=above:$r$] () at (1.5/2,0);
+					%DROITE D
+					\draw (-3,-1.5) coordinate[label= below right:$d$]() -- (3,-1.5); 
+					%LIEU
+					\fill (0,0) circle (0.1);
+					\draw[very thick] (0,0) -- (0,-3);
+					\draw[very thick] (-5,2.66667) parabola bend(0,-1.5) (5,2.66667);
+					
+				  \end{tikzpicture}
+				  \end{figure}
+
+	
+                                  \notedir{%
+	.1 Égaliser les deux distances $\rightarrow$ étude du signe..
+	.2 Les membres sont de même signe.
+	.3 Tous les 2 positifs.
+	.4 $P$ au dessus de $d$ et à l'ext.~cercle..
+	.3 Tous les 2 négatifs.
+	.4 $P$ en dessous de $d$ et à l'int.~cercle..
+	.3 On trouve parabole comprise dans les régions ci-dessus..
+	.2 Les membres sont de signes différents.
+	.3 1\ier{} positif et 2\ieme{} négatif.
+	.4 $P$ au dessus de $d$ et à l'int.~cercle..
+	.3 1\ier{} négatif et 2\ieme{} positif.
+	.4 $P$ en dessus de $d$ et à l'ext.~cercle..
+	.3 On trouve $x=0$ à restreindre dans les régions ci-dessus..
+	.2 Dessin du lieu..
+	}
+      }
+
+                          \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item La distance entre un point et une courbe est la distance entre ce point et sa projection sur la courbe.
+          \item $\sqrt{x^2}=|x|$.
+          \item Étudier le signe lorsqu'on retire valeur absolue d'une égalité.
+            \item Avant l'élévation au carré d'une égalité, noter les contraintes de signe imposées par la racine.
+          \end{itemize}
+    }
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
