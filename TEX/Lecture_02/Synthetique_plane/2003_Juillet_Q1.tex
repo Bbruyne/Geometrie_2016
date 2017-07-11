@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -37,6 +38,31 @@
     },
   }
 
+    \def\enonce{ \frametitle{Q1 Juillet 2003.}
+	  
+	  On considère un triangle $ABC$ dont les angles sont inférieurs à $120^{\circ}$. On construit
+	  les triangles équilatéraux $ABC'$, $BCA'$ et $ACB'$ extérieurs à $ABC$. On note $I$
+	  l’intersection de $AA'$ et $CC'$.
+	  \begin{enumerate}
+            \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Démontrer que $|AA'|=|BB'| = |CC'|$.
+	   \item Démontrer que $\widehat{BIC}=\widehat{BIA}=120^{\circ}$.
+	   \item Démontrer que les droites $AA'$, $BB'$ et $CC'$ sont concourantes.
+	  \end{enumerate}
+  }
+  \def\hypotheses{\underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $\Delta A'BC,\Delta AB'C,\Delta ABC'$ équilatéraux.
+		      \end{enumerate}
+  }
+  \def\these{\underline{Thèse} 
+    \begin{enumerate}
+      \renewcommand{\theenumi}{\alph{enumi})}
+		       \item $|AA'|=|BB'| = |CC'|$,
+		       \item $\widehat{BIC}=\widehat{BIA}=120^{\circ}$,
+		       \item $AA',BB',CC'$ concourantes.
+		      \end{enumerate}
+}
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -44,16 +70,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q1 Juillet 2003.}
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  On considère un triangle $ABC$ dont les angles sont inférieurs à $120^{\circ}$. On construit
-	  les triangles équilatéraux $ABC'$, $BCA'$ et $ACB'$ extérieurs à $ABC$. On note $I$
-	  l’intersection de $AA'$ et $CC'$.
-	  \begin{enumerate}
-	   \item Démontrer que $|AA'|=|BB'| = |CC'|$.
-	   \item Démontrer que $\widehat{BIC}=\widehat{BIA}=120^{\circ}$.
-	   \item Démontrer que les droites $AA'$, $BB'$ et $CC'$ sont concourantes.
-	  \end{enumerate}
+	 \enonce
 
 	  \vfill
 	  
@@ -64,21 +81,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $\Delta A'BC,\Delta AB'C,\Delta ABC'$ équilatéraux.
-		      \end{itemize}
+		      \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      \begin{enumerate}
-		       \item $|AA'|=|BB'| = |CC'|$,
-		       \item $\widehat{BIC}=\widehat{BIA}=120^{\circ}$,
-		       \item $AA',BB',CC'$ concourantes.
-		      \end{enumerate}
+		      \these
 
 		
 	      \end{columns}
@@ -133,18 +141,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $\Delta A'BC,\Delta AB'C,\Delta ABC'$ équilatéraux.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse}
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $|AA'|=|BB'| = |CC'|$,
-				    \item $\widehat{BIC}=\widehat{BIA}=120\deg$,
-				    \item $AA',BB',CC'$ concourantes.
-				    \end{enumerate}
+				   \these
 
 				    \end{tcolorbox}
 		
@@ -153,15 +152,17 @@
 		
 		\underline{Résolution}\\ \flushleft
 		
-		\onslide<+->\heart Deux $\Delta$ sont isométriques lorsqu'ils ont un angle de même mesure compris entre deux côtés de mêmes longueurs. \\
-		
-		 \begin{align*}
-			    |A'C| =& |BC|, \\
-			    |AC| =& |B'C|, \text{ ($\Delta$ équilatéraux)}\\		
-			    \alpha =& \ 60\deg + \widehat{BCA} = \alpha ', \\
-		\end{align*}
+		\onslide<+->\heart Deux $\Delta$ sont isométriques lorsqu'ils ont un angle de même mesure compris entre deux côtés de mêmes longueurs. \\ \medskip
+                
+                $\Delta AA'C, \Delta BCB'$ isométriques car: \smallskip
+                
+		 $\begin{cases}
+			    |A'C| = |BC|,(\textcolor{blue}{1.}) \\
+			    |AC| = |B'C|, (\textcolor{blue}{1.})\\		
+			    \alpha = \ 60\deg + \widehat{BCA} = \alpha '. (\textcolor{blue}{1.})\\
+		\end{cases}$
 				
-		$\Delta AA'C, \Delta BCB'$ isométriques.\smallskip
+	\medskip
 		
 		$\rightarrow|AA'|=|BB'|$. \\ \bigskip
 		
@@ -251,18 +252,8 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $\Delta A'BC,\Delta AB'C,\Delta ABC'$ equilatéraux.
-				    \end{enumerate}
-							      
-				    \underline{Thèse}
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $|AA'|=|BB'| = |CC'|$,
-				    \item $\widehat{BIC}=\widehat{BIA}=120\deg$,
-				    \item $AA',BB',CC'$ concourantes.
-				    \end{enumerate}
+				    \hypotheses							      
+				    \these
 
 				    \end{tcolorbox}
 		
@@ -270,19 +261,28 @@
 		\column{.538\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		\onslide<+->Par a), \\ \smallskip 
-		$\Delta BCC', \Delta ABA'$ isométriques, \\ \smallskip
+		\onslide<+->
+	\heart Un quadrilatère convexe inscrit dans un cercle a ses côtés opposés supplémentaires. \\ \medskip
+
+Si $\gamma = \gamma '$, il existe un cercle dont $[BI]$ est une corde où $\gamma,\gamma '$ angles inscrits et $BIAC'$ est inscrit. \\ \medskip
+        
+                Par \textcolor{blue}{a)}: 
+		$\Delta BCC', \Delta ABA'$ isométriques. \\ \smallskip
 		$\rightarrow \gamma = \gamma '$.  \\ \medskip
-		Il existe un cercle dont $[BI]$ est une corde et $\gamma,\gamma '$ angles inscrits. \\
-		$\rightarrow$ $A,C',B,I$ cocycliques. \\ \medskip
 		
-		\heart Un quadrilatère convexe inscrit dans un cercle a ses côtés opposés supplémentaires. \\ \medskip
-		$\rightarrow$ $\widehat{BIA}=120\deg$. \\ \bigskip
-		
+		$\rightarrow$ quadrilatère $BIAC'$ inscrit.
+                \vspace{-3mm}
+                
+                \begin{align*}
+                  \rightarrow \widehat{BIA}=&180\deg - \widehat{AC'B},\\
+                  =&180\deg - 60\deg, (\textcolor{blue}{1.}) \\
+                                            =&  120\deg.\end{align*}
+
+                                 \smallskip         
 		\onslide<+-> De la même façon,
-		$\delta = \delta '$. ($\Delta BCC', \Delta ABA'$ isométriques) \\ \medskip
-		$\rightarrow$ $A',B,I,C$ cocycliques. \\ \medskip
-		$\rightarrow$ $\widehat{BIC}=120\deg$. \hfill $\qed(b)$
+		$\delta = \delta '$. ($\Delta BCC', \Delta ABA'$ isométriques) \\ \smallskip
+		$\rightarrow$ quadrilatère $CIBA'$ inscrit. \\ \medskip
+		$\rightarrow$ $\widehat{BIC}= 120\deg$. \hfill $\qed(b)$
 		
 		
 	   \end{columns}   
@@ -295,7 +295,7 @@
 	   .4 De a) $\Delta BCC', \Delta ABA'$ isométriques.
 	   .5 $\gamma = \gamma '$..
 	   .6 Il existe cercle où $[BI]$ est corde et passant\\ \hspace{5mm} par $C,A'$ d'où on voit $[BI]$ du même angle..
-	   .7 Quadrilatère $AC'BI$ est inscriptible dans\\ \hspace{5mm} cercle..
+	   .7 Quadrilatère $BIAC'$ est inscriptible dans\\ \hspace{5mm} cercle..
 	   .8 $\widehat{BIA}$ est supplémentaire d'un angle de $60\deg$ $\rightarrow$ $\widehat{BIA}=120\deg$..
 	   .4 De la même façon, quadrilatère $A'CIB$ inscriptible dans cercle et $\widehat{BIC}=120\deg$..
 	   }
@@ -349,18 +349,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $\Delta A'BC,\Delta AB'C,\Delta ABC'$ equilatéraux.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse}
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $|AA'|=|BB'| = |CC'|$,
-				    \item $\widehat{BIC}=\widehat{BIA}=120\deg$,
-				    \item $AA',BB',CC'$ concourantes.
-				    \end{enumerate}
+				    \these
 
 				    \end{tcolorbox}
 		
@@ -380,7 +371,8 @@
 		Dans $\Delta IB'C$, \\ \smallskip
 		$\zeta = 180\deg - \eta ' - 60\deg - \theta$. \\ \bigskip
 		
-		$\epsilon = \zeta = 60\deg\rightarrow \widehat{BIB'}=180\deg$. \\ \bigskip 
+		$\epsilon = \zeta = 60\deg\rightarrow \widehat{BIB'}=180\deg$. \\ \medskip
+                $\rightarrow$ $I$  est sur $BB'$.\\
 		$AA',BB',CC'$ concourantes. \hfill $\qed(c)$
 		
 		
@@ -404,6 +396,23 @@
 	   .4 $\widehat{BIB'}=120 + \epsilon = 180\deg$..
 	   .5 $AA',BB',CC'$ concourantes..
 	   }
+         }
+                    \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item  Montrer l'égalité de longueur = isométrie de $\Delta$ ?
+          \item Un quadrilatère convexe inscrit dans un cercle a ses côtés opposés supplémentaires.
+          \item Montrer que 3 droites sont concourantes = montrer que le point d'$\cap$ de deux de celles-ci se trouve sur la troisième.
+            \item Si thèse comporte plusieurs éléments, utiliser ceux déjà démontrés.
+          \end{itemize}
     }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

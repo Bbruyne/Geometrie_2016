@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -36,14 +37,7 @@
     },
   }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q1 Juillet 2001.}
+  \def\enonce{ \frametitle{Q1 Juillet 2001.}
 	  %\renewcommand{\theenumi}{\alph{enumi})}
 	   Soient $ABC$ un triangle et $\C$ son cercle circonscrit. \\
 	  On note $A'$ le point d’intersection de $\C$ avec la médiatrice du segment $[B, C]$ qui
@@ -52,6 +46,27 @@
 	  segment $[A, C]$, $C'$ sur $\C$ et la médiatrice du segment $[B, C]$, $B$ et $B'$ de part et
 	  d’autre de $AC$, $C$ et $C'$ de part et d’autre de $AB$. \\
 	  Prouver que les droites $AA'$ , $BB'$ et $CC'$ sont concourantes.
+  }
+  \def\hypotheses{  \underline{Hypothèses} 
+				    \begin{enumerate}
+				    \item $A'A_1$ médiatrice de $BC$, \\
+					  $B'B_1$ médiatrice de $AC$, \\
+					  $C'C_1$ médiatrice de $AB$. \\
+				    \item $\C$ cercle circonscrit à $ABC$.
+				    \end{enumerate}
+  }
+  \def\these{  \underline{Thèse} \\
+		      \smallskip
+		      $AA'$ , $BB'$ et $CC'$ concourantes.
+    }
+    
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  \enonce
+	 
 	  \vfill
 	  
 	  \pause
@@ -61,20 +76,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $A'A_1$ médiatrice de $BC$, \\
-			    $B'B_1$ médiatrice de $AC$, \\
-			    $C'C_1$ médiatrice de $AB$. \\
-		      \item $\C$ cercle circonscrit à $ABC$.
-		      \end{itemize}
+		      \hypotheses
 		      {\small $A_1,B_1,C_1$ pied des médiatrices.}
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $AA'$ , $BB'$ et $CC'$ concourantes.
+		   \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -121,13 +128,13 @@
 			          
 			          \draw[visible on=<{1,2}>] (O) node[left] {$O$} -- (A');
 			          \draw[visible on=<{1,2}>] (A') node [right]{$A'$};
-			          \draw[visible on=<{1,3}>] (O) -- (B');
-			          \draw[visible on=<{1,3}>] (B') node [below left]{$B'$};
-			          \draw[visible on=<{1,4}>] (O) -- (C');	
-			          \draw[visible on=<{1,4}>] (C') node [above]{$C'$};
-			          \draw[visible on=<{1,2}>] (A) -- (A');
-			          \draw[visible on=<{1,3}>] (B) -- (B');
-			          \draw[visible on=<{1,4}>] (C) -- (C');			         
+			          \draw[visible on=<{1}>] (O) -- (B');
+			          \draw[visible on=<{1}>] (B') node [below left]{$B'$};
+			          \draw[visible on=<{1}>] (O) -- (C');	
+			          \draw[visible on=<{1}>] (C') node [above]{$C'$};
+			          \draw[thick,visible on=<{1,2}>] (A) -- (A');
+			          \draw[thick,visible on=<{1}>] (B) -- (B');
+			          \draw[thick,visible on=<{1}>] (C) -- (C');			         
 				  
 			       
 			          \draw[visible on=<2>] (O) -- (A_1) node[below right,xshift=-0.8mm] {$A_1$};
@@ -138,63 +145,128 @@
 				  \draw[visible on=<2>] (0.6,0) arc[radius = 6mm, start angle= 0, end angle= -45] node [right,pos=0.5]{$\alpha '$};
 				  \pic [draw, visible on=<2>,"$\beta '$", angle eccentricity=2.2] {angle = C--A--A'};
 				  \pic [draw, visible on=<2>,"$\beta$", angle eccentricity=2.2] {angle = A'--A--B};
-			          
-			          \draw[visible on=<3>] (O) -- (B_1) node[ below left,xshift=-2mm,yshift=-0.8mm] {$B_1$};
-			          \draw[visible on=<3>] (O) node[above] {$O$} -- (A);
-			          \draw[visible on=<3>] (O) -- (C);
-			          %angles
-			          \pic [draw, visible on=<3>,left,"$\alpha '$", angle eccentricity=1.1] {angle = A--O--B'};
-				  \pic [draw, visible on=<3>,below,"$\alpha$", angle eccentricity=1] {angle = B'--O--C};
-				  \pic [draw, visible on=<3>,"$\beta '$", angle eccentricity=1.7] {angle = A--B--B'};
-				  \pic [draw, visible on=<3>,"$\beta$", angle eccentricity=1.7] {angle = B'--B--C};
-				  
-				  \draw[visible on=<4>] (O) -- (C_1) node[ above left,xshift=-2mm,yshift=-0.8mm] {$C_1$};
-			          \draw[visible on=<4>] (O) node[below right] {$O$} -- (A);
-			          \draw[visible on=<4>] (O) -- (B);
-			          %angles
-			          \pic [draw, visible on=<4>,above left,"$\alpha '$", angle eccentricity=0.8] {angle = C'--O--A};
-				  \pic [draw, visible on=<4>,above right,"$\alpha$", angle eccentricity=1] {angle = B--O--C'};
-				  \pic [draw, visible on=<4>,"$\beta '$", angle eccentricity=1.7] {angle = C'--C--A};
-				  \pic [draw, visible on=<4>,"$\beta$", angle eccentricity=1.7] {angle = B--C--C'};
 				  \end{tikzpicture}
 				  \end{figure}
 			
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $A'A_1$ médiatrice de $BC$, \\
-					  $B'B_1$ médiatrice de $AC$, \\
-					  $C'C_1$ médiatrice de $AB$. \\
-				    \item $\C$ cercle circonscrit à $ABC$.
-				    \end{enumerate}
+				  \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $AA',BB',CC'$ concourantes.
+				    \these
 				    \end{tcolorbox}
 		
 		
-		\column{.55\textwidth}\centering
+		\column{.59\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
+
+                
+		\onslide<+->	\heart Les bissectrices d'un $\Delta$ sont concourantes.\\
+                $\rightarrow$ Montrer que $AA',BB',CC'$ sont bissectrices de $\Delta ABC$.\\[1em]
+                \heart  Les médiatrices d'un triangle se coupent au centre du cercle circonscrit. \\$\rightarrow O$ est le centre de $\mathcal{C}$. \\[1em]
+		\onslide<+-> \heart Un angle inscrit mesure la moitié de l'angle au centre interceptant le même arc.
+                 $$  \beta  = \frac{\alpha }{2} \quad \beta ' = \frac{\alpha '}{2}$$\smallskip
+                
+                 Or  $\Delta OBA_1,\Delta OA_1C$ isométriques car :
+$\begin{cases} [OA_1] \text{ en commun}, \\ |BA_1| = |A_1C|, (\textcolor{blue}{1.}) \\ \widehat{OA_1B}=\widehat{OA_1C}=90^\circ.  (\textcolor{blue}{1.})\end{cases}\rightarrow \alpha = \alpha '$
+                 \smallskip
+
+           	
+			    $\rightarrow \beta=\beta '\rightarrow AA'$ bissectrice de $ABC$ de $A$. 
+
+   
+	   \end{columns}
+    \notedir{%
+	   .1 Prouver thèse.
+	   .2 $AA',BB',CC'$ concourantes.
+	   .3 Élément de théorie.
+	   .4 Les bissectrices d'un $\Delta$ sont concourantes (Les 3 droites ressemblent à bissectrices)..
+	   .3 Résolution..
+           .4 $O$ centre de $\mathcal{C}$ car médiatrices $\nmid$ au centre de $\mathcal{C}$..
+	   .4 $AA'$ bissectrice issue de $A$ car $\beta = \beta '$ vu que.
+            .5 L'angle au centre vaut double de celui inscrit et.
+	   .6 $\alpha = \alpha '$ car $\Delta OA_1C, \Delta OA_1B$ isométriques (2 côtés et un angle égaux)..
+	   }
+         }
+             \frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.52\textwidth}\centering 
 		
-		\onslide<+->\heart Les médiatrices d'un triangle se coupent au centre du cercle circonscrit. \\
-		\onslide<+->
-			    \begin{enumerate}
-			    \item $\alpha = \alpha '$ \\($\Delta OBA_1,\Delta OA_1C$ isométriques),
-			    \end{enumerate}	
-			    \heart Un angle au centre mesure le double d'un angle inscrit interceptant le même arc.
-			    \begin{enumerate}
-			    \item[2.] $\alpha ' = 2\beta ',\alpha = 2\beta$,
-			    \end{enumerate}	
-			    $\rightarrow \beta=\beta '$. \\ \smallskip
-			    $ie:$ $AA'$ bissectrice de $ABC$ issue de $A$. \\ \smallskip
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.85]
+			          %projection ($(X)!(B')!(B)$)
+			          %nommer chemin 'name path
+			          %intersection \path [name intersections={of=d and gb,by=G}];
+			          
+			          %\draw[help lines] (-3,-3) grid (3,3);
+			          %Cercle et triangle
+			          \coordinate[](O) at (0,0);
+			          \coordinate[label=above:$B$](B) at (45:2);
+			          \coordinate[label=below:$C$](C) at (-45:2);
+			          \coordinate[label=above left:$A$](A) at (160:2);			          
+			          \draw[name path=cercle] (O) circle (2);
+			          \draw (A) -- (B) -- (C) -- cycle;
+			          
+			          %A',A_1,B',B_1,C',C_1
+				  \coordinate (A') at (0:2);
+			          \coordinate (A_1) at (1.414,0);
+			          \coordinate (C_1) at ($0.5*(A)+0.5*(B)$);
+			          \path[name path=OC_1] (O) -- ($2*(C_1)$);
+			          \path [name intersections={of=OC_1 and cercle,by=C'}];
+			          \coordinate (B_1) at ($0.5*(A)+0.5*(C)$);
+			          \path[name path=OB_1] (O) -- ($5*(B_1)$);
+			          \path [name intersections={of=OB_1 and cercle,by=B'}];
+			          			          \draw[visible on=<{1}>] (O) -- (B');
+			          \draw[visible on=<{1}>] (B') node [below left]{$B'$};
+			          \draw[visible on=<{2}>] (O) -- (C');	
+			          \draw[visible on=<{2}>] (C') node [above]{$C'$};
+			          \draw[thick,visible on=<{1}>] (B) -- (B');
+			          \draw[thick,visible on=<{2}>] (C) -- (C');			         
+				 
+			          
+			          \draw[visible on=<1>] (O) -- (B_1) node[ below left,xshift=-2mm,yshift=-0.8mm] {$B_1$};
+			          \draw[visible on=<1>] (O) node[above] {$O$} -- (A);
+			          \draw[visible on=<1>] (O) -- (C);
+			          %angles
+			          \pic [draw, visible on=<1>,left,"$\alpha '$", angle eccentricity=1.1] {angle = A--O--B'};
+				  \pic [draw, visible on=<1>,below,"$\alpha$", angle eccentricity=1] {angle = B'--O--C};
+				  \pic [draw, visible on=<1>,"$\beta '$", angle eccentricity=1.7] {angle = A--B--B'};
+				  \pic [draw, visible on=<1>,"$\beta$", angle eccentricity=1.7] {angle = B'--B--C};
+				  
+				  \draw[visible on=<2>] (O) -- (C_1) node[ above left,xshift=-2mm,yshift=-0.8mm] {$C_1$};
+			          \draw[visible on=<2>] (O) node[below right] {$O$} -- (A);
+			          \draw[visible on=<2>] (O) -- (B);
+			          %angles
+			          \pic [draw, visible on=<2>,above left,"$\alpha '$", angle eccentricity=0.8] {angle = C'--O--A};
+				  \pic [draw, visible on=<2>,above right,"$\alpha$", angle eccentricity=1] {angle = B--O--C'};
+				  \pic [draw, visible on=<2>,"$\beta '$", angle eccentricity=1.7] {angle = C'--C--A};
+				  \pic [draw, visible on=<2>,"$\beta$", angle eccentricity=1.7] {angle = B--C--C'};
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				      
+				    \smallskip
+				  \hypotheses
+							      
+				    \these
+				    \end{tcolorbox}
+		
+		
+		\column{.59\textwidth}\centering
+		
+		\underline{Résolution}\\ \flushleft
+
 		\onslide<+-> De la même façon : \\ \smallskip
 		$BB'$ bissectrice de $ABC$ issue de $B$. \\ \smallskip
 		\onslide<+->$CC'$ bissectrice de $ABC$ issue de $C$. \\ \smallskip
-		\heart Les bissectrices d'un $\Delta$ sont concourantes. \hfill $\qed$
+                $\rightarrow AA', BB', CC'$ bissectrices de $\Delta ABC$ donc elles sont concourantes.
+	 \hfill $\qed$
 		%\centering\noindent\rule{2cm}{0.4pt}
 	        %\hfill $\qed$
 
@@ -206,14 +278,34 @@
 	   .3 Élément de théorie.
 	   .4 Les bissectrices d'un $\Delta$ sont concourantes (Les 3 droites ressemblent à bissectrices)..
 	   .3 Résolution..
-	   .4 $AA'$ bissectrice issue de $A$ car.
-	   .5 $\alpha = \alpha '$ car $\Delta OA_1C, \Delta OA_1B$ isométriques (3 côtés \\ \hspace{5mm} égaux car médiatrices)..
-	   .6 L'angle au centre vaut double de celui inscrit..
-	   .7 $\beta = \beta '$ $\rightarrow$ $AA'$ bissectrice issue de $A$..
+           .4 $O$ centre de $\mathcal{C}$ car médiatrices $\nmid$ au centre de $\mathcal{C}$..
+	   .4 $AA'$ bissectrice issue de $A$ car $\beta = \beta '$ vu que.
+            .5 L'angle au centre vaut double de celui inscrit et.
+	   .6 $\alpha = \alpha '$ car $\Delta OA_1C, \Delta OA_1B$ isométriques (2 côtés et un angle égaux)..
 	   .4 De la même façon, $BB',CC'$ sont bissectrices..
 	   .4 Les bissectrices d'un $\Delta$ sont concourantes..
 	   }
+         }
+
+
+	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Médiatrice d'un segment = droite $\perp$ au segment passant par son milieu.
+            \item Montrer que 3 droites sont concourantes = est-ce des droites particulières d'un $\Delta$ ?
+	  \item  Les bissectrices d'un $\Delta$ sont concourantes.
+          \item  Les médiatrices d'un triangle se coupent au centre du cercle circonscrit.
+            \item Un angle inscrit mesure la moitié de l'angle au centre interceptant le même arc.
+          \end{itemize}
     }
-	  
+	
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

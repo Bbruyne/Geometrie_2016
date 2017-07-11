@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -35,6 +36,32 @@
       \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
     },
   }
+    \def\enonce{ \frametitle{Q1 Juillet 2002.}
+	  Soit $ABC$ un triangle non rectangle, $\C$ son cercle circonscrit et $A'$ le point de $\C$
+	  diamétralement opposé à $A$. La hauteur issue de $A$ coupe $A'B$ en $B'$, $A'C$ en $C'$
+	  et $\C$ en $A$ et $E$.
+	  \begin{enumerate}
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Montrer que le triangle $A'B'C'$ est semblable au triangle $ABC$.
+	   \item Prouver que les segments $[A',C]$ et $[B,E]$ ont même longueur.
+	   \item Démontrer que le centre du cercle circonscrit au triangle $A'B'C'$ est sur la
+		 tangente à $\C$ menée par $A'$.
+	  \end{enumerate}
+  }
+  \def\hypotheses{ \underline{Hypothèses} 
+				    \begin{enumerate}
+				    \item $AA'$ diamètre de $\C$,
+				    \item $AE$ hauteur de $ABC$.
+				    \end{enumerate}
+  }
+  \def\these{ \underline{Thèse}
+		      \begin{enumerate}
+                        \renewcommand{\theenumi}{\alph{enumi})}
+		       \item $\Delta A'B'C',\Delta ABC$ semblables,
+		       \item $|A'C| = |BE|$,
+		       \item $O'A'\bot AA'$.		  
+		      \end{enumerate}
+}
 
     
 \begin{document}  
@@ -43,17 +70,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q1 Juillet 2002.}
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  Soit $ABC$ un triangle non rectangle, $\C$ son cercle circonscrit et $A'$ le point de $\C$
-	  diamétralement opposé à $A$. La hauteur issue de $A$ coupe $A'B$ en $B'$, $A'C$ en $C'$
-	  et $\C$ en $A$ et $E$.
-	  \begin{enumerate}
-	   \item Montrer que le triangle $A'B'C'$ est semblable au triangle $ABC$.
-	   \item Prouver que les segments $[A',C]$ et $[B,E]$ ont même longueur.
-	   \item Démontrer que le centre du cercle circonscrit au triangle $A'B'C'$ est sur la
-		 tangente à $\C$ menée par $A'$.
-	  \end{enumerate}
+	 \enonce
 
 	  \vfill
 	  
@@ -64,23 +81,13 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $AA'$ diamètre de $\C$,
-		      \item $AE$ hauteur de $ABC$.
-		      \end{itemize}
+		      \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      \begin{enumerate}
-		       \item $\Delta A'B'C',\Delta ABC$ semblables,
-		       \item $|A'C| = |BE|$,
-		       \item $O'A'\bot AA'$.		  
-		      \end{enumerate}
-		      {\small $O'$ centre du cercle circonscrit à $A'B'C'$.}
+		     \these
+		      {\small $O'$ centre du cercle circonscrit à $\Delta A'B'C'$.}
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -111,7 +118,8 @@
 				  %angle \pic [draw, visible on=<2>, above left,"$\beta$", angle eccentricity=1.5] {angle = A'--A--B};
 				  
 				  %CERCLE et triangle
-				  \coordinate (O) at (0,0);
+                                    \coordinate (O) at (0,0);
+                                    \fill (O) circle (0.05);
 				  \coordinate[label=above right:$B$] (B) at (70:2);
 				  \coordinate[label=below right:$C$] (C) at (-70:2);
 				  \coordinate[label=above left:$A$] (A) at (160:2);
@@ -135,6 +143,7 @@
 				  \draw [visible on=<{1,2}>,name path=A'B] (A') -- (B);
 				  \path [name intersections={of=A'B and AC',by=B'}];			  
 				  \draw [visible on=<{1,2}>] (A') -- (B') node[label=below left:$B'$,xshift=3mm,yshift=1.5mm]{};
+                                  \fill [visible on=<{1,2}>] (B') circle (0.04);
 				  %E%
 				  \path [name intersections={of=cercle and AC',by=E}];
 				  
@@ -159,41 +168,30 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AA'$ diamètre de $\C$,
-				    \item $AE$ hauteur de $ABC$.
-				    \end{enumerate}
+                                    
+				   \hypotheses
 							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $\Delta A'B'C',\Delta ABC$ semblables,
-				    \item $|A'C| = |BE|$,
-				    \item $O'A'\bot AA'$.	
-				    \end{enumerate}
+				   \these
 				    \end{tcolorbox}
 		
 		
-		\column{.54\textwidth}\centering
+		\column{.58\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		\onslide<+->\heart 2 $\Delta$ sont semblables si 2 angles de l'un sont égaux à deux angles de l'autre.
-		\begin{enumerate}
-		 \item $\alpha = \alpha '$, 
-		 \item $\beta = \beta '$. (angles à côtés $\bot$)
-		\end{enumerate}
+		\onslide<+->\heart 2 $\Delta$ sont semblables si 2 angles de l'un sont égaux à deux angles de l'autre.\\
+		 $\alpha = \alpha '$, (angles à côtés $\bot$, \textcolor{blue}{1.}) \\
+		 $\beta = \beta '$. (angles à côtés $\bot$,  \textcolor{blue}{2.})\smallskip
+                 
 		$\Delta A'B'C',\Delta ABC$ semblables.  \hfill $\qed(a)$
 		\centering\noindent\rule{2cm}{0.4pt}\flushleft
-			     \begin{align*}
-	                      \onslide<+->{\delta =&\ \delta ', \text{ (angles à côtés $\bot$)} \\
-					  \delta '=&\ \epsilon, \text{ (angles inscrits)} \\
-					  \delta =&\ \epsilon. \\ }
-			      \onslide<+->{\frac{\zeta}{2}=&\ \frac{\zeta '}{2}, \\
-					    \zeta=&\ \zeta ' \text{ $\rightarrow \Delta OBE,\Delta OCA'$ isométriques. } \\[1em]
-					    &|A'C| =\ |BE|. \\
-					    &\omit\hfill \qed(b)\\}	      
-	                     \end{align*}
+	                      \onslide<+->{$\begin{cases}\delta =\ \delta ', \text{ (angles à côtés $\bot$)} \\
+					  \delta '=\ \epsilon, \text{ (angles inscrits)} \\
+					\end{cases} \rightarrow \delta =\epsilon.$ \\ \smallskip}
+                                      \onslide<+->{Donc $\zeta=\zeta '$ ($\zeta=2\delta$, $\zeta '=2\epsilon$), \\ \bigskip
+                                        Ainsi  $\Delta OBE,\Delta OCA'$ isométriques. $\begin{cases} \zeta = \zeta ', \\ |OB| = |OA'|=r, \\ |OE|=|OC|=r.\end{cases}$
+					 \\  \medskip
+					    $\rightarrow |A'C| =\ |BE|$.
+					    \hfill $\qed(b)$\\}
 		
 
    
@@ -237,7 +235,8 @@
 				  %angle \pic [draw, visible on=<2>, above left,"$\beta$", angle eccentricity=1.5] {angle = A'--A--B};
 				  
 				  %CERCLE et triangle
-				  \coordinate (O) at (0,0);
+                                    \coordinate (O) at (0,0);
+                                    \fill (O) circle (0.05);
 				  \coordinate[label=above right:$B$] (B) at (70:2);
 				  \coordinate[label=below right:$C$] (C) at (-70:2);
 				  \coordinate[label=above left:$A$] (A) at (160:2);
@@ -261,6 +260,7 @@
 				  \draw [name path=A'B] (A') -- (B);
 				  \path [name intersections={of=A'B and AC',by=B'}];			  
 				  \draw (A') -- (B') node[above,yshift=1mm,xshift=0.7mm]{$B'$};
+                                  \fill (B') circle (0.03);
 				  				 
 				  %Tangente
 				  \path[name path=tangente] (A') -- ($(A')!3cm!-90:(A)$);
@@ -270,7 +270,7 @@
 				  \path[name path =MO'] (M) -- ($(M)!2cm!90:(C')$);
 				  \path [name intersections={of=MO' and tangente,by=O'}];
 				  \coordinate[label=right:$O'$] () at (O');
-				  \fill (O') circle (0.025);
+				  \fill (O') circle (0.05);
 				  
 				  %C'
 				  \node [draw, name path=cercle'] at (O') [circle through=(A')] {};
@@ -291,19 +291,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AA'$ diamètre de $\C$,
-				    \item $AE$ hauteur de $ABC$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $\Delta A'B'C',\Delta ABC$ semblables,
-				    \item $|A'C| = |BE|$,
-				    \item $O'A'\bot AA'$.	
-				    \end{enumerate}
+				    \these
 				    \end{tcolorbox}
 		
 		
@@ -335,6 +325,26 @@
 	   .4 $\eta'+ \iota=90^{\circ}$ car $AA'$ diamètre..
 	   .5 $O'$ est sur la perpendiculaire au diamètre $AA'$ passant par $A'$ $\rightarrow$ est sur la tangente en $A'$..
 	   } 
-            }
+         }
+
+            \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item 2 $\Delta$ sont semblables si 2 angles de l'un sont égaux à deux angles de l'autre.
+              \item  Montrer l'égalité de longueur = isométrie de $\Delta$ ?
+          \item 2 angles sont égaux si côtés $\bot$.
+          \item 2 angles inscrits interceptant même arc sont égaux.
+          \item Deux $\Delta$ sont isométriques lorsqu’ils ont un angle de même mesure compris entre deux côtés de mêmes longueurs.
+            \item un $\Delta$ inscrit dans un demi-cercle est rectangle.
+          \end{itemize}
+    }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

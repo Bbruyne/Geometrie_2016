@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -36,6 +37,24 @@
     },
   }
 
+    \def\enonce{ \frametitle{Q1 Septembre 2003.}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  On considère un triangle quelconque $ABC$. On note $H$ son orthocentre et $D$ le
+	  pied de la hauteur issue de $A$. La droite $AD$ coupe le cercle circonscrit au triangle
+	  en $P$. \\
+	  Démontrer que $|HD| = |DP |$.
+  }
+  \def\hypotheses{ \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $AH$ hauteur issue de $A$,
+		      \item $BH$ hauteur issue de $B$,
+		      \item $\Delta ABC$ inscrit dans un cercle.
+		      \end{enumerate}
+  }
+  \def\these{ \underline{Thèse} \\
+		      \smallskip
+		      $|HD|=|DP| $.
+}
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -43,12 +62,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q1 Septembre 2003.}
-	  %\renewcommand{\theenumi}{\alph{enumi})}
-	  On considère un triangle quelconque $ABC$. On note $H$ son orthocentre et $D$ le
-	  pied de la hauteur issue de $A$. La droite $AD$ coupe le cercle circonscrit au triangle
-	  en $P$. \\
-	  Démontrer que $|HD| = |DP |$.
+	 \enonce
 	  \vfill
 	  
 	  \pause
@@ -58,19 +72,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $AH$ hauteur issue de $A$,
-		      \item $BH$ hauteur issue de $B$,
-		      \item $\Delta ABC$ inscrit dans un cercle.
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $|HD|=|DP| $.
+		     \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -115,6 +122,7 @@
 				   \path[name path =AP] (A) -- +(4,0);
 				   \path [name intersections={of=AP and BC,by=D}];
 				   \path [name intersections={of=AP and cercle,by=P}];
+                                   \fill (D) circle (0.05);
 				   \coordinate[label= below right:$D$] () at (D);
 				   \coordinate[label= right:$P$] () at (P);
 				   \draw[name path=AP] (A) -- (P);
@@ -124,7 +132,8 @@
 				   \draw[name path=BH] (B) -- ($(A)!(B)!(C)$);
 				   \path [name intersections={of=AP and BH,by=H}];
 				   \coordinate[label= below right:$H$] () at (H);
-				   
+
+                                   \fill (H) circle (0.05);
 				   %ANGLES
 				   \pic [draw,"$\alpha$", angle eccentricity=1.5] {angle = D--B--P};
 				   \pic [draw,"$\alpha '$", angle eccentricity=1.7,angle radius=4mm] {angle = H--B--D};
@@ -136,33 +145,26 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AH$ hauteur issue de $A$,
-				    \item $BH$ hauteur issue de $B$,
-				    \item $\Delta ABC$ inscrit dans un cercle. 
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $|HD|=|DP| $.
+				    \these
 				    \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\centering
+		\column{.55\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
 		\heart Deux $\Delta$ sont isométriques lorsqu'ils ont un côté de même longueur compris entre deux angles de mêmes mesures. \\ \medskip
 		
-		\begin{enumerate}
-		 \item $\widehat{BDP}=\widehat{BDA}$,
-		 \item \begin{align*}
-		        \alpha =& \beta, \text{ (angles inscrits)} \\
-			       =& \alpha '. \text{ (angles à côtés $\bot$)}      
-		       \end{align*}
-		\end{enumerate} \medskip
-		Côté $[BD]$ en commun. \\ \bigskip
-		$\Delta BDH,\Delta BDP$ isométriques. \\ \bigskip
+		\begin{itemize}
+		 \item $\widehat{BDP}=\widehat{BDA}$, (\textcolor{blue}{1.})
+		 \item $\begin{cases}
+		        \alpha = \beta, \text{ (angles inscrits)} \\
+			\beta  = \alpha '. \text{ (angles à côtés $\bot$, \textcolor{blue}{1.,2.}})     
+		       \end{cases}$ \\$\rightarrow \alpha = \alpha '$
+                       \item Côté $[BD]$ en commun.
+		\end{itemize} \medskip
+		$\rightarrow \Delta BDH,\Delta BDP$ isométriques. \\ \bigskip
 		
 		\centering 
 		
@@ -185,5 +187,21 @@
 	   }
     }
 	  
-  
+            \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+	  \item Montrer l’égalité de longueur = isométrie de $\Delta$ ?
+              \item 2 angles sont égaux si côtés $\bot$.
+              \item 2 angles inscrits interceptant même arc sont égaux.
+                  \item  Deux $\Delta$ sont isométriques lorsqu'ils ont un côté de même longueur compris entre deux angles de mêmes mesures.
+          \end{itemize}
+    }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
