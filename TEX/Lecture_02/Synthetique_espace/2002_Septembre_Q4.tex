@@ -37,23 +37,39 @@
     },
   }
 
-    
+ \def\enonce{  \frametitle{Q4 Septembre 2002.}
+	 
+	  Soit $ABCD$ un tétraèdre. On note respectivement $h_A$ et $h_B$ les hauteurs du
+	  tétraèdre issues de $A$ et $B$.
+	  \begin{enumerate}
+             \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Démontrer que $h_A$ et $h_B$ sont concourantes si et seulement si la droite $AB$ est
+		orthogonale à la droite $CD$.
+	   \item Démontrer que les hauteurs d’un tétraèdre sont concourantes si les arêtes
+		 opposées de ce tétraèdre sont orthogonales deux à deux. 
+	  \end{enumerate}
+  }
+  \def\hypotheses{  \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $AA'\bot BCD$,
+		      \item $BB'\bot ACD$.
+		      \end{enumerate} 
+  }
+  \def\these{  \underline{Thèse} 
+    \begin{enumerate}
+       \renewcommand{\theenumi}{\alph{enumi})}
+		       \item $AA'\nmid BB' \leftrightarrow CD \orthog AB$,
+		       \item côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
+		      \end{enumerate}
+}
+  
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q4 Septembre 2002.}
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  Soit $ABCD$ un tétraèdre. On note respectivement $h_A$ et $h_B$ les hauteurs du
-	  tétraèdre issues de $A$ et $B$.
-	  \begin{enumerate}
-	   \item Démontrer que $h_A$ et $h_B$ sont concourantes si et seulement si la droite $AB$ est
-		orthogonale à la droite $CD$.
-	   \item Démontrer que les hauteurs d’un tétraèdre sont concourantes si les arêtes
-		 opposées de ce tétraèdre sont orthogonales deux à deux. 
-	  \end{enumerate}
+	 \enonce
 
 	  \vfill
 	  
@@ -64,21 +80,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $AA'\bot BCD$,
-		      \item $BB'\bot ACD$.
-		      \end{itemize}
+		     \hypotheses
 		      {\small $A',B',C',D'$ pied des hauteurs.}
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      \begin{enumerate}
-		       \item $AA'\nmid BB' \leftrightarrow CD \orthog AB$,
-		       \item côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
-		      \end{enumerate}
+		     \these
 
 		
 	      \end{columns}
@@ -130,18 +137,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AA'\bot BCD$,
-				    \item $BB'\bot ACD$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $AA'\nmid BB' \leftrightarrow CD \orthog AB$,
-				    \item côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
-				    \end{enumerate}
+				    \these
 				    \end{tcolorbox}
 		
 		
@@ -150,19 +148,23 @@
 		\underline{Résolution}\\ \flushleft
 		$AA'\nmid BB' \rightarrow \exists \text{ plan } ABA'$ \\ \smallskip
 		\heart Une droite est $\bot$ à un plan si elle est orthogonale à 2 droites sécantes de celui-ci.\\ \smallskip
-		\begin{enumerate}
-		 \item $CD \orthog AA'$,
-		 \item $CD \orthog BB'$,
-		\end{enumerate}
-		$CD \bot ABA' \rightarrow AB\orthog CD$. \hfill $\qed (a\rightarrow)$ \\ \bigskip
+                
+                $CD \bot ABA'$ car :
+                
+		$$\begin{cases}
+                CD \orthog AA'\text{ car }AA' \perp BCD, (\textcolor{blue}{1.})
+                    \\
+		 CD \orthog BB'\text{ car }BB' \perp ACD, (\textcolor{blue}{2.})
+               \end{cases}$$
+               \smallskip
+               
+		$ CD \bot ABA'\rightarrow AB\orthog CD$. \hfill $\qed (a\rightarrow)$ \\ \bigskip
 		
-		$CD \orthog AB$ et :
-		\begin{enumerate}
-		 \item $CD \orthog AA'$, $\rightarrow CD \bot AA'B$.
-		 \item $CD \orthog BB'$, $\rightarrow CD \bot AB'B$.
-		\end{enumerate} \smallskip
-		\heart Il n'existe qu'un plan $\bot$ à une droite donnée passant par un point donné. \\ \medskip
-		$B\in AA'B,AB'B \rightarrow AA'B=AB'B$
+		$CD \orthog AB$ et :\\ \medskip
+                $CD \orthog AA'$ (\textcolor{blue}{1.}), $\rightarrow CD \bot AA'B$.\\
+                $CD \orthog BB'$ (\textcolor{blue}{2.}), $\rightarrow CD \bot AB'B$. \smallskip\\
+		\heart Il n'existe qu'un plan $\bot$ à une droite donnée passant par un point donné. \\ \smallskip
+		$B\in AA'B,AB'B \rightarrow AA'B=AB'B$.
 		
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
@@ -218,32 +220,23 @@
 				  \draw (A) -- (B);
 				  \draw (A) -- (C);
 				  \draw (A) -- (D);
-				  %A',B'
-				  \coordinate[label=below left:$A'$] (A') at (0,0,0);
+				  %A',B',D'
+				  \coordinate[label=right:$A'$] (A') at (0,0,0);
 				  \coordinate[label=above left:$B'$](B') at ($0.333*(A)+0.333*(C)+0.333*(D)$);
-				  %AA',BB'
-				  \draw (A) -- (A') (B) -- (B');
+                                   \coordinate[label=above right:$D'$](D') at ($0.333*(A)+0.333*(C)+0.333*(B)$);
+				  %AA',BB',DD'
+				  \draw (A) -- (A') (B) -- (B') (D) -- (D');
 				  
 				  \coordinate[] (E) at ($0.5*(C)+0.5*(D)$); 
-				  \draw (A) -- (E) -- (B);
+				  %\draw (A) -- (E) -- (B);
 				  \end{tikzpicture}
 				  \end{figure}
 			
 				  \begin{tcolorbox}[basic] 
-				      
-				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AA'\bot BCD$,
-				    \item $BB'\bot ACD$.
-				    \end{enumerate}
+				      \smallskip
+				    \hypotheses
 							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $AA'\nmid BB' \leftrightarrow CD \orthog AB$,
-				    \item côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
-				    \end{enumerate}
+				    \these
 				    \end{tcolorbox}
 		
 		
@@ -251,19 +244,23 @@
 		\heart 2 droites sont $\nmid$ si elles $\in$ au même plan et ne sont pas $\parallel$. \\ \medskip
 		$AA'\nmid BB'.$ \hfill $\qed(a\leftarrow  )$ \\
 		\centering\noindent\rule{2cm}{0.4pt} \\ \medskip \flushleft		
-		De (a), côtés opposés $\orthog \rightarrow$ hauteurs deux à deux sécantes. \\
+		En généralisant (a), côtés opposés $\orthog \rightarrow$ hauteurs deux à deux sécantes. \\ \medskip
+
+                
+                $AA'\nmid BB'$  \\
+		$AA'\nmid DD'$  \\
+		$BB'\nmid DD'$  \\ \medskip
+                
+                \heart Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver). \\ \medskip
+
+                
 		\begin{numcases}{}X= AA' \cap BB', \label{eq:1}\\
 					      Y= AA' \cap DD', \label{eq:2}\\
 					      Z= BB' \cap DD'. \label{eq:3} 
 			    \end{numcases} \smallskip
 		
 		 
-		\begin{align*}
-		Y \in& AA' \subset AA'B, \\
-		Z \in& BB' \subset AA'B, \\
-		\text{et }&  Y,Z \in DD', \\[1em]				
-			    Y =& Z  =DD' \cap AA'B. \\[1.5em]					    	      
-		\end{align*}
+	
 	        %\hfill $\qed$
 
    
@@ -277,9 +274,6 @@
 	   .4 3 droites non coplanaires sécantes 2 à 2 sont concourantes (à prouver car non vu)..
 	   .3 Résolution. 
 	   .4 Les hauteurs sont sécantes 2 à 2 si côtés opposés $\orthog$ par généralisation de thèse a)..
-	   .4 Former un plan avec 2 hauteurs, $AA'$ et $BB'$.
-	   .5 L'intersect\ion de $DD'$ avec $AA'$ et celle avec $BB'$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
-	   .6 Ces deux intersect\ion sont confondues car\\ \hspace{5mm} point de percée de $DD'$ ds.~plan est \\ \hspace{5mm} unique..
 	   }
     
     
@@ -306,38 +300,32 @@
 				  \draw (A) -- (B);
 				  \draw (A) -- (C);
 				  \draw (A) -- (D);
-				  %A',B'
-				  \coordinate[label=below left:$A'$] (A') at (0,0,0);
+				   %A',B',D'
+				  \coordinate[label=right:$A'$] (A') at (0,0,0);
 				  \coordinate[label=above left:$B'$](B') at ($0.333*(A)+0.333*(C)+0.333*(D)$);
-				  %AA',BB'
-				  \draw (A) -- (A') (B) -- (B');
+                                   \coordinate[label=above right:$D'$](D') at ($0.333*(A)+0.333*(C)+0.333*(B)$);
+				  %AA',BB',DD'
+				  \draw (A) -- (A') (B) -- (B') (D) -- (D');
 				  
 				  \coordinate[] (E) at ($0.5*(C)+0.5*(D)$); 
-				  \draw (A) -- (E) -- (B);
+				  %\draw (A) -- (E) -- (B);
 				  \end{tikzpicture}
 				  \end{figure}
 			
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $AA'\bot BCD$,
-				    \item $BB'\bot ACD$.
-				    \end{enumerate}
-							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $AA'\nmid BB' \leftrightarrow CD \orthog AB$,
-				    \item côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
-				    \end{enumerate}
+\hypotheses	      
+				   \these
 				    \end{tcolorbox}
 		
 		
 		\column{.5\textwidth}\flushleft
-		 
-		\begin{align*}	
+		 	\begin{align*}
+		Y \in& AA' \subset AA'B, \\
+		Z \in& BB' \subset AA'B, \\
+		\text{et }&  Y,Z \in DD', \\[1em]				
+			    Y =& Z  =DD' \cap AA'B. \\[1.5em]	
 			    Y =& AA' \cap DD' = BB' \cap DD', (\ref{eq:2}=\ref{eq:3}) \\
 			      =& AA' \cap BB', \text{(transitivité)}\\
 			      =& X.\\
@@ -349,16 +337,37 @@
 		$AA',BB',DD'$ sont concourantes. \\ \medskip
 		De la même façon : \\ \medskip
 		$AA',BB',CC'$ sont concourantes. \\ \bigskip
-		Ainsi $AA',BB',CC',DD'$ sont concourantes. \hfill $\qed$   
+		Ainsi $AA',BB',CC',DD'$ sont concourantes. \hfill $\qed(b)$   
 	   \end{columns}
    \notedir{%
    .1 Prouver thèses.
    .2 Suite côtés opposés $\orthog \rightarrow$ hauteurs concourantes.
-   .3 Ce point de percée appartient à la fois à $AA',BB',DD' \rightarrow$ droites concourantes..
-   .3 De la même façon : $AA',BB',CC'$ concourantes..
-   .3 L'intersect\ion de $AA',BB'$ appartient à $DD'$ et à $CC'$.
-   .4 $\rightarrow AA',BB',CC',DD'$ concourantes..
+     .3 Former un plan avec 2 hauteurs, $AA'$ et $BB'$.
+	   .4 L'intersect\ion de $DD'$ avec $AA'$ et celle avec $BB'$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
+	   .5 Ces deux intersect\ion sont confondues car\\ \hspace{5mm} point de percée de $DD'$ ds.~plan est \\ \hspace{5mm} unique..
+   .5 Ce point de percée appartient à la fois à $AA',BB',DD' \rightarrow$ droites concourantes..
+   .5 De la même façon : $AA',BB',CC'$ concourantes..
+   .5 L'intersect\ion de $AA',BB'$ appartient à $DD'$ et à $CC'$.
+   .6 $\rightarrow AA',BB',CC',DD'$ concourantes..
    }
   }
-  
+
+	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Si \textit{ssi}, montrer les 2 sens de l'énoncé.
+          \item Une droite $\bot$ à un plan est $\orthog$ à toutes les droites de ce plan.
+          \item Il n'existe qu'un plan $\bot$ à une droite donnée passant par un point donné.
+          \item  2 droites sont $\nmid$ si elles $\in$ au même plan et ne sont pas $\parallel$.
+            \item  Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver).
+          \end{itemize}
+    }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

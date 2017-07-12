@@ -38,14 +38,7 @@
     },
   }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q5 Juillet 2011.}
+ \def\enonce{ \frametitle{Q5 Juillet 2011.}
 	  %\renewcommand{\theenumi}{\alph{enumi})}
 	  On considère une pyramide droite à base carrée $SABCD$ (en d’autres
 	  termes, la base $ABCD$ de cette pyramide est un carré, et le pied $H$
@@ -56,6 +49,26 @@
 	  Si $V$ et $V'$ désignent respectivement le volume de la pyramide et de la
 	  sphère, calculer la valeur du rapport $\frac{V'}{V}$ et en donner une expression
 	  indépendante du rayon de la sphère et du côté de la base de la pyramide.
+  }
+  \def\hypotheses{   \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $SABCD$ pyramide à base $\square$,
+		      \item $[SH]$ hauteur issue de $S$,
+                        \item $SABCD$ inscrite dans sphère.
+		      \end{enumerate}
+  }
+  \def\these{ \underline{Thèse} \\
+		      \smallskip
+		      $V'/V$.
+}
+  
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \enonce
 	  \vfill
 	  
 	  \pause
@@ -65,18 +78,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $SABCD$ pyramide à base $\square$,
-		      \item $[SH]$ hauteur issue de $S$.
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $\dfrac{V'}{V}$.
+		     \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -97,7 +104,7 @@
 			\underline{Dessin}\\
 			
 				  \begin{figure}[h]
-				  \begin{tikzpicture}[scale=0.75]
+				  \begin{tikzpicture}[scale=0.72]
 			          %projection ($(X)!(B')!(B)$)
 			          %nommer chemin 'name path
 			          %intersection \path [name intersections={of=d and gb,by=G}];
@@ -105,52 +112,54 @@
 			          \coordinate[label=below right:$H$](H) at (0,0,0);
 			          \coordinate[label=below right:$B$](B) at (2,0,2);
 			          \coordinate[label=below right:$C$](C) at (2,0,-2);
-			          \coordinate[label=above left:$D$](D) at (-2,0,-2);
+			          \coordinate[label=above left:$D$,xshift=2mm](D) at (-2,0,-2);
 			          \coordinate[label=below left:$A$](A) at (-2,0,2);
 			          \coordinate[label=above:$S$](S) at (0,4,0);
 			          \coordinate[label=right:$O$](O) at (0,1,0);
 			          \draw (A) --node[below] {$b$} (B) --node[below right] {$b$} (C) -- (D) --cycle
-					(A) -- (S) (B) -- (S) (C) -- (S) (D) -- (S)
-					(O) --node[above] {$r$} (A)
-					(A) -- (S)
+					(A) -- (S) (B) -- (S) (C) -- (S) (D) -- (S);
+				\draw[very thick]	(O) --node[below] {$\mathbf{r}$} (A) (O) --node[left, xshift=0.5mm] {$\mathbf{r}$}(S);
+				\draw	(A) -- (S)
 					(A) -- (H)
-					(H) --node[left] {$b$} (S)
-					(O) --node[right] {$r$}(S);
+					(H) --node[right] {$b$} (S);
+					
 				  \end{tikzpicture}
 				  \end{figure}
-			
+			\vspace{-5mm}
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $SABCD$ pyramide à base $\square$,
-				    \item $[SH]$ hauteur issue de $S$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $\dfrac{V'}{V}$.
+				    \these
 				    \end{tcolorbox}
 		
 		
-		\column{.51\textwidth}\centering
+		\column{.56\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
 		$O$ centre de la sphère, \\
 		$r$ rayon de la sphère, \\
-		$b$ longueur des côtés du carré. \\[0.05em]
-		\begin{align*}
-		r=&|SO|\\
-		 =&|AO|=|BO|=|CO|=|DO|.
-		\end{align*} \\[0.1em]
+		$b$ longueur des côtés du carré. \\ \medskip
+                
+                $O \in SH$ car $SH$ est $\cap$ plans médiateurs des côtés du carré (\textcolor{blue}{1.}). \\ \medskip
+                $\Delta AOH$ rectangle (\textcolor{blue}{2.}).
+
+                $$\rightarrow  |AH|^2 + |OH|^2 = |AO|^2.$$
+
+                
+                          $|AH|=\frac{\sqrt{2}}{2}b$, \text{(moitié diagonale du carré)}\\ \smallskip
+                          $|OH|=||SH| - |OH|| = |b-r|$, \\
+                          $|AO|=r$. (\textcolor{blue}{3.})
+                          
+                	\begin{align*}
+		 |AH|^2 + |OH|^2 =& |AO|^2, \\
+                          \dfrac{b^2}{2} + |b-r|^2 =& r^2,\\
+		 r=& \dfrac{3b}{4}.
+                        \end{align*}
+                        
+                      
 		
-		\begin{enumerate}
-		 \item $O \in SH$ car $SH$ est $\cap$ plans médiateurs des côtés du carré, 
-		 \item $\Delta AOH$ rectangle.
-		\end{enumerate}	
-		$|AH|=\frac{\sqrt{2}}{2}b$,\\ \smallskip
-		$|OH|=|b-r|$, \\ 
 		\begin{align*}
 		 |AH|^2 + |OH|^2 =& |AO|^2, \\
 		 \dfrac{b^2}{2} + |b-r|^2 =& r^2,\\
@@ -183,7 +192,7 @@
 			\underline{Dessin}\\
 			
 				  \begin{figure}[h]
-				  \begin{tikzpicture}[scale=0.75]
+				  \begin{tikzpicture}[scale=0.72]
 			          %projection ($(X)!(B')!(B)$)
 			          %nommer chemin 'name path
 			          %intersection \path [name intersections={of=d and gb,by=G}];
@@ -191,7 +200,7 @@
 			          \coordinate[label=below right:$H$](H) at (0,0,0);
 			          \coordinate[label=below right:$B$](B) at (2,0,2);
 			          \coordinate[label=below right:$C$](C) at (2,0,-2);
-			          \coordinate[label=above left:$D$](D) at (-2,0,-2);
+			          \coordinate[label=above left:$D$,xshift=2mm](D) at (-2,0,-2);
 			          \coordinate[label=below left:$A$](A) at (-2,0,2);
 			          \coordinate[label=above:$S$](S) at (0,4,0);
 			          \coordinate[label=right:$O$](O) at (0,1,0);
@@ -204,20 +213,14 @@
 					(O) --node[right] {$r$}(S);
 				  \end{tikzpicture}
 				  \end{figure}
-			
+			\vspace{-5mm}
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $SABCD$ pyramide à base $\square$,
-				    \item $[SH]$ hauteur issue de $S$.
-				    \end{enumerate}
-							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $\dfrac{V'}{V}$.
-				    \end{tcolorbox}
+				    \hypotheses
+                                    \these
+
+                                  \end{tcolorbox}
 		
 		
 		\column{.51\textwidth} \flushleft
@@ -233,6 +236,22 @@
 	   .2 Suite $CD\bot ABE$.
 	   .3 Connaître volume sphère et pyramide..
 	   }
+         }
+
+           \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Exprimer un rapport de volume indépendant des dimensions = trouver lien entre les dimensions.
+            \item $V_{\text{shère}}=\dfrac{4\pi r^3}{3}$ et $V_{\text{pyramide}}=\dfrac{base.hauteur}{3}$.
+          \end{itemize}
     }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

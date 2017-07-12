@@ -30,6 +30,31 @@
 		      }
 }
 
+ \def\enonce{ \frametitle{Q4 Septembre 2001.}
+	  On considère un prisme droit $ABCDA'B'C'D'$ , à base carrée $ABCD$ (cf. figure).
+	 
+	  \begin{enumerate}
+             \renewcommand{\theenumi}{\alph{enumi})}
+	   \item Si $X$ est le centre (intersection des diagonales) de la face $A'B'C'D'$, montrez que la hauteur
+		 du triangle $BXB'$ issue de $B'$ est perpendiculaire au plan $A'C'B$.
+	   \item Prouver que si les diagonales $BD'$ et $B'D$ sont perpendiculaires, alors la
+		 perpendiculaire abaissée de $B'$ sur le plan $A'C'B$ passe par le milieu de
+		 l’arête $[D,D']$.
+	  \end{enumerate}
+  }
+  \def\hypotheses{\underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item Prisme droit à base $\square$,
+		      \item $B'B_1$ hauteur de $\Delta XBB'$.
+		      \end{enumerate}  
+  }
+  \def\these{  \underline{Thèse} 
+    \begin{enumerate}
+       \renewcommand{\theenumi}{\alph{enumi})}
+		       \item $B'B_1\bot A'C'B$,
+		       \item $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
+		      \end{enumerate} \flushleft
+}
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -37,16 +62,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q4 Septembre 2001.}
-	  On considère un prisme droit $ABCDA'B'C'D'$ , à base carrée $ABCD$ (cf. figure).
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  \begin{enumerate}
-	   \item Si $X$ est le centre (intersection des diagonales) de la face $A'B'C'D'$, montrez que la hauteur
-		 du triangle $BXB'$ issue de $B'$ est perpendiculaire au plan $A'C'B$.
-	   \item Prouver que si les diagonales $BD'$ et $B'D$ sont perpendiculaires, alors la
-		 perpendiculaire abaissée de $B'$ sur le plan $A'C'B$ passe par le milieu de
-		 l’arête $[D,D']$.
-	  \end{enumerate}
+	  \enonce
 
 	  \vfill
 	  
@@ -57,20 +73,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item Prisme droit à base $\square$,
-		      \item $B'B_1$ hauteur de $\Delta XBB'$.
-		      \end{itemize}
+		      \hypotheses
 
 		  
 		  \column{.55\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \begin{enumerate}
-		       \item $B'B_1\bot A'C'B$,
-		       \item $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
-		      \end{enumerate} \flushleft
+		     \these
 		      {\small $B_1$ pied de la hauteur issue de $B$, \\
 			      $B_2=B'B_1\cap DD'.$ }
 		     
@@ -125,18 +133,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item Prisme droit à base $\square$,
-				    \item $B'B_1$ hauteur de $\Delta XBB'$.
-				    \end{enumerate}
-							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $B'B_1\bot A'C'B$,
-				    \item $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
-				    \end{enumerate}				    
+                                    \hypotheses
+				    
+				   \these				    
 				    \end{tcolorbox}
 		
 		
@@ -145,14 +144,20 @@
 		\underline{Résolution}\\ \flushleft
 		
 		\heart Une droite est $\bot$ à un plan si elle est orthogonale à 2 droites sécantes de celui-ci.\\ \bigskip
+
+                \begin{itemize}
+ \item  $B'B_1 \orthog A'C'$ car :
+
+                  $$\begin{cases}
+                  A'C'\bot D'B', (\textcolor{blue}{1.})\\ A'C'\bot A'A.\ (\textcolor{blue}{1.}) 
+                 
+                \end{cases} \hspace{-4.5mm} \rightarrow A'C'\bot XB'B.$$ \\[1em]
+                  
+                \item $B'B_1\bot XB$, (\textcolor{blue}{2.}).
+                
+                \end{itemize} \bigskip
 		
-		\begin{enumerate}
-		 \item $A'C'\bot D'B', A'C'\bot A'A$ \\ \medskip
-		       $\rightarrow A'C'\bot XB'B$,\\ \medskip
-		       $\rightarrow B'B_1 \orthog A'C'$. \\ \bigskip
-		 \item $B'B_1\bot XB$.
-		\end{enumerate} \bigskip
-		$B'B_1\bot A'C'B$. \hfill $\qed(a)$
+		$\rightarrow B'B_1\bot A'C'B$. \hfill $\qed(a)$
 	   \end{columns}  
 	   \notedir{%
 	   .1 Montrer que $B'B_1$ $\bot$ $A'C'B$.
@@ -193,18 +198,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item Prisme droit à base $\square$,
-				    \item $B'B_1$ hauteur de $\Delta XBB'$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} 
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				    \begin{enumerate}
-				    \item $B'B_1\bot A'C'B$,
-				    \item $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
-				    \end{enumerate}				    
+				    \these				    
 				    \end{tcolorbox}
 		
 		
@@ -217,8 +213,12 @@
 		\alpha =& \alpha ' \text{ (angles à cotés $\bot$)} \\[0.5em] 
 		\widehat{B_2D'B'} =& \widehat{BB'X} = \dfrac{\pi}{2}\\ 
 		\end{align*}
-		$D'B'B_2, BB'X$ isométriques. \\ \bigskip
-		$|DB_2|=|B_2D'|$. \hfill $\qed$
+		$D'B'B_2, BB'X$ isométriques. \\                 
+                \begin{align*}
+                 \rightarrow |B_2D'|=|XB'|&=\frac{|D'B'|}{2},\\
+                               &=\frac{|D'D|}{2},\ (\text{carré})\\
+                  &=|DB_2|. \quad \qed
+                  \end{align*}
 	   \end{columns}  
     \notedir{%
 	   .1 Montrer que $BD'\bot B'D \rightarrow |DB_2|=|B_2D'|$.
@@ -231,7 +231,26 @@
 	   .5 $|D'B'| = |BB'|$ cotés du carré..
 	   .5 Chacun un angle droit du carré..
 	   .5 $\alpha = \alpha '$ car angles à côtés (carré + thèse a))..
-	   .4 $\rightarrow |D'B_2| = |XB'| = $ moitié d'un côté du carré..
-	   }
+	   .4 $\rightarrow |B_2D'| = |XB'|= $ moitié d'un côté du carré..
+           .5 $=|DB_2|$..
+           	   }
+                 }
+
+                   \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Une droite est $\bot$ à un plan si elle est orthogonale à 2 droites sécantes de celui-ci.
+          \item Si les diagonales d'un rectangle sont $\bot$ alors c'est un carré.
+          \item Deux triangles sont isométriques lorsqu'ils ont un côté de même longueur compris entre deux angles de mêmes mesures.
+            \item Deux angles à côtés $\bot$ sont de même mesure.
+          \end{itemize}
     }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

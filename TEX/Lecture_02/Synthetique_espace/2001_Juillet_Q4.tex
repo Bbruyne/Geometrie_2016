@@ -36,18 +36,12 @@
     },
   }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q4 Juillet 2001.}
+     \def\enonce{\frametitle{Q4 Juillet 2001.}
 	  On considère un tétraèdre $ABCD$ régulier (c’est-à-dire dont tous les côtés sont
 	  égaux). Soit $E$ le milieu du côté $[C, D]$.
-	  \renewcommand{\theenumi}{\alph{enumi})}
+	 
 	  \begin{enumerate}
+             \renewcommand{\theenumi}{\alph{enumi})}
 	   \item Montrer que la droite $CD$ est perpendiculaire au plan $ABE$.
 	   \item Montrer que la hauteur du triangle $ABE$ issue de $A$ est perpendiculaire à la
 		face $BCD$ et que la hauteur du triangle $ABE$ issue de $B$ est perpendiculaire
@@ -56,6 +50,30 @@
 		 correspondantes.
 	   \item En déduire que les quatre hauteurs du tétraèdre sont concourantes. 
 	  \end{enumerate}
+  }
+  \def\hypotheses{ \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $ABCD$ régulier,
+		      \item $|CE|=|ED|$.
+		      \end{enumerate}
+  }
+  \def\these{ \underline{Thèse} 
+		      \begin{enumerate}
+		       \renewcommand{\theenumi}{\alph{enumi})}
+				     \item $CD\bot ABE$,
+				     \item $AA'\bot BCD$ et
+				       	   $BB'\bot ACD$,
+				     \item $A',B',C',D'$ orthocentres,
+				     \item $AA',BB',CC', DD'$ concourantes.
+		      \end{enumerate}
+}
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	  \enonce
 
 	  
 	  \vfill
@@ -67,25 +85,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $ABCD$ régulier,
-		      \item $|CE|=|ED|$.
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèses} \\
-		      \smallskip
-		      \begin{enumerate}
-		       
-				     \item $CD\bot ABE$,
-				     \item $AA'\bot BCD$ et
-				       	   $BB'\bot ACD$,
-				     \item $A',B',C',D'$ orthocentres,
-				     \item $AA',BB',CC', DD'$ concourantes.
-		      \end{enumerate}
+		     \these
 		      {\small $A',B',C',D'$ pied des hauteurs.} 
 		
 	      \end{columns}
@@ -133,44 +138,40 @@
 				 \vspace{-3.5mm} 
 				  \begin{tcolorbox}[basic]\centering 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $ABCD$ régulier,
-				    \item $|CE|=|ED|$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèses} \\
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				     \begin{enumerate}
-				     \item $CD\bot ABE$,
-				     \item $AA'\bot BCD$ et
-				       	   $BB'\bot ACD$,
-				     \item $A',B',C',D'$ orthocentres,
-				     \item $AA',BB',CC', DD'$ concourantes.
-				     \end{enumerate}				  
+				   \these			  
 				  \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\centering
+		\column{.52\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		
-		\begin{enumerate}
-		\item $ACD,BCD$ $\Delta$ équilatéraux,
-		\item $EA$ médiane de $ACD$ \\
-		      $EB$ médiane de $BCD$.
-		\end{enumerate}	\medskip
-		\textcolor{blue}{$\heartsuit_1$} Les droites remarquables d'un $\Delta$ équilatéral sont confondues. \\ \medskip
+                $CD\bot EA,CD\bot EB$ car : \medskip
+
+                \textcolor{blue}{$\heartsuit_1$} Les droites remarquables d'un $\Delta$ équilatéral sont confondues. \medskip
+
+                Comme $\Delta ACD,\Delta BCD \text{ équilatéraux}$,
+                
+		$$\begin{cases}
+		 EA \text{ médiane de }\Delta ACD, \\
+		      EB \text{ médiane de } \Delta BCD.
+                    \end{cases}$$
+
+                    	$$\rightarrow \begin{cases}
+		 EA \text{ hauteur de }\Delta ACD, \\
+		      EB \text{ hauteur de } \Delta BCD.
+                    \end{cases}$$
+                    
+                    \medskip
+                    
 		$CD\bot EA,CD\bot EB\rightarrow CD\bot ABE$. \\ \hfill$\qed(a)$ \\
-		\centering\noindent\rule{2cm}{0.4pt}\flushleft 
-		$AA'\bot EB$ car hauteur, \\
-		$AA'\orthog CD$ car $AA'\in ABE$, \\
-		$AA'\bot BCD$. \\
-		\begin{enumerate}
-		 \item Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.
-		\end{enumerate}
-		$BB'\bot ACD$. \\ \hfill $\qed(b)$ \\
-		\centering\noindent\rule{2cm}{0.4pt}		   
+		\centering\noindent\rule{2cm}{0.4pt}\flushleft
+                \begin{itemize}
+		\item $AA'\bot EB$ car hauteur, 
+		\item $AA'\orthog CD$ car $CD\perp ABE$ (\textcolor{blue}{a).}),
+                \end{itemize}\medskip
+		$\rightarrow AA'\bot BCD$. 		   
 	   \end{columns}
 	   \notedir{%
 	   .1 Prouver thèses.
@@ -230,52 +231,115 @@
 				 \vspace{-3.5mm} 
 				  \begin{tcolorbox}[basic]\centering 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $ABCD$ régulier,
-				    \item $|CE|=|ED|$.
-				    \end{enumerate}
+				   \hypotheses
 							      
-				    \underline{Thèses} \\
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				     \begin{enumerate}
-				     \item $CD\bot ABE$,
-				     \item $AA'\bot BCD$ et
-				       	   $BB'\bot ACD$,
-				     \item $A',B',C',D'$ orthocentres,
-				     \item $AA',BB',CC', DD'$ concourantes.
-				     \end{enumerate}				  
+				    \these			  
 				  \end{tcolorbox}
 		
 		
-		\column{.52\textwidth}\flushleft
+		\column{.53\textwidth}\flushleft
+		\textcolor{blue}{$\heartsuit$} Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.
+		$\rightarrow BB'\bot ACD$. \hfill $\qed(b)$ \\
+		\centering\noindent\rule{2cm}{0.4pt}
+                \flushleft
+
+                
+                \heart Les points remarquables d'un $\Delta$ équilatéral sont confondus. \\
+               \medskip
+                $A'$ centre du cercle circonscrit car : \\ \medskip
+
+                	$\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques. \\ \medskip
+                	\textcolor{blue}{$\heartsuit$} Des $\Delta$ sont isométriques s'ils ont un angle de même mesure entre 2 côtés de mêmes longueurs.
+                        
+                        
+		$$\begin{cases} 
+			  |AB|= |AC|=|AD|, (\textcolor{blue}{1.}) \\[0.5em]
+			  \widehat{BAA'}=\widehat{CAA'}=\widehat{DAA'}\\
+                          \phantom{\widehat{BAA'}=\widehat{CAA'}} =\arcos\dfrac{|AA'|}{|AB|}, (\textcolor{blue}{a).})\\[0.5em]
+                          [AA'] \text{ en commun}.
+                        \end{cases}$$
+	
+			   
+	   \end{columns}
+	   \notedir{%
+	   .1 Prouver thèses.
+	   .2 $A',B',C',D'$ orthocentres (=intersection des hauteurs $\Delta$).
+	   .3 Élément de théorie.
+	   .4 Les droites remarquables d'un $\Delta$ équilatéral sont\\ \hspace{5mm} confondues..
+	   .5 Montrer que $A'$ est centre cercle circonscrit à $\Delta BCD$..
+	   .3 Résolution.~(commencer par $A'$)..
+	   .4 $\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques car.
+	   .5 2 cotés ($AA'$ et arête) et un angle en commun..
+	   }
+          }  
+
+          
+    \frame{ 
+	  % résolution ex1
+	  \begin{columns}[t]
+		\column{.53\textwidth}\centering 
+			
+			\underline{Dessin}\\
+			\vspace{-2mm}	  
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.78]
+				  %AXES
+				  %\draw[->] (0,0,-3) -- (0,0,3) coordinate[label=below right:$z$]();
+				  %\draw[->] (0,-3,0) -- (0,3,0) coordinate[label=above left:$y$]();
+				  %\draw[->] (-3,0,0) -- (3,0,0) coordinate[label=above left:$x$]();
+				  %TETRAEDRE et E
+				  \coordinate[label=above:$A$] (A) at (0,2.449,0);
+				  \coordinate[label=right:$B$] (B) at (1.64317,0,-0.948683);
+				  \coordinate[label=left:$C$] (C) at (-1.64317,0,-0.948683);				  
+				  \coordinate[label=below:$D$] (D) at (0,0,1.89737);
+				  \draw (B) -- (C) -- (D) -- cycle;
+				  \draw (A) -- (B);
+				  \draw (A) -- (C);
+				  \draw (A) -- (D);	
+				  				  
+				  %A'
+				  \coordinate[label=left:$A'$](A') at (0,0);
+				  %AA'
+				  \draw (A) -- (A');
+				  %A'C,A'D, A'B%
+				  \draw (A')--(B);
+				  \draw (A') -- (C);
+				  \draw (A') -- (D);
+				  \end{tikzpicture}
+				  \end{figure}
+				 \vspace{-3.5mm} 
+				  \begin{tcolorbox}[basic]\centering 				      
+				    \smallskip
+				   \hypotheses
+							      
+				    \these			  
+				  \end{tcolorbox}
 		
-		\begin{align*} 
-			  &|AB|= |AC|=|AD|, \\[0.5em]
-			  &AA'\bot BCD :  \\[-0.3em]
-			  &\widehat{BAA'}=\widehat{CAA'}=\widehat{DAA'} =\arcos\dfrac{|AA'|}{|AB|}, \\		
-		\end{align*}
-		\vspace{-8mm}
 		
-		\textcolor{blue}{$\heartsuit_2$} Des $\Delta$ sont isométriques s'ils ont un angle de même mesure entre 2 côtés de mêmes longueurs. \\ \medskip
-		$\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques. \\
+		\column{.53\textwidth}\flushleft
+		
+	$\rightarrow |A'B|=|A'C|=|A'D|$. \medskip
 		\begin{align*}
 		A'=& \text{ centre cercle circonscrit,} \\
-		  =& \text{ orthocentre. (\textcolor{blue}{$\heartsuit_1$})} 
+		  =& \text{ orthocentre.} 
 		\end{align*}
-		\begin{enumerate}
-		 \item Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.\\ \hfill $\qed(c)$
-		\end{enumerate}
+                
+               \medskip
+
+               \heart Propriété montrée pour un sommet est vraie pour tous les autres grâce à la symétrie.\\ \medskip
+
+               $A', B', C', D'$ orthocentres. \hfill $\qed(c)$
+               \\
 		\centering\noindent\rule{2cm}{0.4pt}	
 			   
 	   \end{columns}
 	   \notedir{%
 	   .1 Prouver thèses.
-	   .2 $A',B',C',D'$ orthocentres.~(commencer par $A'$).
+	   .2 $A',B',C',D'$ orthocentres (=intersection des hauteurs $\Delta$).
 	   .3 Élément de théorie.
 	   .4 Les droites remarquables d'un $\Delta$ équilatéral sont\\ \hspace{5mm} confondues..
 	   .5 Montrer que $A'$ est centre cercle circonscrit à $\Delta BCD$..
-	   .3 Résolution..
+	   .3 Résolution.~(commencer par $A'$)..
 	   .4 $\Delta BAA',\Delta CAA',\Delta DAA'$ isométriques car.
 	   .5 2 cotés ($AA'$ et arête) et un angle en commun..
 	   .6 $|A'B| = |A'C| = |A'D|\rightarrow A'$ centre cercle..
@@ -283,7 +347,7 @@
 	   .4 Par symétrie du tétraèdre régulier, vrai pour $B',C',D'$..
 	   }
           }  
-    
+          
    \frame{ 
 	  % résolution ex1
 	  \begin{columns}[t]
@@ -330,43 +394,31 @@
 				 \vspace{-3.5mm} 
 				  \begin{tcolorbox}[basic]\centering 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $ABCD$ régulier,
-				    \item $|CE|=|ED|$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèses} \\
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				     \begin{enumerate}
-				     \item $CD\bot ABE$,
-				     \item $AA'\bot BCD$ et
-				       	   $BB'\bot ACD$,
-				     \item $A',B',C',D'$ orthocentres,
-				     \item $AA',BB',CC', DD'$ concourantes.
-				     \end{enumerate}				  
+				    \these
 				  \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\flushleft
+                                  \column{.5\textwidth}\flushleft
+                                  \heart Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver). \medskip
+
 		\onslide<+-> $AA'\nmid BB'$ (hauteurs $\Delta ABE$) \\
 		\onslide<+-> $AA'\nmid DD'$ (hauteurs $\Delta ADF$) \\
 		\onslide<+-> $BB'\nmid DD'$ (hauteurs $\Delta BDG$) \\
-		\onslide<+->\begin{numcases}{}X= AA' \cap BB', \label{eq:1}\\
-					      Y= AA' \cap DD', \label{eq:2}\\
-					      Z= BB' \cap DD'. \label{eq:3} 
-			    \end{numcases} \smallskip
-		
-		 
+		\onslide<+->Preuve : \begin{numcases}{}X= AA' \cap BB', \label{eq:1}\\
+					      Y = AA' \cap DD', \label{eq:2}\\
+					      Z = BB' \cap DD'. \label{eq:3} 
+			    \end{numcases} 
+		          
 		\begin{align*}
 		Y \in& AA' \subset AA'B, \\
 		Z \in& BB' \subset AA'B, \\
-		\text{et }&  Y,Z \in DD', \\[1em]				
-			    Y =& Z  =DD' \cap AA'B. \\[1.5em]		
+		\text{et }&  Y,Z \in DD', \\[.5em]				
+			    Y =&\ Z  =DD' \cap AA'B. \\[.5em]		
 			    Y =& AA' \cap DD' = BB' \cap DD', (\ref{eq:2}=\ref{eq:3}) \\
 			      =& AA' \cap BB', \text{(transitivité)}\\
-			      =& X.\\
-			    X =& Y = Z. 	      
+			      =& X \quad \rightarrow  X = Y = Z.\\
 		\end{align*}
 		
 			   
@@ -376,7 +428,7 @@
 	   .2 $AA',BB',CC', DD'$ concourantes.~(commencer par $AA',BB',CC'$).
 	   .3 Élément de théorie.
 	   .4 3 droites non coplanaires sécantes 2 à 2 sont concourantes (à prouver car non vu)..
-	   .3 Résolution.
+	   .3 Résolution (commencer par $AA',BB',DD'$).
 	   .4 Les droites sont sécantes 2 à 2 car hauteurs $\Delta$..
 	   .4 Former un plan avec 2 droites, $AA'$ et $BB'$.
 	   .5 L'intersect\ion de $DD'$ avec $AA'$ et celle avec $BB'$\\ \hspace{5mm} appartiennent au plan et à $DD'$.
@@ -425,21 +477,9 @@
 				 \vspace{-3.5mm} 
 				  \begin{tcolorbox}[basic]\centering 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $ABCD$ régulier,
-				    \item $|CE|=|ED|$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèses} \\
-				    \renewcommand{\theenumi}{\alph{enumi})}
-				     \begin{enumerate}
-				     \item $CD\bot ABE$,
-				     \item $AA'\bot BCD$ et
-				       	   $BB'\bot ACD$,
-				     \item $A',B',C',D'$ orthocentres,
-				     \item $AA',BB',CC', DD'$ concourantes.
-				     \end{enumerate}				  
+				    \these				  
 				  \end{tcolorbox}
 		
 		
@@ -458,5 +498,22 @@
 	   }
           }
   
-  
+	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Droite $\bot$ plan si droite $\orthog$ 2 droites du plan.
+            \item Propriété montrée pour un sommet d'un tétraèdre régulier est vraie pour tous les autres grâce à la symétrie.
+	  \item  Points et droites particuliers d'un $\Delta$ isocèle sont confondus.
+          \item  Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver).
+          \end{itemize}
+    }
+          
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

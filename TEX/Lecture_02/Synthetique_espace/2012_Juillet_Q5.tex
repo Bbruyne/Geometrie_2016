@@ -28,6 +28,30 @@
 		      bottom = 2mm,
 		      boxsep=0mm
 		      }
+                    }
+
+                     \def\enonce{   \frametitle{Q1 Juillet 2012.}
+	  On considère un tétraèdre $ABCD$ et un plan parallèle à sa base $ABC$,
+	  qui coupe les arêtes $[AD]$, $[BD]$ et $[CD]$ en des points notés respectivement $A'$ , $B'$ et $C'$.
+	  Dans le triangle $ABC$, les milieux des côtés $[BC]$,
+	  $[AC]$ et $[AB]$ sont respectivement notés $P$, $Q$ et $R$. \\
+	  Démontrer que les droites $A'P$, $B'Q$ et $C'R$ sont concourantes.
+	  \vfill
+  }
+  \def\hypotheses{   \underline{Hypothèses} 
+		      \begin{enumerate}
+
+		      \item $ABC\parallel A'B'C'$,
+		      \item \begin{itemize}
+		              \item[$\bullet$] $|AQ|=|QC|$,
+		              \item[$\bullet$] $|AR|=|RB|$,
+		              \item[$\bullet$] $|BP|=|PC|$.
+		            \end{itemize}		            		              
+		      \end{enumerate}
+  }
+  \def\these{ \underline{Thèse} \\		
+		      \smallskip
+		      $A'P,B'Q,C'R$ concourantes.
 }
 
     
@@ -39,13 +63,7 @@
     
     \frame{
 	  
-	  \frametitle{Q1 Juillet 2012.}
-	  On considère un tétraèdre $ABCD$ et un plan parallèle à sa base $ABC$,
-	  qui coupe les arêtes $[AD]$, $[BD]$ et $[CD]$ en des points notés respectivement $A'$ , $B'$ et $C'$.
-	  Dans le triangle $ABC$, les milieux des côtés $[BC]$,
-	  $[AC]$ et $[AB]$ sont respectivement notés $P$, $Q$ et $R$. \\
-	  Démontrer que les droites $A'P$, $B'Q$ et $C'R$ sont concourantes.
-	  \vfill
+	\enonce
 	  
 	  \pause
 	  % hypothèses et thèse
@@ -54,23 +72,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-
-		      \item $ABC\parallel A'B'C'$,
-		      \item \begin{itemize}
-		              \item[$\bullet$] $|AQ|=|QC|$,
-		              \item[$\bullet$] $|AR|=|RB|$,
-		              \item[$\bullet$] $|BP|=|PC|$.
-		            \end{itemize}		            		              
-		      \end{itemize}
+		     \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\		
-		      \smallskip
-		      $A'P,B'Q,C'R$ concourantes.
+		      \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -129,24 +136,13 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-
-				    \item $ABC\parallel A'B'C'$,
-				    \item \begin{itemize}
-					      \item[$\bullet$] $|AQ|=|QC|$,
-					      \item[$\bullet$] $|AR|=|RB|$,
-					      \item[$\bullet$] $|BP|=|PC|$.
-					  \end{itemize} 
-				    \end{enumerate}
-							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $A'P,B'Q,C'R$ concourantes.
+				    \hypotheses
+                                    
+				    \these
 				    \end{tcolorbox}
 		
 		
-		\column{.5\textwidth}\centering
+		\column{.52\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
 	
@@ -158,14 +154,17 @@
 		Les droites sont concourantes en D.
 		\bigskip
 		
-		\textit{Cas général :} \\ \medskip
+		\textit{Cas général :} \\ \smallskip
+                 \heart Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver). \smallskip
 		
-		\begin{enumerate}
-		 \item $BC\parallel B'C'$,
-		 \item $BC\parallel QR$ par Thalès.
-		\end{enumerate}	\bigskip
-		\centering $B'C'\parallel QR \rightarrow B'Q \nmid C'R$. \\ \medskip
-		De la même façon : \\ \medskip $A'P\nmid C'R\text{ et }A'P\nmid B'Q$.
+		$$\begin{cases}
+		 B'C'\parallel BC, (\textcolor{blue}{1.})\\
+		 BC\parallel QR.\ (\text{Thalès})
+               \end{cases} \rightarrow B'C'\parallel QR.$$ 
+               
+               $\rightarrow$ $B',C',R,Q$ sont dans un plan.\\ \smallskip
+                \heart 2 droites sont $\nmid$ si elles $\in$ au même plan et ne sont pas $\parallel. \rightarrow B'Q \nmid C'R$. \\ \medskip
+	
 	   \end{columns}
        \notedir{%
 	   .1 Prouver thèse.
@@ -186,8 +185,6 @@
 	   .5 $\rightarrow$ $B'C'$ parallèle à $RC$ par transitivité..
 	   .6 $B',C',R,Q$ sont coplanaires..
 	   .7 $B'Q$, $C'R$ sécantes car coplanaires et non $\parallel$..
-	   .5 De la même façon, $A'P\nmid C'R$ et $A'P\nmid B'Q$..
-	   .6 Les trois droites sont 2 à 2 sécantes..
 	   }
        }
 	  
@@ -238,33 +235,23 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-
-				    \item $ABC\parallel A'B'C'$,
-				    \item \begin{itemize}
-					      \item[$\bullet$] $|AQ|=|QC|$,
-					      \item[$\bullet$] $|AR|=|RB|$,
-					      \item[$\bullet$] $|BP|=|PC|$.
-					  \end{itemize} 
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $A'P,B'Q,C'R$ concourantes.
+				    \these
 				    \end{tcolorbox}
 		
 		
 		\column{.5\textwidth}\flushleft
+                De la même façon : \\ \medskip $A'P\nmid C'R\text{ et }A'P\nmid B'Q$. \medskip
+                
 		
-		\bigskip 
-		
-		\begin{numcases}{}X= B'Q \cap C'R, \label{eq:1}\\
+		Preuve : \begin{numcases}{}X= B'Q \cap C'R, \label{eq:1}\\
 				  Y= A'P \cap C'R, \label{eq:2}\\
 				  Z= A'P \cap B'Q. \label{eq:3} 
-		\end{numcases} \medskip
-		
-		 
+		\end{numcases} 
+
+\smallskip
+                
 		\begin{align*}
 		Y \in& C'R \subset B'C'R, \\
 		Z \in& B'Q \subset B'C'R, \\
@@ -273,19 +260,37 @@
 			    Y =& A'P \cap C'R = A'P \cap B'Q, (\ref{eq:2}=\ref{eq:3}) \\
 			      =& B'Q \cap C'R, \text{(transitivité)}\\
 			      =& X.\\[0.5em]
-			    X =& Y = Z. 	      
+			    X =& Y = Z. \hspace{30mm} \qed	      
 		\end{align*}
-		\hfill $\qed$
 	   \end{columns}
        
        \notedir{%
        .1 Prouver thèse.
        .2 Suite $A'P,B'Q,C'R$ concourantes.
+	   .3 De la même façon, $A'P\nmid C'R$ et $A'P\nmid B'Q$..
+	   .4 Les trois droites sont 2 à 2 sécantes..
        .3 Former un plan avec 2 droites, $C'R$ et $B'Q$.
        .4 L'intersect\ion de $A'P$ avec $C'R$ et celle avec $B'Q$\\ \hspace{5mm} appartiennent au plan et à $A'P$.
        .5 Ces deux intersect\ion sont confondues car point de \\ \hspace{5mm} percée de $A'P$ ds.~plan est unique..
        .6 Ce point de percée appartient à la fois à $A'P,B'Q,C'R \rightarrow$ droites concourantes.. 
        }
-       }
+     }
+
+     	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+             \item  Trois droites de directions différentes et sécantes 2 à 2 sont concourantes (à prouver).
+          \item  2 droites sont $\nmid$ si elles $\in$ au même plan et ne sont pas $\parallel$.
+           
+          \end{itemize}
+    }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
