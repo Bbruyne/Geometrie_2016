@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -27,18 +28,20 @@
 		      }
 }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
- \frame{%énoncé ex2
-	\frametitle{Q2 Septembre 2015.}
+
+\def\enonce{	\frametitle{Q2 Septembre 2015.}
 	 Dans un repère orthonormé $(O,X,Y)$, on considère une parabole $\mathcal{P}_1$
 	 d’axe $Y$ dont le sommet est l’origine $O$ et dont tous les points ont
 	 une ordonnée positive ou nulle. On considère aussi la parabole $\mathcal{P}_2$,
 	 translatée de $\mathcal{P}_1$ , de sommet au point de coordonnées $(4, 0)$. Les
 	 paraboles $\mathcal{P}_1$ et $\mathcal{P}_2$ sont telles que leurs tangentes respectives à leur
 	 point d’intersection sont orthogonales. On demande de déterminer les
-	 équations cartésiennes de $P_1$ et $P_2$.
+	 équations cartésiennes de $\mathcal{P}_1$ et $\mathcal{P}_2$.
+  }
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+ \frame{%énoncé ex2
+\enonce
   
 	 \vfill
 	  
@@ -126,25 +129,94 @@
 		\column{.5\textwidth}\flushleft
 		
 		\underline{Résolution}\\
-		
-		\begin{enumerate}
 
-		\item[$\mathcal{P}_1$] $\equiv y=px^2$ $(p>0)$,
-		\item[$\mathcal{P}_2$] $\equiv y=p(x-4)^2$,
-		\item[$X$] $= \mathcal{P}_1 \cap \mathcal{P}_2 = (2,4p)$.
-		\end{enumerate} \bigskip
+                
+                \begin{align*}
+                  \mathcal{P}\equiv&\ y = p(x-x_s)^2 + y_s\\
+\mathcal{P}_1\equiv& \begin{cases} p_1>0 \\ (x_{s_1},y_{s_1})=(0,0)\end{cases}\\\rightarrow \mathcal{P}_1\equiv&\ y=px^2.\\\mathcal{P}_2\equiv& \begin{cases} p_2=p_1 \\ (x_{s_2},y_{s_2})=(4,0)\end{cases}\\\rightarrow \mathcal{P}_2\equiv&\ y=p(x-4)^2.
+                \end{align*}
+                
+	 $X = \mathcal{P}_1 \cap \mathcal{P}_2 = (2,4p)$.\medskip
 		
-		\heart Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$.
-		 
-	
-		\begin{align*}
-		\mathcal{P}_1'(2).\mathcal{P}_2'(2) =& -1& \\
-		4p.-4p =& -1& \\
-		p=& \text{ }\dfrac{1}{4} &\text{ car } p>0. \\ 
+         \heart Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$.\vspace{-1mm}
+         \begin{align*}
+		\mathcal{P}_1'(2).\mathcal{P}_2'(2) =& -1, \\
+                  (4p)(-4p) =& -1, \\
+                  16p^2 =& 1, 
 		\end{align*}
 		
-		$\begin{cases}\mathcal{P}_1\equiv y=\frac{x^2}{4} \\
-			      \mathcal{P}_2\equiv y=\frac{(x-4)^2}{4}
+		\hfill $\qed$
+   
+	   \end{columns}
+  
+	\notedir{%
+	.1 Déterminer équations de $\mathcal{P}_1$ et $\mathcal{P}_2$.
+	.2 Représenter les paraboles dans repère.
+	.3 $\mathcal{P}_1$: equat\ion parabole avec concavité pos.~et sommet en O..
+	.3 $\mathcal{P}_2$: $\mathcal{P}_1$ translatée de 4 vers x positifs..
+	.3 $X$ point d'intersection des 2 paraboles..	
+	.2 Résolution.
+	.3 Tangentes $\bot$ en $X$.
+	.4 Propriété des droites perpendiculaires.
+	.5 Applications aux tangentes des paraboles en $X$.
+	.6 Les pentes des tangentes sont données par les \\ \hspace{5mm} dérivées des paraboles en $X$..
+	}
+      }
+
+        \frame{ %résolution ex2
+	\begin{columns}[t]
+		\column{.5\textwidth}\centering 
+		
+
+			\underline{Dessin}\\
+			
+				  \begin{figure}[h]
+				  \begin{tikzpicture}[scale=0.57]
+					%\draw[help lines] (-3,-3) grid (3,3); 				
+					%AXES
+					\draw[->] (0,-1) -- (0,4) coordinate[label=below left:$y$]();
+					\draw[->] (-4.5,0) -- (4.5,0) coordinate[label=below left:$x$]();
+					%P_1 et P_2
+					\draw[name path = P_1] (-4,4) coordinate[label=right:$\mathcal{P}_1$]() parabola bend(0,0) (4,4);
+					\draw[name path = P_2] (0,4) coordinate[label=right:$\mathcal{P}_2$]() parabola bend(4,0) (4.5,0.0625);
+					\path [name intersections={of=P_1 and P_2,by=X}];
+					\coordinate[label=above:$X$]() at (X); 
+				  \end{tikzpicture}
+				  \end{figure}
+			
+				  \begin{tcolorbox}[basic] 
+				    \centering  
+				    \smallskip
+				    \underline{Procédé} \\ \smallskip
+				    
+				    Equations de $\mathcal{P}_1, \mathcal{P}_2$ avec les conditions : \\ \medskip				 
+				    				    
+				    $\mathcal{P}_1\begin{cases} 
+						  \text{concavité positive,} \\
+						  \text{sommet en }(0,0).
+						  \end{cases}$ \\ \medskip
+
+				    $\mathcal{P}_2\begin{cases} 
+						  \mathcal{P}_1 \text{ translatée,} \\
+						  \text{sommet en }(4,0).
+						  \end{cases}$ \\ \smallskip
+
+				    Tangentes $\bot$ en $\mathcal{P}_1 \cap \mathcal{P}_2$.
+
+		      		      
+				    \end{tcolorbox}
+		
+		
+		\column{.5\textwidth}\flushleft
+		
+		\underline{Résolution}\\
+
+         \begin{align*}
+		p=& \text{ }\dfrac{1}{4} \quad \text{ car } p>0.  
+		\end{align*}
+                
+		$\rightarrow \begin{cases}\mathcal{P}_1\equiv y=\frac{x^2}{4}, \\
+			      \mathcal{P}_2\equiv y=\frac{(x-4)^2}{4}.
 		  \end{cases}$
 		
 		\hfill $\qed$
@@ -165,5 +237,20 @@
 	.7 On trouve $p$ et $p>0$ car $\mathcal{P}_1$ de concavité >0..
 	.8 Équations de $\mathcal{P}_1$ et $\mathcal{P}_2$..
 	}
-	}
+      }
+
+      	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$.
+          \end{itemize}
+    }
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

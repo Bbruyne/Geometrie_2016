@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -284,7 +285,7 @@
 			          
 			          
 			          \draw[dotted] (-2,-0.5,0) -- +(0,2,-1) -- (2,2.5,-1) node[above left]{$\pi$} -- +(0,-2,1) -- cycle;
-			          \draw[dotted] (0,2,2)  node[right]{$\pi '$} -- +(0,-2,1) -- (0,0,-1) -- +(0,2,-1) -- cycle;
+			          \draw[dotted] (0,2,2)  -- +(0,-2,1) node[below]{$\pi '$} -- (0,0,-1) -- +(0,2,-1) -- cycle;
 			          
 				  
 	  \end{tikzpicture}
@@ -432,3 +433,8 @@
 	  }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

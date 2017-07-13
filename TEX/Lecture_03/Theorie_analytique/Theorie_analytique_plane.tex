@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -60,11 +61,11 @@
 					
 				  \end{tikzpicture}
 				  \end{figure}
-				    $$\mathcal{P} \equiv y = a(x - x_s)^2 + y_s.$$ \smallskip
+				    $$\mathcal{P} \equiv y = p(x - x_s)^2 + y_s.$$ \smallskip
 				    
 				  \begin{itemize}
 				   \item $(x_s,y_s)$ sommet. \\
-				   \item $a$ courbure.
+				   \item $p$ courbure.
 				  \end{itemize}
 
 	   \column{.35\textwidth}\centering\underline{Cercle.}
@@ -150,3 +151,8 @@
 	  
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -5,6 +5,7 @@
 \usepackage[french]{babel}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -41,6 +42,15 @@
     },
   }
 
+  
+ \def\enonce{  \frametitle{Q2 Juillet 2002.}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  Dans le plan muni d’un repère orthonormé $Oxy$, on note $\mathcal{P}$ la parabole d’équation
+	  $y = x^2$ et $P$ le point de $\mathcal{P}$ d’abscisse $1$. Quel est le lieu des sommets des paraboles
+	  d’axe parallèle à $Oy$ et orthogonales à $\mathcal{P}$ en $P$ (dire que deux paraboles sont
+	  orthogonales en $P$ signifie qu’elles passent par $P$ et que leurs tangentes en $P$ sont
+	  perpendiculaires).
+  }
     
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
@@ -48,13 +58,7 @@
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q2 Juillet 2002.}
-	  %\renewcommand{\theenumi}{\alph{enumi})}
-	  Dans le plan muni d’un repère orthonormé $Oxy$, on note $\mathcal{P}$ la parabole d’équation
-	  $y = x^2$ et $P$ le point de $\mathcal{P}$ d’abscisse $1$. Quel est le lieu des sommets des paraboles
-	  d’axe parallèle à $Oy$ et orthogonales à $\mathcal{P}$ en $P$ (dire que deux paraboles sont
-	  orthogonales en $P$ signifie qu’elles passent par $P$ et que leurs tangentes en $P$ sont
-	  perpendiculaires).
+	\enonce
 	  \vfill
 	  
 	  \pause
@@ -135,30 +139,23 @@
 		\column{.5\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		\begin{enumerate}
-		 \item $\mathcal{P_L} \equiv y = a(x-x_s)^2 + y_s$. \\ \smallskip
-		       $\hspace{3cm}(a\neq 0)$
-		\end{enumerate} \bigskip
+                $\mathcal{P_L} \equiv y = a(x-x_s)^2 + y_s.\ (a\neq 0)$
+                   \bigskip
 		
-		$P=(1,1)$. \medskip
+		$\begin{cases}P_x=1,\\ P\in\mathcal{P},\\\mathcal{P} \equiv y=x^2.\end{cases}\rightarrow P=(1,1)$. \medskip
 		
-		\heart Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$. \\ \medskip
+		\heart Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$. \\
 		
-		\begin{itemize}
-		 \item[2.] $\mathcal{P_L}'(1)\mathcal{P}'(1) = -1$.
-		\end{itemize}
-		$\rightarrow \qquad 4\ a(1-x_s)=-1 \qquad \hspace{2mm} (\dag)$. \\ \bigskip
+		\begin{align*} \mathcal{P_L}'(1)\mathcal{P}'(1) =& -1, \\ \qquad 2\, a(1-x_s)\, 2=&-1, \\
+a =& \dfrac{1}{4(x_s-1)}. \quad (x_s \neq 1)                \end{align*} \\ \bigskip
 		
 		
-		
-		\begin{enumerate}
-		 \item[3.] $\mathcal{P_L}(1) = 1$.		   
-		\end{enumerate}
-		$\rightarrow \qquad a(1-x_s)^2 + y_s = 1 \qquad (\ddag)$. \\ \bigskip
-		
-		$(\dag)\ a = \dfrac{1}{4(x_s-1)}. \quad (x_s \neq 1)$ \\ \medskip
-		\onslide<+->$(\ddag)\ y_s = -\dfrac{x_s}{4} + \dfrac{5}{4}. \quad (x_s \neq 1)$\hfill $\qed$		
-		
+                \begin{align*}P\in \mathcal{P_L} \ : \mathcal{P_L}(1) =& 1.\\
+                a(1-x_s)^2 + y_s =& 1. 
+                \end{align*}
+                
+                \onslide<+->\smallskip \ $\rightarrow y_s = -\dfrac{x_s}{4} + \dfrac{5}{4}. \quad (x_s \neq 1)\hspace{2mm} \qed$
+                
    
 	   \end{columns}
     \notedir{%
@@ -181,6 +178,21 @@
 	.3 L'équation du lieu est une droite dépourvue de $P$..
 	}
     }
-	  
+	               \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Deux droites sont $\bot$ si le produit de leur coefficient angulaire vaut $-1$
+            \item Avant d'éliminer un paramètre, noter les conditions qu'il impose sur les variables.
+          \end{itemize}
+    }
   
 \end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

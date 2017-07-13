@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -25,6 +26,24 @@
 		      bottom = 2mm,
 		      boxsep=0mm
 		      }
+                    }
+
+                     \def\enonce{ \frametitle{Q1 Septembre 2015.}
+	  On considère deux cercles $\mathcal{C}$ et $\mathcal{C'}$ se coupant en deux points distincts
+	  $A$ et $B$. On note $P$ le point diamétralement opposé à $A$ sur $\mathcal{C}$, et $P'$ le
+	  point diamétralement opposé à $A$ sur $\mathcal{C'}$ . \\
+	  Démontrer que les points $P$ , $B$ et $P'$ sont alignés.
+  }
+  \def\hypotheses{ \underline{Hypothèses} 
+		      \begin{enumerate}
+		      \item $[AP]$ diamètre de $\mathcal{C}$ \\
+			    $[AP']$ diamètre de  $\mathcal{C'}$,
+		      \item $[AB]$ corde de $\mathcal{C}$ et $\mathcal{C'}$.			    
+		      \end{enumerate}
+}
+  \def\these{\underline{Thèse} \\
+		      \smallskip
+		      $P,B$ et $P'$ alignés.
 }
 
     
@@ -33,11 +52,7 @@
     
     \frame{%enoncé ex1
 	  
-	  \frametitle{Q1 Septembre 2015.}
-	  On considère deux cercles $\mathcal{C}$ et $\mathcal{C'}$ se coupant en deux points distincts
-	  $A$ et $B$. On note $P$ le point diamétralement opposé à $A$ sur $\mathcal{C}$, et $P'$ le
-	  point diamétralement opposé à $A$ sur $\mathcal{C'}$ . \\
-	  Démontrer que les points $P$ , $B$ et $P'$ sont alignés.
+	 \enonce
 	  
 	  \vfill
 	  
@@ -48,19 +63,12 @@
 		 
 		 \column{.5\textwidth}\centering
 		      
-		      \underline{Hypothèses} 
-		      \begin{itemize}
-		      \item $[AP]$ diamètre de $\mathcal{C}$ \\
-			    $[AP']$ diamètre de  $\mathcal{C'}$,
-		      \item $[AB]$ corde de $\mathcal{C}$ et $\mathcal{C'}$.			    
-		      \end{itemize}
+		    \hypotheses
 
 		  
 		  \column{.5\textwidth}\centering
 		      
-		      \underline{Thèse} \\
-		      \smallskip
-		      $P,B$ et $P'$ alignés.
+		      \these
 		
 	      \end{columns}
 	  \end{tcolorbox}
@@ -111,16 +119,9 @@
 				  \begin{tcolorbox}[basic] 
 				      
 				    \smallskip
-				    \underline{Hypothèses} 
-				    \begin{enumerate}
-				    \item $[AP]$ diamètre de $\mathcal{C}$ \\
-					  $[AP']$ diamètre de  $\mathcal{C'}$,
-				    \item $[AB]$ corde de $\mathcal{C}$ et $\mathcal{C'}$.
-				    \end{enumerate}
+				    \hypotheses
 							      
-				    \underline{Thèse} \\
-				    \smallskip
-				    $P,B$ et $P'$ alignés. 
+				    \these
 				    \end{tcolorbox}
 		
 		
@@ -130,13 +131,15 @@
 		
 		\heart Un triangle inscrit dans un demi-cercle est rectangle.
 		
-		
-		\begin{enumerate}
-		 \item $\Delta APB$ rectangle en $B$ \\
-		       $\Delta AP'B$ rectangle en $B$,
-		 \item $P$ et $P'$ sont sur une droite $\bot$ à AB passant par $B$.
-		\end{enumerate}
-		\bigskip		
+		$$\begin{cases}
+		       \Delta APB \text{ rectangle en } B, \\
+		       \Delta AP'B \text{ rectangle en } B.
+                     \end{cases}\hspace{-4mm}\rightarrow \widehat{PBP'}=\pi.$$
+
+                     $P$ et $P'$ sont sur une droite $\bot$ à AB passant par $B$.
+                     
+                     \bigskip
+                     
 		$P,B$ et $P'$ alignés.  \hfill $\qed$
 
    
@@ -155,6 +158,20 @@
 	   }   
         }
 
-  
+     \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Montrer que $A,B,C$ sont alignés = montrer que $\widehat{ABC}=\pi$ ?
+            \item  Un triangle inscrit dans un demi-cercle est rectangle.
+          \end{itemize}
+    }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

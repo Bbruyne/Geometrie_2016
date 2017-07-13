@@ -5,6 +5,7 @@
 \usepackage[french]{babel}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -41,18 +42,19 @@
     },
   }
 
-    
+  \def\enonce{  \frametitle{Q2 Juillet 2003.}
+	  %\renewcommand{\theenumi}{\alph{enumi})}
+	  On considère un triangle $ABC$. Par $B$, on mène une droite $d$ variable qui
+	  coupe $AC$ en $D$. Déterminer l’équation cartésienne du lieu géométrique du
+	  centre de gravité du triangle $ABD$.
+    }
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
     \frame{
-	  
-	  \frametitle{Q2 Juillet 2003.}
-	  %\renewcommand{\theenumi}{\alph{enumi})}
-	  On considère un triangle $ABC$. Par $B$, on mène une droite $d$ variable qui
-	  coupe $AC$ en $D$. Déterminer l’équation cartésienne du lieu géométrique du
-	  centre de gravité du triangle $ABD$.
+	  \enonce
+	
 	  \vfill
 	  
 	  \pause
@@ -108,14 +110,15 @@
 		 Soit un repère orthonormé $R=(O,X,Y)$ avec : \\
 		 $A\ (0,a),\ B\ (b,0),\ C\ (c,0)$.\\ \bigskip
 		 
-		 \textit{Cas particulier : $c=0$} \\ \medskip 
-		 $AC \equiv x = 0$. \\ \medskip
+		 \textit{Cas particulier : $c=0$} \\ \medskip
+                  $AC \equiv \begin{cases}A,\\C.\end{cases}\rightarrow
+		 AC \equiv x=0.$ \\ \medskip
 		 $\rightarrow D(\ 0,\ y_D). \qquad (y_D \in \mathbb{R})$ \\ \bigskip
 		 $G = \frac{1}{3}A+\frac{1}{3}B+\frac{1}{3}D$. \\ \medskip
 		 $G \equiv \begin{cases}
 		            x=\dfrac{b}{3}, \\[0.8em]
 		            y=\dfrac{a+y_D}{3}.
-		           \end{cases}$ \\ \medskip
+		           \end{cases} \quad (y_D \in \mathbb{R})$ \\ \medskip
 		 Lieu : $x=\frac{b}{3}$.
 
 		%\centering\noindent\rule{2cm}{0.4pt}
@@ -174,20 +177,21 @@
 				    \end{tcolorbox}
 		
 		
-		\column{.52\textwidth} \underline{Résolution}\\ \flushleft
-		 Soit un repère orthonormé $R=(O,X,Y)$ avec : \\
-		 $A\ (0,a),\ B\ (b,0),\ C\ (c,0)$.\\ \bigskip
+		\column{.55\textwidth} \underline{Résolution}\\ \flushleft
+		
 		 
-		 \textit{Cas général : $c\neq 0$} \\ \medskip 
-		 $AC \equiv y=a(1-\frac{x}{c})$. \\ \medskip
+                \textit{Cas général : $c\neq 0$} \\ \medskip
+                   $AC \equiv \begin{cases}A,\\C.\end{cases}\rightarrow
+		 AC \equiv y=a\left(1-\dfrac{x}{c}\right).$ \\ \medskip
 		 $\rightarrow D(\ x_D,\ a(1-\frac{x_D}{c})\ ). \qquad (x_D \in \mathbb{R})$ \\ \bigskip
 		 $G = \frac{1}{3}A+\frac{1}{3}B+\frac{1}{3}D$. \\ \medskip
 		 \begin{numcases}{G \equiv} 
 		            x=\frac{b+x_D}{3}, \\[0.2em]
-		            y=\frac{a+a(1-\frac{x_D}{c})}{3}.
+		            y=\frac{a+a\left(1-\dfrac{x_D}{c}\right)}{3}.
 		           \end{numcases} \\ \medskip
-		 $(1)\ x_D = 3x -b$. \\ \bigskip
-		 $(2)\ \text{Lieu : } y=-\dfrac{a}{c}x + \dfrac{a}{3c}(b+2c)$.
+		 $(1)\rightarrow \ x_D = 3x -b$.\hfill $(3)$ \\ \bigskip
+		 $(1),(3)\rightarrow  \text{Lieu : } y=-\dfrac{a}{c}x + \dfrac{a}{3c}(b+2c)$.\\ \medskip \hfill
+                 $(x \in \mathbb{R})$\\ \hfill $\qed$
 
 		%\centering\noindent\rule{2cm}{0.4pt}
 		\end{columns}
@@ -210,6 +214,23 @@
 	.7 L'équation du lieu est une droite car $x\in \mathbb{R}$..
 	}
     }
-	  
+
+    	             \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Trouver les cas particuliers. Par exemple en vérifiant qu'aucun dénominateur ne peut s'annuler.
+          \item Si $G$ est le centre de gravité de $A,B,C$, alors
+
+            $$G=\left(\dfrac{A_x + B_x + C_x}{3}, \dfrac{A_y + B_y + C_y}{3}\right).$$.
+          \end{itemize}
+    }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
