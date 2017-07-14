@@ -42,25 +42,27 @@
     },
   }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q5 Juillet 2001.}
+
+  \def\enonce{ \frametitle{Q5 Juillet 2001.}
 	  \renewcommand{\theenumi}{\alph{enumi})}
 	  On donne des équations cartésiennes de trois droites $d_1$, $d_2$, $d_3$ de l’espace : \\
 	  $$d_1 \equiv \frac{x-1}{2}=-y=\frac{z+1}{3},\; d_2 \equiv \frac{x}{3}=y+1=\frac{z-2}{5},\; d_3 \equiv \begin{cases}
-	                                                                                                     x=1 \\
-	                                                                                                     y+z=2
+	                                                                                                     x=1, \\
+	                                                                                                     y+z=2.
 	                                                                                                    \end{cases}$$
 	   \begin{enumerate}
 	    \item Donner une équation du plan $\alpha$ contenant $d_1$ et parallèle à $d_3$.
 	    \item Donner une équation du plan $\beta$ contenant $d_2$ et parallèle à $d_3$
 	    \item Donner les équations de la droite $d$ s’appuyant sur $d_1$ et $d_2$ et parallèle à $d_3$.
 	   \end{enumerate}
+    }
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	 \enonce
                                                                                                  
 
 	  \vfill
@@ -219,15 +221,15 @@
 	.3 Équation de $\alpha$.
 	.4 $\alpha$ est déterminé par un point et 2 vecteurs direct..
 	.5 Son équation s'obtient en annulant le déterminant:.
-	.6 1\iere\ colonne : $x - D_{1_x}$,$y - D_{1_y}$, $z - D_{1_z}$..
-	.6 2\ieme\ colonne : coordonnée de $\vect{d_1}$..
-	.6 3\ieme\ colonne : coordonnée de $\vect{d_3}$..	
+	.6 1\iere\ ligne : $x - D_{1_x}$,$y - D_{1_y}$, $z - D_{1_z}$..
+	.6 2\ieme\ ligne : coordonnée de $\vect{d_1}$..
+	.6 3\ieme\ ligne : coordonnée de $\vect{d_3}$..	
 	.3 Équation de $\beta$.
 	.4 $\beta$ est déterminé par un point et 2 vecteurs direct..
 	.5 Son équation s'obtient en annulant le déterminant:.
-	.6 1\iere\ colonne : $x - D_{2_x}$,$y - D_{2_y}$, $z - D_{2_z}$..
-	.6 2\ieme\ colonne : coordonnée de $\vect{d_2}$..
-	.6 3\ieme\ colonne : coordonnée de $\vect{d_3}$..	
+	.6 1\iere\ ligne : $x - D_{2_x}$,$y - D_{2_y}$, $z - D_{2_z}$..
+	.6 2\ieme\ ligne : coordonnée de $\vect{d_2}$..
+	.6 3\ieme\ ligne : coordonnée de $\vect{d_3}$..	
 	}
     }
 	\frame{ 			
@@ -322,8 +324,23 @@
 	.4 $d$ parallèle à $d_3$ $\rightarrow$ $d$ parallèle à plan $\beta$..
 	.5 Si $d$ intersecte et est parallèle à $\beta$, elle est contenue dans $\beta$..
 	.4 $d$ est intersection de $\alpha$ et $\beta$..
-	.5 Équations : éliminer au moins une inconnue dans équations du système..
 	}
-    }  
+      }
+
+           \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Pour trouver équation d'un plan, trouver un point et deux vecteurs directeurs du plan,
+            \item Utiliser les résultats déjà démontrés.
+          \end{itemize}
+    }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

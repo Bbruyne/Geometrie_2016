@@ -42,14 +42,7 @@
     },
   }
 
-    
-\begin{document}  
-    \beamertemplatenavigationsymbolsempty
-    \setlength{\abovedisplayskip}{0pt}
-    \setlength{\belowdisplayskip}{0pt}
-    \frame{
-	  
-	  \frametitle{Q5 Juillet 2002.}
+  \def\enonce{ \frametitle{Q5 Juillet 2002.}
 	  \renewcommand{\theenumi}{\alph{enumi})}
 	  On se place dans l’espace muni d’un repère orthonormé $Oxyz$.
 	  \begin{enumerate}
@@ -58,11 +51,20 @@
 		 où $r$ parcourt $\mathbb{R}$, soient tous parallèles à $d$.
 	   \item Déterminer la perpendiculaire commune $d_1$ à $d$ et à la droite $d'$ d’équations 
 		 $$d' \equiv \begin{cases} 
-			x=y \\
-			z=1
+			x=y, \\
+			z=1.
 		        \end{cases}$$
 
 	  \end{enumerate}
+    }
+  
+\begin{document}  
+    \beamertemplatenavigationsymbolsempty
+    \setlength{\abovedisplayskip}{0pt}
+    \setlength{\belowdisplayskip}{0pt}
+    \frame{
+	  
+	 \enonce
 
 	  \vfill
 	  
@@ -298,7 +300,24 @@
 	.3 $d_1$ est intersection des 2 plans..
 	.4 Équations : éliminer au moins une inconnue dans équations du système..
 	}	
+      }
+
+                \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Si $a r^2 + b r +c =0 \ \forall r$ alors $a=0,\ b=0,\ c=0$,
+            \item  La perpendiculaire commune à 2 droites gauches $d,d'$ est l'intersection du plan $\alpha$ contenant $d$ et la direction $d \wedge
+		d'$ avec le plan $\alpha '$ contenant $d'$ et la direction $d \wedge d'$.
+          \end{itemize}
     }
 	  
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

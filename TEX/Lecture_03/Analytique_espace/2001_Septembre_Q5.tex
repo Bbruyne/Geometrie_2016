@@ -42,21 +42,23 @@
     },
   }
 
-    
+  \def\enonce{ \frametitle{Q5 Septembre 2001.}
+	  \renewcommand{\theenumi}{\alph{enumi})}
+	  \begin{enumerate}
+	   \item Quelles sont les coordonnées du pied $Q$ de la perpendiculaire abaissée du point
+		 $P (\alpha, \alpha + 1, \alpha - 1)$ sur le plan $\pi$ d’équation $2x + \alpha y + \alpha z + \alpha^3 + 4 = 0$ ?
+	   \item Montrer que ces pieds, lorsque $\alpha$ parcourt $\mathbb{R}$, sont tous situés sur une même
+		 droite $d$, dont on déterminera les équations.
+	  \end{enumerate}
+    }
+  
 \begin{document}  
     \beamertemplatenavigationsymbolsempty
     \setlength{\abovedisplayskip}{0pt}
     \setlength{\belowdisplayskip}{0pt}
     \frame{
 	  
-	  \frametitle{Q5 Septembre 2001.}
-	  \renewcommand{\theenumi}{\alph{enumi})}
-	  \begin{enumerate}
-	   \item Quelles sont les coordonnées du pied $Q$ de la perpendiculaire abaissée du point
-		 $P (\alpha, \alpha + 1, \alpha - 1)$ sur le plan $\pi$ d’équation $2x + \alpha y + \alpha z + \alpha^3 + 4 = 0$ ?
-	   \item Montrer que ces pieds, lorsque $\alpha$ parcourt $\mathbb{R}$, sont tous situés sur une même
-		 droite $d$, dont on déterminera des équations.
-	  \end{enumerate}
+	 \enonce
 
 	  \vfill
 	  
@@ -134,7 +136,7 @@
 		            \vect{n_\pi}, \\
 			    \ni P(\alpha, \alpha + 1, \alpha - 1).
 		           \end{cases} \\
-		    &\ \equiv \frac{\alpha(x-\alpha)}{2}=y-\alpha-1=z-\alpha+1.
+		 PQ   &\ \equiv \frac{\alpha(x-\alpha)}{2}=y-\alpha-1=z-\alpha+1.
 		\end{align*}\bigskip
 		
 		\column{.5\textwidth}\centering
@@ -216,18 +218,17 @@
 		\centering\underline{Résolution}\\ \medskip
 		$Q(-2,\frac{2-\alpha^2}{2},-\frac{2+\alpha^2}{2})\qquad \rightarrow \qquad \begin{cases}
 											    x = -2, \\
-											    y = \frac{2-\alpha^2}{2}, \; \text{ ($\dagger$)}\\
+											    y = \frac{2-\alpha^2}{2}, \; \text{ ($\dagger$)} \qquad (\alpha \in \mathbb{R})\\
 											    z = -\frac{2+\alpha^2}{2}. 
 											    \end{cases}$ \bigskip
 											    
 		$(\dagger)\quad \alpha^2 = -2y + 2  \qquad \rightarrow \qquad d \equiv      \begin{cases}
 											    x = -2, \\
 											    y = z + 2. 
-											    \end{cases}$  \\ \bigskip\flushleft
-											    
-		$d$ est une droite car intersection de 2 plans. \\ \bigskip
-		De $(\dagger)$, si $\alpha \in \mathbb{R}$, $y\le 1$.\\ \medskip
-		Lieu est demi-droite $d$ comprise dans région $y\le 1$. \hfill $\qed(b)$
+											    \end{cases}\qquad (y \leq 1)$  \\ \bigskip\flushleft
+											   
+		De $(\dagger)$, $\alpha \in \mathbb{R} \rightarrow y\le 1$.\\ \medskip
+		Lieu est demi-droite $d$ (intersection de 2 plans) comprise dans région $y\le 1$. \hfill $\qed(b)$
 		
 		%\centering\noindent\rule{2cm}{0.4pt}
 	\notedir{%
@@ -247,6 +248,23 @@
 	.5 Injecter $\alpha$ dans une autre équation pour l'éliminer..
 	.4 L'équation du lieu est une demi-droite car intersect\ion 2 plans et $y\ge0$ car $\alpha \in \mathbb{R}$ (dans $(\dagger)$)..
 	}
+      }
+
+            \frame{ 
+	  \enonce
+
+	  \vfill\center
+	  \underline{Résumé}\\ \flushleft
+          \begin{itemize}
+          \item Si $\pi\equiv ax + by + cz + d =0$ alors $n_{\pi}=(a,b,c)$,
+            \item Avant d’éliminer un paramètre, noter les conditions qu’il impose sur
+les variables. 
+          \end{itemize}
     }
   
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
