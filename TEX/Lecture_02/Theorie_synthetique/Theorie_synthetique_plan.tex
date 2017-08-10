@@ -4,6 +4,7 @@
 \usepackage{pgfpages}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -353,13 +354,8 @@
 				 \medskip
 				
 		\notedir{%
-		.1 Relations de longueurs.
-		.2 Pythagore généralisé..
-		.3 Formule valable pour n'importe quel côté.~Pas seulement pour le côté le plus long..
-		.3 Énoncé en français aide à connaître formule..
-		.2 Médiane issue de l'angle droit d'un triangle rectangle.
-		.3 Car $\Delta$ rect.~inscriptible dans demi-cercle de centre $M$.. 
-		.4 $A,B,C$ sont à équidistance de $M$..
+                  .1 Relations de longueurs.
+		.2 Pour un triangle donné, le rapport de la longueur d'un coté sur le sinus de la mesure de l'angle opposé est une constante.. 
 		}
 }
 
@@ -394,7 +390,7 @@
 				  \pic [draw, angle eccentricity=1.5,  "$\gamma$"] {angle = B--A--D};
 				  \end{tikzpicture}
                                 \end{figure}
-                                $$\alpha=2\beta=\gamma$$
+                                $$\alpha=\frac{\beta}{2}=\gamma$$
                                 
 				Tous les angles inscrits interceptant le même arc sont égaux.
 				

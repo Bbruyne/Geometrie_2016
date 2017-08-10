@@ -5,6 +5,7 @@
 \usepackage[french]{babel}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -139,10 +140,11 @@
 		\begin{align*}
 		                    \pi \equiv &\ (2r^2 + 6r - 2)x - (r^2 - 1)y - 2rz + r^2 + 1 = 0, \\
 		             \vect{\pi} \equiv &\ (2r^2 + 6r - 2)x - (r^2 - 1)y - 2rz = 0, \\
-         \vect{d}=(x_0,y_0,z_0)\in \vect{\pi} : &\ (2r^2 + 6r - 2)x_0 - (r^2 - 1)y_0 - 2rz_0 = 0. \\[0.3em]
+                  \vect{d}=(x_0,y_0,z_0)\in \vect{\pi} : &\ (2r^2 + 6r - 2)x_0 - (r^2 - 1)y_0 - 2rz_0 = 0. \\[0.3em]
+                   &\ (  2x_0 - y_0 )r^2 + ( 6x_0 - 2z_0)r  -2x_0 + y_0   = 0. \\[0.3em]
 					       &\ \begin{cases}
-					           2r^2x_0 - r^2y_0 &= 0, \\
-					           6rx_0 - 2rz_0 &= 0, \\
+					           2x_0 - y_0 &= 0, \\
+					           6x_0 - 2z_0 &= 0, \\
 					           -2x_0 + y_0 &= 0.
 					          \end{cases}
 		\end{align*} \\ 

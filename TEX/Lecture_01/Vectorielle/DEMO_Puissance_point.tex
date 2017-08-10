@@ -6,6 +6,7 @@
 \usepackage[french]{babel}
 \usepackage{dirtree}
 \setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen =left}
 \AtEndNote{\vfill \begin{center} mm:hh \end{center}}
 \newcommand{\notedir}[1] {
   \note{\dirtree{#1}}}
@@ -140,21 +141,26 @@
 		\column{.5\textwidth}\centering
 		
 		\underline{Résolution}\\ \flushleft
-		\heart La droite passant par le centre d’un cercle et le milieu d’une des cordes est perpendiculaire à cette corde.
-                \medskip
-
-                $\rightarrow \Delta PMO, \Delta AMO$ sont rectangles.
+	
                 
 		\begin{align*}
 		 \vect{PA}\cdot\vect{PB} &=\ (\vect{PM}+\vect{MA})\cdot(\vect{PM}+\vect{MB}), \\[0.5em]	
-					 &=\ (\vect{PM}+\vect{MA})\cdot(\vect{PM}-\vect{MA}), \\[0.5em]	
+					 &=\ (\vect{PM}+\vect{MA})\cdot(\vect{PM}-\vect{MA}), \\[0.5em]
+                   &=\ \vect{PM}\cdot\vect{PM}-\vect{MA}\cdot\vect{MA}, \\[0.5em]	
 					 &=\ |\vect{PM}|^2 - |\vect{MA}|^2, \\[0.5em]
-					 &=\ |\vect{PO}|^2 - |\vect{OM}|^2 - (|\vect{OA}|^2 - |\vect{OM}|^2), \\[0.5em]
+                \end{align*}
+
+               \vspace{-4mm} 
+                	\heart La droite passant par le centre d’un cercle et le milieu d’une des cordes est perpendiculaire à cette corde.
+                \smallskip
+
+                $\rightarrow \Delta PMO, \Delta AMO$ sont rectangles.
+                
+                \begin{align*}
+			 \vect{PA}\cdot\vect{PB}		 &=\ |\vect{PO}|^2 - |\vect{OM}|^2 - (|\vect{OA}|^2 - |\vect{OM}|^2), \\[0.5em]
 					 &=\ |\vect{PO}|^2 - |\vect{OA}|^2, \\[0.5em]
-					 &=\ |PO|^2 - r^2. \\
+					 &=\ |PO|^2 - r^2. \hspace{25mm}  \qed
 		\end{align*}
-		\hfill $\qed$
-   
 	   \end{columns}
      \notedir{%
 	   .1 Prouver thèse.
